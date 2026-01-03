@@ -26,8 +26,10 @@ export default function Navbar() {
                 second: '2-digit'
             }));
         };
-        updateTime();
+        // Initial delay to avoid hydration mismatch/immediate render loop
         const interval = setInterval(updateTime, 1000);
+        updateTime(); // Sync once after mount is safe
+
         return () => clearInterval(interval);
     }, []);
 
@@ -45,12 +47,12 @@ export default function Navbar() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${scrolled
-                    ? "bg-[#030303]/95 backdrop-blur-xl"
-                    : "bg-transparent"
+                ? "bg-[var(--bg-void)]/95 backdrop-blur-xl border-b border-[var(--color-border)]"
+                : "bg-transparent"
                 }`}
         >
             {/* Top Accent Line */}
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D10000]/50 to-transparent" />
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--acc-red)]/50 to-transparent" />
 
             {/* FULL WIDTH Container matching section padding */}
             <div className="w-full px-6 md:px-12 lg:px-24">
@@ -64,12 +66,12 @@ export default function Navbar() {
                                 <div className="relative">
                                     {/* Outer Ring */}
                                     <motion.div
-                                        className="absolute -inset-1 border border-[#D10000]/30 opacity-0 group-hover:opacity-100 transition-opacity"
+                                        className="absolute -inset-1 border border-[var(--acc-red)]/30 opacity-0 group-hover:opacity-100 transition-opacity"
                                         animate={{ rotate: 360 }}
                                         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                                     />
                                     {/* Logo */}
-                                    <div className="w-10 h-10 bg-[#D10000] flex items-center justify-center relative overflow-hidden">
+                                    <div className="w-10 h-10 bg-[var(--acc-red)] flex items-center justify-center relative overflow-hidden">
                                         <span className="font-bebas text-white text-xl relative z-10">A</span>
                                         {/* Shine Effect */}
                                         <motion.div
@@ -81,7 +83,7 @@ export default function Navbar() {
                                     </div>
                                 </div>
                                 <div className="hidden sm:block">
-                                    <span className="font-bebas text-xl text-white tracking-[0.15em] group-hover:text-[#D10000] transition-colors">
+                                    <span className="font-bebas text-xl text-[var(--fg-cinema)] tracking-[0.15em] group-hover:text-[var(--acc-red)] transition-colors">
                                         ADAM
                                     </span>
                                     <div className="text-[8px] font-mono text-gray-600 tracking-[0.3em]">
@@ -171,8 +173,8 @@ export default function Navbar() {
 
             {/* Bottom Border with gradient */}
             <div className={`h-px transition-all duration-500 ${scrolled
-                    ? "bg-gradient-to-r from-transparent via-white/10 to-transparent"
-                    : "bg-transparent"
+                ? "bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                : "bg-transparent"
                 }`} />
         </motion.nav>
     );

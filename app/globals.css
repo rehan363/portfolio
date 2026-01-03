@@ -6,17 +6,32 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 
 @layer base {
+
+  html,
+  body {
+    background-color: var(--bg-void);
+    color: var(--fg-cinema);
+    overscroll-behavior: none;
+    /* Prevents bounce revealing white background */
+  }
+
   :root {
-    /* Colors */
-    --color-bg: #030303;
+    /* Colors - The Silk Protocol */
+    --bg-void: #050505;
+    --fg-cinema: #E0E0E0;
+    --fg-muted: #525252;
+    --acc-red: #D10000;
+
+    --color-bg: var(--bg-void);
     --color-surface: #0A0A0A;
-    --color-accent: #D10000;
+    --color-accent: var(--acc-red);
     --color-accent-dark: #8B0000;
-    --color-text-primary: #FFFFFF;
+    --color-text-primary: var(--fg-cinema);
     --color-text-secondary: #A1A1A1;
-    --color-text-muted: #4A4A4A;
-    --color-border: rgba(255, 255, 255, 0.1);
-    --color-border-hover: rgba(255, 255, 255, 0.2);
+    --color-text-muted: var(--fg-muted);
+    --color-border: rgba(255, 255, 255, 0.08);
+    /* Softer borders */
+    --color-border-hover: rgba(255, 255, 255, 0.15);
 
     /* Spacing (8px base) */
     --space-xs: 8px;
@@ -32,7 +47,8 @@
     --container-px-desktop: 96px;
 
     /* Navbar */
-    --navbar-height: 80px;
+    --navbar-height: 96px;
+    /* Taller, more architectural */
   }
 }
 
@@ -58,6 +74,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* Selection */

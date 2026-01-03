@@ -29,7 +29,7 @@ export default function ProcessPage() {
         : null;
 
     return (
-        <main className="relative min-h-screen text-white overflow-x-hidden">
+        <main className="relative min-h-screen bg-[var(--bg-void)] text-[var(--fg-cinema)] overflow-x-hidden selection:bg-[var(--acc-red)] selection:text-white">
             <PulseBackground />
             <Navbar />
 
@@ -48,25 +48,25 @@ export default function ProcessPage() {
                         {/* Status Bar */}
                         <div className="flex items-center gap-4 mb-8">
                             <motion.div
-                                className="w-2 h-2 bg-[#D10000] rounded-full"
+                                className="w-2 h-2 bg-[var(--acc-red)] rounded-full"
                                 animate={{ scale: [1, 1.2, 1], opacity: [1, 0.6, 1] }}
                                 transition={{ duration: 2, repeat: Infinity }}
                             />
-                            <span className="text-[10px] font-mono text-gray-500 tracking-[0.3em]">
+                            <span className="text-[10px] font-mono text-[var(--fg-muted)] tracking-[0.3em]">
                                 METHODOLOGY_V3.0 // NEURAL_ALGORITHM
                             </span>
                         </div>
 
                         {/* Title */}
-                        <h1 className="text-[15vw] md:text-[12vw] lg:text-[10vw] font-bebas text-white leading-[0.85] mb-8">
+                        <h1 className="text-[15vw] md:text-[12vw] lg:text-[10vw] font-bebas text-[var(--fg-cinema)] leading-[0.85] mb-8">
                             THE
                             <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D10000] via-red-600 to-[#D10000]">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--acc-red)] via-red-600 to-[var(--acc-red)]">
                                 ALGORITHM
                             </span>
                         </h1>
 
-                        <p className="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed font-light">
+                        <p className="text-lg md:text-xl text-[var(--fg-muted)] max-w-xl leading-relaxed font-light">
                             A systematic approach to transforming complexity into elegant solutions.
                             Four phases. Infinite iterations. Zero compromises.
                         </p>
@@ -96,10 +96,10 @@ export default function ProcessPage() {
                             </defs>
 
                             {/* Input Label */}
-                            <text x="50" y="125" textAnchor="middle" fill="#4A4A4A" fontSize="10" fontFamily="JetBrains Mono, monospace">
+                            <text x="50" y="125" textAnchor="middle" fill="var(--fg-muted)" fontSize="10" fontFamily="JetBrains Mono, monospace">
                                 INPUT
                             </text>
-                            <text x="50" y="140" textAnchor="middle" fill="#D10000" fontSize="9" fontFamily="JetBrains Mono, monospace">
+                            <text x="50" y="140" textAnchor="middle" fill="var(--acc-red)" fontSize="9" fontFamily="JetBrains Mono, monospace">
                                 PROBLEM
                             </text>
 
@@ -129,7 +129,7 @@ export default function ProcessPage() {
                             ))}
 
                             {/* Output Label */}
-                            <text x="850" y="125" textAnchor="middle" fill="#4A4A4A" fontSize="10" fontFamily="JetBrains Mono, monospace">
+                            <text x="850" y="125" textAnchor="middle" fill="var(--fg-muted)" fontSize="10" fontFamily="JetBrains Mono, monospace">
                                 OUTPUT
                             </text>
                             <text x="850" y="140" textAnchor="middle" fill="#22c55e" fontSize="9" fontFamily="JetBrains Mono, monospace">
@@ -152,7 +152,7 @@ export default function ProcessPage() {
                             transition={{ delay: 1.5, duration: 0.8 }}
                             className="text-center mt-16"
                         >
-                            <p className="text-sm font-mono text-gray-600 tracking-widest">
+                            <p className="text-sm font-mono text-[var(--fg-muted)] tracking-widest">
                                 SELECT A PHASE TO EXPLORE
                             </p>
                         </motion.div>
@@ -165,7 +165,7 @@ export default function ProcessPage() {
                         transition={{ delay: 1.2, duration: 0.8 }}
                         className="max-w-3xl mx-auto mt-32"
                     >
-                        <div className="bg-[#0A0A0A]/60 backdrop-blur-sm border border-white/5 p-6">
+                        <div className="bg-[#0A0A0A]/60 backdrop-blur-sm border border-[var(--color-border)] p-6">
                             <div className="flex items-center gap-2 mb-4">
                                 <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
                                 <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
@@ -173,11 +173,11 @@ export default function ProcessPage() {
                                 <span className="ml-3 text-[10px] font-mono text-gray-600">neural_algorithm.log</span>
                             </div>
 
-                            <div className="font-mono text-xs space-y-1 text-gray-500">
-                                <p><span className="text-gray-600">&gt;</span> initializing neural_algorithm v3.0...</p>
-                                <p><span className="text-gray-600">&gt;</span> loading cognitive_frameworks...</p>
-                                <p><span className="text-[#D10000]">&gt;</span> <span className="text-[#D10000]">READY:</span> awaiting problem input</p>
-                                <p className="text-gray-600 pt-2">
+                            <div className="font-mono text-xs space-y-1 text-[var(--fg-muted)]">
+                                <p><span className="text-[var(--fg-cinema)]">&gt;</span> initializing neural_algorithm v3.0...</p>
+                                <p><span className="text-[var(--fg-cinema)]">&gt;</span> loading cognitive_frameworks...</p>
+                                <p><span className="text-[var(--acc-red)]">&gt;</span> <span className="text-[var(--acc-red)]">READY:</span> awaiting problem input</p>
+                                <p className="text-[var(--fg-muted)] pt-2">
                                 // This is how I think. Not linear, but iterative.<br />
                                 // Each phase informs the next. Each iteration refines.
                                 </p>

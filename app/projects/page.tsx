@@ -24,7 +24,7 @@ export default function ProjectsPage() {
         : projects.filter(p => p.category === activeFilter);
 
     return (
-        <main className="relative min-h-screen bg-[#030303] text-white selection:bg-[#D10000] selection:text-white">
+        <main className="relative min-h-screen bg-[var(--bg-void)] text-[var(--fg-cinema)] selection:bg-[var(--acc-red)] selection:text-white">
 
             {/* 1. LAYER: BACKGROUND */}
             <SystemBackground />
@@ -44,25 +44,25 @@ export default function ProjectsPage() {
                         className="mb-20"
                     >
                         <div className="flex items-center gap-3 mb-6 opacity-60">
-                            <span className="w-2 h-2 bg-[#D10000] rounded-full animate-pulse" />
-                            <span className="text-xs font-mono tracking-[0.2em] text-zinc-400">CLASSIFIED PORTFOLIO</span>
+                            <span className="w-2 h-2 bg-[var(--acc-red)] rounded-full animate-pulse" />
+                            <span className="text-xs font-mono tracking-[0.2em] text-[var(--fg-muted)]">CLASSIFIED PORTFOLIO</span>
                         </div>
 
-                        <h1 className="text-7xl md:text-9xl font-bebas text-white leading-[0.85] tracking-tight mb-8">
+                        <h1 className="text-7xl md:text-9xl font-bebas text-[var(--fg-cinema)] leading-[0.85] tracking-tight mb-8">
                             ENGINEERING <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-600">
                                 INTELLIGENCE
                             </span>
                         </h1>
 
-                        <p className="max-w-2xl text-zinc-400 text-lg font-light leading-relaxed border-l border-zinc-800 pl-6">
+                        <p className="max-w-2xl text-[var(--fg-muted)] text-lg font-light leading-relaxed border-l border-[var(--color-border)] pl-6">
                             A curated archive of high-performance autonomous agents, financial algorithms, and neural interfaces.
                             Deployed for enterprise scale.
                         </p>
                     </motion.div>
 
                     {/* Filter Bar */}
-                    <div className="sticky top-20 z-40 bg-[#030303]/80 backdrop-blur-md mb-12 border-b border-zinc-800 pb-0 overflow-x-auto scrollbar-none">
+                    <div className="sticky top-20 z-40 bg-[var(--bg-void)]/80 backdrop-blur-md mb-12 border-b border-[var(--color-border)] pb-0 overflow-x-auto scrollbar-none">
                         <div className="flex gap-8 min-w-max">
                             {categories.map((cat) => (
                                 <button
@@ -76,7 +76,7 @@ export default function ProjectsPage() {
                                     {activeFilter === cat.id && (
                                         <motion.div
                                             layoutId="activeFilter"
-                                            className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#D10000]"
+                                            className="absolute bottom-0 left-0 right-0 h-[2px] bg-[var(--acc-red)]"
                                         />
                                     )}
                                 </button>
