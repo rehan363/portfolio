@@ -1,93 +1,125 @@
+
+export type ProjectCategory = 'NEURAL_VOICE' | 'CONVERSATIONAL_AI' | 'ALGORITHMIC_FINANCE' | 'DEEP_RESEARCH';
+
+export type DeploymentStatus = 'ONLINE' | 'OFFLINE' | 'TRAINING' | 'DEPRECATED';
+
 export interface Project {
     id: string;
     codename: string;
     title: string;
-    status: 'DEPLOYED' | 'PROTOTYPE' | 'CLASSIFIED';
+    category: ProjectCategory;
+    status: DeploymentStatus;
     classification: string;
-
+    tech_stack: string[];
     problem: {
+        short: string;
         desc: string;
-        metric: string;
     };
     solution: {
+        short: string;
         desc: string;
-        metric: string;
     };
-
-    metrics: { label: string; value: string }[];
-    tech_stack: string[];
-    image: string; // New holographic image paths
-    link?: string;
+    image: string;
+    performance: {
+        latency: string;
+        accuracy: string;
+        throughput?: string;
+        uptime?: string;
+        [key: string]: string | undefined;
+    };
 }
 
 export const projects: Project[] = [
     {
-        id: "neo-bank",
-        codename: "PROJECT_NEO",
-        title: "NeoBank Core",
-        status: "DEPLOYED",
-        classification: "FINTECH_INFRASTRUCTURE",
+        id: "EXP-01",
+        codename: "VOX_SYNTH_V4",
+        title: "NEURAL VOICE ENGINE",
+        category: "NEURAL_VOICE",
+        status: "ONLINE",
+        classification: "CONFIDENTIAL // PROPRIETARY",
+        tech_stack: ["Python", "PyTorch", "FastAPI", "Redis"],
         problem: {
-            desc: "Legacy latency detected. High user attrition.",
-            metric: "12m Latency"
+            short: "High latency in TTS",
+            desc: "Standard Text-to-Speech engines suffer from robotic intonation and high inference latency (>400ms), making real-time conversation impossible."
         },
         solution: {
-            desc: "WebSocket engine active. Zero-friction.",
-            metric: "45s Latency"
+            short: "Real-time diffusion",
+            desc: "Implemented a non-autoregressive transformer model with distinct pitch/duration predictors, reducing inference time to <40ms while maintaining human-like prosody."
         },
-        metrics: [
-            { label: "Throughput", value: "50K TPS" },
-            { label: "Uptime", value: "99.99%" },
-            { label: "Growth", value: "+40%" }
-        ],
-        tech_stack: ["Next.js", "Rust", "AWS"],
-        image: "/projects/neobank-holo.png",
-        link: "#"
+        image: "/projects/voice_ui.png",
+        performance: {
+            latency: "38ms",
+            accuracy: "99.2%",
+            throughput: "450 req/s"
+        }
     },
     {
-        id: "luxe-fashion",
-        codename: "VIRTUAL_FIT",
-        title: "Luxe AR Experience",
-        status: "DEPLOYED",
-        classification: "ECOMMERCE_VISUALIZATION",
+        id: "EXP-02",
+        codename: "ALPHA_CHAT_Q",
+        title: "ENTERPRISE ASSISTANT",
+        category: "CONVERSATIONAL_AI",
+        status: "TRAINING",
+        classification: "RESTRICTED // ENTERPRISE ONLY",
+        tech_stack: ["Next.js", "LangChain", "OpenAI", "Pinecone"],
         problem: {
-            desc: "Visualization gap. Return rate critical.",
-            metric: "40% Returns"
+            short: "Context loss in long chats",
+            desc: "LLMs struggle with long-context retrieval, often hallucinating or forgetting earlier instructions in complex enterprise workflows."
         },
         solution: {
-            desc: "WebGL/AR Try-On. Photorealistic render.",
-            metric: "18% Returns"
+            short: "Vector-augmented memory",
+            desc: "Hybrid search architecture combining dense vector retrieval with sparse keyword search (BM25), enabling accurate recall across 100k+ token context windows."
         },
-        metrics: [
-            { label: "Conversion", value: "+40%" },
-            { label: "Savings", value: "$2.1M" },
-            { label: "Engagement", value: "4m Avg" }
-        ],
-        tech_stack: ["Three.js", "React", "WebGL"],
-        image: "/projects/luxe-holo.png",
-        link: "#"
+        image: "/projects/chat_ui.png",
+        performance: {
+            latency: "120ms",
+            accuracy: "96.5%",
+            uptime: "99.99%"
+        }
     },
     {
-        id: "aero-dash",
-        codename: "AERO_STREAM",
-        title: "AeroDash Analytics",
-        status: "PROTOTYPE",
-        classification: "REALTIME_ANALYTICS",
+        id: "EXP-03",
+        codename: "PREDICT_X_7",
+        title: "ALGORITHMIC TRADER",
+        category: "ALGORITHMIC_FINANCE",
+        status: "ONLINE",
+        classification: "TOP SECRET // FINANCIAL",
+        tech_stack: ["Rust", "Python", "Kafka", "Postgres"],
         problem: {
-            desc: "Data blindness. 5m reporting delay.",
-            metric: "5m Delay"
+            short: "Market noise filtering",
+            desc: "High-frequency trading signals are often drowned out by market microstructure noise, leading to false positives in trade execution."
         },
         solution: {
-            desc: "Edge-computed streaming. Instant visibility.",
-            metric: "50ms Delay"
+            short: "Kalman Filter ensemble",
+            desc: "Deployed an ensemble of Kalman Filters and LSTM networks to separate signal from noise, improving Sharpe ratio by 45% in backtesting."
         },
-        metrics: [
-            { label: "Events", value: "2M/s" },
-            { label: "Latency", value: "<50ms" },
-            { label: "Clients", value: "200+" }
-        ],
-        tech_stack: ["D3.js", "Socket.io", "Redis"],
-        image: "/projects/aerodash-holo.png",
-        link: "#"
+        image: "/projects/fintech_ui.png",
+        performance: {
+            latency: "4ms",
+            accuracy: "84.3%",
+            throughput: "12k tx/s"
+        }
+    },
+    {
+        id: "EXP-04",
+        codename: "DEEP_VISION_R",
+        title: "AUTONOMOUS VISION",
+        category: "DEEP_RESEARCH",
+        status: "OFFLINE",
+        classification: "CLASSIFIED // MIL-SPEC",
+        tech_stack: ["C++", "CUDA", "TensorRT", "OpenCV"],
+        problem: {
+            short: "Edge detection failure",
+            desc: "Standard CV models fail in low-light conditions, critical for autonomous drone navigation in subterranean environments."
+        },
+        solution: {
+            short: "Thermal fusion model",
+            desc: "Created a multi-modal input pipeline fusing standard RGB with thermal imaging data, training a custom YOLOv8 variant for reliable detection in 0 lux."
+        },
+        image: "/projects/vision_ui.png",
+        performance: {
+            latency: "12ms",
+            accuracy: "99.8%",
+            uptime: "N/A"
+        }
     }
 ];
