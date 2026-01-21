@@ -34,11 +34,10 @@ export default function Navbar() {
     }, []);
 
     const navLinks = [
-        { name: "CONTEXT", href: "/#about", code: "01" },
-        { name: "EXPERIENCE", href: "/experience", code: "02" },
-        { name: "ARSENAL", href: "/skills", code: "03" },
-        { name: "WORK", href: "/projects", code: "04" },
-        { name: "PROCESS", href: "/process", code: "05" },
+        { name: "EXPERIENCE", href: "/experience", code: "01" },
+        { name: "ARSENAL", href: "/skills", code: "02" },
+        { name: "WORK", href: "/projects", code: "03" },
+        { name: "PROCESS", href: "/process", code: "04" },
     ];
 
     return (
@@ -72,7 +71,7 @@ export default function Navbar() {
                                     />
                                     {/* Logo */}
                                     <div className="w-10 h-10 bg-[var(--acc-red)] flex items-center justify-center relative overflow-hidden">
-                                        <span className="font-bebas text-white text-xl relative z-10">A</span>
+                                        <span className="font-bebas text-white text-xl relative z-10">P</span>
                                         {/* Shine Effect */}
                                         <motion.div
                                             className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
@@ -84,10 +83,10 @@ export default function Navbar() {
                                 </div>
                                 <div className="hidden sm:block">
                                     <span className="font-bebas text-xl text-[var(--fg-cinema)] tracking-[0.15em] group-hover:text-[var(--acc-red)] transition-colors">
-                                        ADAM
+                                        PORTFOLIO
                                     </span>
                                     <div className="text-[8px] font-mono text-gray-600 tracking-[0.3em]">
-                                        SOLUTION.ARCHITECT
+                                        CHIEF.TECH.OFFICER
                                     </div>
                                 </div>
                             </a>

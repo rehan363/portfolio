@@ -5,33 +5,23 @@ import React from 'react';
 const projects = [
     {
         id: "01",
-        title: "NEO • BANK",
-        category: "FINTECH_ARCHITECTURE",
-        image: "/projects/neobank.png",
+        title: "OUIIMI • MARKETPLACE",
+        category: "SERVICE_MARKETPLACE",
+        image: "/ouiimi_portfolio_thumbnail_1768828611462.png",
         year: "2024",
-        description: "A complete reimagining of digital finance interfaces. Utilizing React Server Components for sub-millisecond data hydration and WebGL for real-time market visualization.",
-        tech: ["Next.js 14", "TypeScript", "WebGL", "PostgreSQL"],
-        status: "PRODUCTION"
-    },
-    {
-        id: "02",
-        title: "LUXE • FASHION",
-        category: "E-COMMERCE_EXPERIENCE",
-        image: "/projects/luxe.png",
-        year: "2023",
-        description: "Immersive shopping platform blending editorial aesthetics with high-conversion UX flows. Features AI-driven sizing recommendations and cloth simulation.",
-        tech: ["Shopify Plus", "React", "Three.js", "Node.js"],
+        description: "A full-stack service booking marketplace connecting customers with local beauty and wellness businesses. Features a fair 5% revenue-share model, real-time multi-staff scheduling, and split payments via Stripe.",
+        tech: ["Next.js 14", "MongoDB", "Stripe", "TailwindCSS"],
         status: "LIVE"
     },
     {
-        id: "03",
-        title: "AERO • DASH",
-        category: "IOT_ANALYTICS",
-        image: "/projects/aerodash.png",
-        year: "2022",
-        description: "Enterprise dashboard for aviation logistics. handling millions of data points with D3.js and WebSocket connections for live fleet tracking.",
-        tech: ["Vue.js", "D3.js", "Python", "Redis"],
-        status: "INTERNAL"
+        id: "02",
+        title: "GOCREATION • AI",
+        category: "LEGAL_AI_PLATFORM",
+        image: "/gocreation_landing_page_screenshot_1768829344794.png",
+        year: "2024",
+        description: "AI-powered legal platform for automated company formation in Morocco. Combines conversational AI (TALYA) with LangGraph for dynamic document generation and multilingual support.",
+        tech: ["Next.js 15", "LangGraph", "FastAPI", "OpenAI"],
+        status: "LIVE"
     }
 ];
 

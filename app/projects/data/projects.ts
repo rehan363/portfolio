@@ -1,5 +1,5 @@
 
-export type ProjectCategory = 'NEURAL_VOICE' | 'CONVERSATIONAL_AI' | 'ALGORITHMIC_FINANCE' | 'DEEP_RESEARCH';
+export type ProjectCategory = 'SERVICE_MARKETPLACE' | 'LEGAL_AI' | 'CONVERSATIONAL_AI' | 'FULL_STACK';
 
 export type DeploymentStatus = 'ONLINE' | 'OFFLINE' | 'TRAINING' | 'DEPRECATED';
 
@@ -31,95 +31,51 @@ export interface Project {
 
 export const projects: Project[] = [
     {
-        id: "EXP-01",
-        codename: "VOX_SYNTH_V4",
-        title: "NEURAL VOICE ENGINE",
-        category: "NEURAL_VOICE",
+        id: "PRJ-01",
+        codename: "OUIIMI_PF",
+        title: "OUIIMI MARKETPLACE",
+        category: "SERVICE_MARKETPLACE",
         status: "ONLINE",
-        classification: "CONFIDENTIAL // PROPRIETARY",
-        tech_stack: ["Python", "PyTorch", "FastAPI", "Redis"],
+        classification: "PRODUCTION // PUBLIC",
+        tech_stack: ["Next.js 14", "React 18", "MongoDB", "Stripe", "TailwindCSS"],
         problem: {
-            short: "High latency in TTS",
-            desc: "Standard Text-to-Speech engines suffer from robotic intonation and high inference latency (>400ms), making real-time conversation impossible."
+            short: "In efficient booking systems",
+            desc: "Small service businesses struggle with high platform fees (15-30%), no-shows, and complex booking management, while customers face fragmented discovery and lack of transparency."
         },
         solution: {
-            short: "Real-time diffusion",
-            desc: "Implemented a non-autoregressive transformer model with distinct pitch/duration predictors, reducing inference time to <40ms while maintaining human-like prosody."
+            short: "Fair-revenue marketplace",
+            desc: "Full-stack marketplace with 5% revenue split model. Features real-time multi-staff scheduling, double-booking prevention, geospatial search, and secure split payments via Stripe."
         },
-        image: "/projects/voice_ui.png",
+        image: "/ouiimi_portfolio_thumbnail_1768828611462.png",
         performance: {
-            latency: "38ms",
-            accuracy: "99.2%",
-            throughput: "450 req/s"
+            latency: "<50ms",
+            accuracy: "100%",
+            throughput: "High Concurrency",
+            uptime: "99.9%"
         }
     },
     {
-        id: "EXP-02",
-        codename: "ALPHA_CHAT_Q",
-        title: "ENTERPRISE ASSISTANT",
-        category: "CONVERSATIONAL_AI",
-        status: "TRAINING",
-        classification: "RESTRICTED // ENTERPRISE ONLY",
-        tech_stack: ["Next.js", "LangChain", "OpenAI", "Pinecone"],
+        id: "PRJ-02",
+        codename: "GOCREATION_AI",
+        title: "GOCREATION LEGAL AI",
+        category: "LEGAL_AI",
+        status: "ONLINE",
+        classification: "PRODUCTION // PROPRIETARY",
+        tech_stack: ["Next.js 15", "LangGraph", "FastAPI", "OpenAI GPT-4", "Pinecone"],
         problem: {
-            short: "Context loss in long chats",
-            desc: "LLMs struggle with long-context retrieval, often hallucinating or forgetting earlier instructions in complex enterprise workflows."
+            short: "Complex business formation",
+            desc: "Entrepreneurs in Morocco face bureaucratic hurdles, language barriers, and high legal costs when creating companies, often requiring multiple manual steps and expensive consultation."
         },
         solution: {
-            short: "Vector-augmented memory",
-            desc: "Hybrid search architecture combining dense vector retrieval with sparse keyword search (BM25), enabling accurate recall across 100k+ token context windows."
+            short: "AI Legal Assistant",
+            desc: "AI-powered platform combining conversational interfaces with automated legal document generation. Features TALYA (AI assistant), multi-language support (RTL), and dynamic PDF generation."
         },
-        image: "/projects/chat_ui.png",
+        image: "/gocreation_landing_page_screenshot_1768829344794.png",
         performance: {
             latency: "120ms",
-            accuracy: "96.5%",
-            uptime: "99.99%"
-        }
-    },
-    {
-        id: "EXP-03",
-        codename: "PREDICT_X_7",
-        title: "ALGORITHMIC TRADER",
-        category: "ALGORITHMIC_FINANCE",
-        status: "ONLINE",
-        classification: "TOP SECRET // FINANCIAL",
-        tech_stack: ["Rust", "Python", "Kafka", "Postgres"],
-        problem: {
-            short: "Market noise filtering",
-            desc: "High-frequency trading signals are often drowned out by market microstructure noise, leading to false positives in trade execution."
-        },
-        solution: {
-            short: "Kalman Filter ensemble",
-            desc: "Deployed an ensemble of Kalman Filters and LSTM networks to separate signal from noise, improving Sharpe ratio by 45% in backtesting."
-        },
-        image: "/projects/fintech_ui.png",
-        performance: {
-            latency: "4ms",
-            accuracy: "84.3%",
-            throughput: "12k tx/s"
-        }
-    },
-    {
-        id: "EXP-04",
-        codename: "DEEP_VISION_R",
-        title: "AUTONOMOUS VISION",
-        category: "DEEP_RESEARCH",
-        status: "OFFLINE",
-        classification: "CLASSIFIED // MIL-SPEC",
-        tech_stack: ["C++", "CUDA", "TensorRT", "OpenCV"],
-        problem: {
-            short: "Edge detection failure",
-            desc: "Standard CV models fail in low-light conditions, critical for autonomous drone navigation in subterranean environments."
-        },
-        solution: {
-            short: "Thermal fusion model",
-            desc: "Created a multi-modal input pipeline fusing standard RGB with thermal imaging data, training a custom YOLOv8 variant for reliable detection in 0 lux."
-        },
-        image: "/projects/vision_ui.png",
-        performance: {
-            latency: "12ms",
-            accuracy: "99.8%",
-            uptime: "N/A"
+            accuracy: "99.5%",
+            throughput: "Scalable",
+            uptime: "99.9%"
         }
     }
 ];

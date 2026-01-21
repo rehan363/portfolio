@@ -1,7 +1,7 @@
 "use client";
 import HeroSection from "./components/HeroSection";
-import AboutSection from "./components/AboutSection";
 import ExperienceSection from "./components/ExperienceSection";
+
 import SkillsSection from "./components/SkillsSection";
 import ProjectsSection from "./components/ProjectsSection";
 import MethodologySection from "./components/MethodologySection";
@@ -25,7 +25,6 @@ export default function Home() {
 
       {/* Scrollable Sections - Rendered immediately so they are visible upon reveal */}
       <HeroSection />
-      <AboutSection />
       <ExperienceSection />
       <SkillsSection />
       <MethodologySection />

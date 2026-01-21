@@ -46,7 +46,7 @@ export default function SystemFooter() {
                 {/* CENTER: BUILD INFO (Mobile Hidden) */}
                 <div className="hidden md:block">
                     <span className="text-[9px] font-mono text-[var(--fg-muted)] tracking-[0.2em] uppercase">
-                        ARCHITECT_PORTFOLIO // V.2.5.0 // SILK
+                        CTO_PORTFOLIO // V.3.0.0 // PRODUCTION
                     </span>
                 </div>
 
@@ -54,7 +54,7 @@ export default function SystemFooter() {
                 <div className="flex items-center gap-6">
                     <div className="hidden md:flex items-center gap-2 border-r border-[var(--color-border)] pr-4">
                         <span className="text-[9px] font-mono text-[var(--fg-muted)]">LOC:</span>
-                        <span className="text-[9px] font-mono text-[var(--fg-muted)]">34.05°N, 118.24°W</span>
+                        <span className="text-[9px] font-mono text-[var(--fg-muted)]">33.68°N, 73.04°E</span>
                     </div>
                     <span className="text-[9px] font-mono text-[var(--fg-muted)] w-16 text-right">
                         {time}

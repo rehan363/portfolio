@@ -5,31 +5,31 @@ import SectionWrapper from "./SectionWrapper";
 const steps = [
     {
         id: "01",
-        phase: "DISCOVERY_&_AUDIT",
-        action: "DECONSTRUCT",
-        description: "Analyzing system requirements, identifying bottlenecks, and defining core architectural constraints.",
-        output: "Technical Specification Doc"
+        phase: "REQUIREMENT_ANALYSIS",
+        action: "DISCOVER",
+        description: "Understanding client requirements, analyzing project scope, and identifying key technical challenges. Defining clear objectives and success metrics.",
+        output: "Technical Requirements Doc"
     },
     {
         id: "02",
         phase: "SYSTEM_ARCHITECTURE",
         action: "DESIGN",
-        description: "Mapping data flows, selecting optimal tech stacks, and designing scalable component hierarchies.",
-        output: "Architecture Diagram"
+        description: "Planning system architecture, selecting optimal tech stack (FastAPI, Next.js, Docker), and designing scalable database schemas. Creating API specifications and data flow diagrams.",
+        output: "Architecture Blueprint"
     },
     {
         id: "03",
-        phase: "IMPLEMENTATION",
-        action: "EXECUTE",
-        description: "Writing clean, type-safe production code. Focusing on performance metrics and modular reusability.",
-        output: "Production Build"
+        phase: "DEVELOPMENT",
+        action: "IMPLEMENT",
+        description: "Writing clean, production-ready code with TypeScript and Python. Implementing CRUD operations, API routes, server actions, and integrating AI workflows with OpenAI SDK and LangGraph.",
+        output: "Working Application"
     },
     {
         id: "04",
-        phase: "QUALITY_ASSURANCE",
-        action: "OPTIMIZE",
-        description: "Rigorous testing, enhancing load times, and verifying accessibility standards before deployment.",
-        output: "Deployment Success"
+        phase: "DEPLOYMENT_&_CI/CD",
+        action: "DELIVER",
+        description: "Containerizing applications with Docker, setting up CI/CD pipelines, managing load balancing and caching with Redis. Ensuring system scalability and monitoring performance metrics.",
+        output: "Production Deployment"
     }
 ];
 
