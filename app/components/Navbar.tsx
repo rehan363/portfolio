@@ -41,6 +41,7 @@ export default function Navbar() {
         { name: "ARSENAL", href: "/skills", code: "02" },
         { name: "WORK", href: "/projects", code: "03" },
         { name: "PROCESS", href: "/process", code: "04" },
+        { name: "RESUME", href: "/resume", code: "05" },
     ];
 
     return (
