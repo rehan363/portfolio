@@ -1,5 +1,5 @@
 
-export type ProjectCategory = 'SERVICE_MARKETPLACE' | 'LEGAL_AI' | 'CONVERSATIONAL_AI' | 'FULL_STACK';
+export type ProjectCategory = 'SERVICE_MARKETPLACE' | 'LEGAL_AI' | 'CONVERSATIONAL_AI' | 'FULL_STACK' | 'NEURAL_VOICE' | 'ALGORITHMIC_FINANCE' | 'DEEP_RESEARCH';
 
 export type DeploymentStatus = 'ONLINE' | 'OFFLINE' | 'TRAINING' | 'DEPRECATED';
 
