@@ -45,14 +45,11 @@ export default function Navbar() {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${scrolled
-                ? "bg-[var(--bg-void)]/95 backdrop-blur-xl border-b border-[var(--color-border)]"
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+                ? "bg-[var(--bg-void)]/98 backdrop-blur-xl border-b border-white/[0.08]"
                 : "bg-transparent"
                 }`}
         >
-            {/* Top Accent Line */}
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--acc-red)]/50 to-transparent" />
-
             {/* FULL WIDTH Container matching section padding */}
             <div className="w-full px-6 md:px-12 lg:px-24">
                 <div className="max-w-7xl mx-auto">
@@ -60,33 +57,37 @@ export default function Navbar() {
 
                         {/* LEFT: Brand + Status */}
                         <div className="flex items-center gap-6">
-                            {/* Logo Mark */}
+                            {/* Logo Mark - Enhanced */}
                             <a href="/" className="group flex items-center gap-4">
                                 <div className="relative">
+                                    {/* Glow Effect on Hover */}
+                                    <div className="absolute -inset-2 bg-[var(--acc-red)]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
                                     {/* Outer Ring */}
                                     <motion.div
-                                        className="absolute -inset-1 border border-[var(--acc-red)]/30 opacity-0 group-hover:opacity-100 transition-opacity"
+                                        className="absolute -inset-1.5 border border-[var(--acc-red)]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                         animate={{ rotate: 360 }}
                                         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                                     />
+
                                     {/* Logo */}
-                                    <div className="w-10 h-10 bg-[var(--acc-red)] flex items-center justify-center relative overflow-hidden">
-                                        <span className="font-bebas text-white text-xl relative z-10">P</span>
+                                    <div className="relative w-11 h-11 bg-gradient-to-br from-[var(--acc-red)] to-[#A00000] flex items-center justify-center overflow-hidden group-hover:shadow-[0_0_20px_rgba(209,0,0,0.4)] transition-all duration-300">
+                                        <span className="font-bebas text-white text-2xl relative z-10 group-hover:scale-110 transition-transform duration-300">M</span>
                                         {/* Shine Effect */}
                                         <motion.div
-                                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
                                             initial={{ x: "-100%" }}
-                                            whileHover={{ x: "100%" }}
-                                            transition={{ duration: 0.6, ease: "easeInOut" }}
+                                            animate={{ x: "100%" }}
+                                            transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
                                         />
                                     </div>
                                 </div>
                                 <div className="hidden sm:block">
-                                    <span className="font-bebas text-xl text-[var(--fg-cinema)] tracking-[0.15em] group-hover:text-[var(--acc-red)] transition-colors">
-                                        PORTFOLIO
+                                    <span className="font-bebas text-xl text-[var(--fg-cinema)] tracking-[0.15em] group-hover:text-[var(--acc-red)] transition-colors duration-300">
+                                        MUHAMMAD
                                     </span>
-                                    <div className="text-[8px] font-mono text-gray-600 tracking-[0.3em]">
-                                        CHIEF.TECH.OFFICER
+                                    <div className="text-[8px] font-mono text-gray-600 tracking-[0.3em] uppercase">
+                                        Full Stack Engineer
                                     </div>
                                 </div>
                             </a>

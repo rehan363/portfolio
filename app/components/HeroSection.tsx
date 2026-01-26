@@ -1,205 +1,323 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { SiNextdotjs, SiPython, SiTypescript, SiFastapi, SiDocker, SiPostgresql, SiLangchain, SiAmazon, SiGithub, SiLinkedin } from 'react-icons/si';
+import { MdEmail } from 'react-icons/md';
 
 export default function HeroSection() {
+    const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+
+    const techStack = [
+        { name: 'Next.js', icon: SiNextdotjs, color: '#ffffff' },
+        { name: 'Python', icon: SiPython, color: '#3776AB' },
+        { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
+        { name: 'FastAPI', icon: SiFastapi, color: '#009688' },
+        { name: 'Docker', icon: SiDocker, color: '#2496ED' },
+        { name: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1' },
+        { name: 'LangChain', icon: SiLangchain, color: '#1C3C3C' },
+        { name: 'AWS', icon: SiAmazon, color: '#FF9900' }
+    ];
+
+    const socialLinks = [
+        { name: 'GitHub', icon: SiGithub, color: '#ffffff', opacity: 0.15, url: '#' },
+        { name: 'LinkedIn', icon: SiLinkedin, color: '#0A66C2', opacity: 0.12, url: '#' },
+        { name: 'Email', icon: MdEmail, color: '#EA4335', opacity: 0.12, url: '#' }
+    ];
+
     return (
-        <section className="relative w-full min-h-screen bg-transparent overflow-hidden">
+        <section id="hero" className="relative w-full min-h-screen bg-transparent overflow-hidden">
 
-            {/* VERTICAL NAME - Reduced 10% */}
-            <div className="hidden lg:block fixed left-10 xl:left-14 z-40" style={{ top: '110px' }}>
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.4, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                    style={{
-                        writingMode: 'vertical-lr',
-                        textOrientation: 'upright',
-                        letterSpacing: '-0.02em'
-                    }}
-                >
-                    <h1 className="font-bebas text-[50px] leading-none text-[#E0E0E0]" style={{ textShadow: '0 0 30px rgba(224, 224, 224, 0.1)' }}>
-                        MUHAMMAD ADAM
-                    </h1>
-                </motion.div>
-            </div>
+            {/* Subtle Ambient Glow */}
+            <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-[#D10000]/[0.03] rounded-full blur-[150px] pointer-events-none"></div>
 
-            {/* MAIN CONTENT - Perfect Alignment */}
-            <div className="relative z-10 min-h-screen flex items-center px-6 lg:pl-48 xl:pl-60 lg:pr-16 xl:pr-24">
-                <div className="w-full max-w-[1400px] mx-auto lg:mx-0">
+            {/* Vertical Name - Cinematic & Professional */}
+            <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                className="hidden lg:block fixed left-8 xl:left-12 top-1/2 -translate-y-1/2 z-50"
+            >
+                <div className="relative flex flex-col items-center gap-8">
+                    {/* Top Accent Line */}
+                    <motion.div
+                        className="w-px h-16 bg-gradient-to-b from-transparent via-white/20 to-transparent"
+                        initial={{ scaleY: 0 }}
+                        animate={{ scaleY: 1 }}
+                        transition={{ duration: 1, delay: 0.8 }}
+                    />
 
-                    <div className="grid lg:grid-cols-[1.2fr_1fr] gap-20 xl:gap-28 items-center">
-
-                        {/* LEFT COLUMN - Clean & Organized */}
-                        <div>
-                            {/* Status Badge */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ duration: 0.8, delay: 1 }}
-                                className="mb-16 inline-flex items-center gap-3 px-5 py-2.5 border border-white/[0.12] bg-white/[0.03] backdrop-blur-md"
+                    {/* Name Container */}
+                    <div className="relative group">
+                        {/* Subtle Glow on Hover */}
+                        <div className="absolute inset-0 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                            <h1
+                                className="font-bebas text-[36px] tracking-[0.4em] text-white/30 rotate-180"
+                                style={{ writingMode: 'vertical-rl' }}
                             >
-                                <div className="relative">
-                                    <motion.div
-                                        className="w-2 h-2 rounded-full bg-emerald-500"
-                                        animate={{ opacity: [0.5, 1, 0.5] }}
-                                        transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-                                    />
-                                    <div className="absolute inset-0 w-2 h-2 bg-emerald-500 rounded-full animate-ping opacity-40" />
+                                MUHAMMAD ADAM
+                            </h1>
+                        </div>
+
+                        {/* Main Text with Gradient */}
+                        <h1
+                            className="relative font-bebas text-[36px] tracking-[0.4em] rotate-180 transition-all duration-700 group-hover:tracking-[0.45em]"
+                            style={{
+                                writingMode: 'vertical-rl',
+                                background: 'linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.3) 100%)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                                backgroundClip: 'text',
+                                filter: 'drop-shadow(0 0 20px rgba(255, 255, 255, 0.1))',
+                            }}
+                        >
+                            MUHAMMAD ADAM
+                        </h1>
+                    </div>
+
+                    {/* Bottom Accent Line */}
+                    <motion.div
+                        className="w-px h-16 bg-gradient-to-b from-transparent via-white/20 to-transparent"
+                        initial={{ scaleY: 0 }}
+                        animate={{ scaleY: 1 }}
+                        transition={{ duration: 1, delay: 0.8 }}
+                    />
+                </div>
+            </motion.div>
+
+            {/* Main Content - Aligned with Navbar */}
+            <div className="relative z-10 w-full min-h-screen flex items-center px-6 md:px-12 lg:px-24 pt-20">
+                <div className="w-full max-w-7xl mx-auto">
+
+                    <div className="grid lg:grid-cols-[1.4fr_0.6fr] gap-12 lg:gap-20 xl:gap-24 items-center py-12 md:py-16">
+
+                        {/* Left - Main Content */}
+                        <div className="space-y-10 md:space-y-12 lg:space-y-16">
+
+                            {/* Mobile Name */}
+                            <motion.h1
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                                className="lg:hidden text-6xl sm:text-7xl md:text-8xl font-bebas text-white leading-[0.9] tracking-tight"
+                            >
+                                MUHAMMAD<br />ADAM
+                            </motion.h1>
+
+                            {/* Main Section */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.3 }}
+                                className="space-y-8 md:space-y-10 lg:space-y-12"
+                            >
+                                {/* Status */}
+                                <div className="flex items-center gap-3">
+                                    <div className="relative">
+                                        <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                                        <div className="absolute inset-0 bg-emerald-400 rounded-full animate-ping"></div>
+                                    </div>
+                                    <span className="text-sm text-emerald-400">Available for opportunities</span>
                                 </div>
-                                <span className="text-[9px] font-mono text-gray-400 uppercase tracking-[0.35em] font-medium">
-                                    Available for Projects
-                                </span>
-                            </motion.div>
 
-                            {/* Main heading */}
-                            <motion.h2
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 1.2, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                                className="text-6xl sm:text-7xl lg:text-8xl xl:text-[110px] font-bebas text-[#E0E0E0] leading-[0.86] mb-10 tracking-tight"
-                                style={{ textShadow: '0 2px 40px rgba(224, 224, 224, 0.08)' }}
-                            >
-                                CHIEF TECHNOLOGY
-                                <br />
-                                OFFICER
-                            </motion.h2>
+                                {/* Headline */}
+                                <div className="space-y-4 md:space-y-6">
+                                    <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-bebas text-white leading-[0.95] tracking-tight">
+                                        FULL STACK<br />
+                                        ENGINEER
+                                    </h2>
+                                    <p className="text-lg sm:text-xl md:text-2xl text-white/50 font-light leading-relaxed max-w-[600px]">
+                                        Building AI-powered solutions and scalable architectures
+                                    </p>
+                                </div>
 
-                            {/* Description */}
-                            <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 1, delay: 1.4 }}
-                                className="text-base lg:text-lg text-[#D4D4D8] font-light leading-[1.8] mb-12 max-w-[600px]"
-                            >
-                                Full-stack engineer and technical leader specializing in AI-powered solutions, cloud infrastructure,
-                                and scalable system architecture. Driving innovation through agentic AI workflows and modern tech stacks.
-                            </motion.p>
+                                {/* Description */}
+                                <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-[560px]">
+                                    Specialized in developing production-ready applications with modern tech stacks.
+                                    Experienced in full-stack development, agentic AI workflows, and cloud infrastructure.
+                                </p>
 
-                            {/* Polished Tech Stack */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 1, delay: 1.6 }}
-                                className="flex flex-wrap gap-3 mb-16"
-                            >
-                                {['Python', 'TypeScript', 'Next.js', 'FastAPI', 'Docker', 'Redis', 'Django', 'OpenAI SDK'].map((tech, i) => (
-                                    <motion.span
-                                        key={tech}
-                                        initial={{ opacity: 0, scale: 0.9 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        transition={{ delay: 1.7 + i * 0.05, duration: 0.4 }}
-                                        className="px-4 py-2.5 text-[10px] font-mono text-white/[0.6] border border-white/[0.1] bg-white/[0.03] hover:bg-white/[0.08] hover:text-white/[0.9] hover:border-white/[0.2] transition-all duration-300 backdrop-blur-md"
+                                {/* CTAs */}
+                                <div className="flex flex-wrap gap-4 pt-4">
+                                    <motion.button
+                                        onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
+                                        className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-black font-medium text-sm sm:text-base hover:bg-[#D10000] hover:text-white transition-all duration-300"
+                                        whileHover={{ x: 4 }}
+                                        whileTap={{ scale: 0.98 }}
                                     >
-                                        {tech}
-                                    </motion.span>
-                                ))}
+                                        View Work
+                                    </motion.button>
+                                    <motion.a
+                                        href="#contact"
+                                        className="px-6 sm:px-8 py-3 sm:py-4 text-white font-medium text-sm sm:text-base hover:text-white/70 transition-colors duration-300 flex items-center gap-2"
+                                        whileHover={{ x: 4 }}
+                                    >
+                                        <span>Contact</span>
+                                        <span className="text-sm">→</span>
+                                    </motion.a>
+                                </div>
                             </motion.div>
 
-                            {/* CTA Buttons */}
+                            {/* Tech Stack - Clean Icons Always Visible */}
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 1, delay: 1.9 }}
-                                className="flex flex-col sm:flex-row gap-4"
+                                transition={{ duration: 0.8, delay: 0.5 }}
+                                className="pt-6 md:pt-8 border-t border-white/5"
                             >
-                                <motion.button
-                                    onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
-                                    className="group relative px-11 py-4 bg-[#E0E0E0] text-[#050505] font-semibold text-sm overflow-hidden transition-all duration-300"
-                                    whileHover={{ scale: 1.02, y: -2 }}
-                                    whileTap={{ scale: 0.98 }}
-                                >
-                                    <span className="relative z-10">View Portfolio</span>
-                                    <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-                                </motion.button>
-                                <motion.button
-                                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                                    className="px-11 py-4 border-2 border-white/[0.15] text-[#E0E0E0] font-semibold text-sm hover:bg-white/[0.08] hover:border-white/[0.25] transition-all duration-300 backdrop-blur-md"
-                                    whileHover={{ scale: 1.02, y: -2 }}
-                                    whileTap={{ scale: 0.98 }}
-                                >
-                                    Get in Touch
-                                </motion.button>
+                                <div className="text-xs text-gray-700 uppercase tracking-widest mb-3 md:mb-4">Working With</div>
+                                <div className="flex flex-wrap gap-x-6 gap-y-3">
+                                    {techStack.map((tech) => {
+                                        const Icon = tech.icon;
+                                        return (
+                                            <motion.div
+                                                key={tech.name}
+                                                className="group flex items-center gap-2 cursor-pointer"
+                                                whileHover={{ y: -2 }}
+                                            >
+                                                <Icon
+                                                    className="w-5 h-5 text-gray-600 transition-colors duration-300"
+                                                    style={{ color: 'rgb(75 85 99)' }}
+                                                    onMouseEnter={(e) => {
+                                                        const parent = e.currentTarget.parentElement;
+                                                        if (parent?.classList.contains('group')) {
+                                                            e.currentTarget.style.color = tech.color;
+                                                        }
+                                                    }}
+                                                    onMouseLeave={(e) => {
+                                                        e.currentTarget.style.color = 'rgb(75 85 99)';
+                                                    }}
+                                                />
+                                                <span
+                                                    className="text-sm text-gray-500 group-hover:text-white transition-colors duration-300"
+                                                    onMouseEnter={(e) => {
+                                                        const icon = e.currentTarget.previousElementSibling as HTMLElement;
+                                                        if (icon) {
+                                                            icon.style.color = tech.color;
+                                                        }
+                                                    }}
+                                                    onMouseLeave={(e) => {
+                                                        const icon = e.currentTarget.previousElementSibling as HTMLElement;
+                                                        if (icon) {
+                                                            icon.style.color = 'rgb(75 85 99)';
+                                                        }
+                                                    }}
+                                                >
+                                                    {tech.name}
+                                                </span>
+                                            </motion.div>
+                                        );
+                                    })}
+                                </div>
                             </motion.div>
                         </div>
 
-                        {/* RIGHT COLUMN - About Card */}
+                        {/* Right - Minimal Info */}
                         <motion.div
-                            initial={{ opacity: 0, x: 40 }}
+                            initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 1.2, delay: 1.6, ease: [0.16, 1, 0.3, 1] }}
-                            className="hidden lg:block"
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            className="hidden lg:block space-y-10 xl:space-y-12"
                         >
-                            <div className="relative border border-white/[0.1] bg-gradient-to-br from-white/[0.04] to-white/[0.02] backdrop-blur-xl p-10 xl:p-12">
-                                {/* Corner Accents */}
-                                <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-white/20"></div>
-                                <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-white/20"></div>
-                                <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-white/20"></div>
-                                <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-white/20"></div>
 
-                                {/* Header */}
-                                <div className="flex items-center gap-4 mb-8">
-                                    <div className="w-12 h-[2px] bg-gradient-to-r from-[#D10000] to-transparent"></div>
-                                    <span className="text-[10px] font-mono text-gray-400 uppercase tracking-[0.35em]">About</span>
+                            {/* Current Work */}
+                            <div className="space-y-4 xl:space-y-6">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-8 h-px bg-white/10"></div>
+                                    <span className="text-xs text-gray-700 uppercase tracking-widest">Currently</span>
                                 </div>
-
-                                {/* Content */}
-                                <div className="space-y-5 mb-10">
-                                    <p className="text-sm text-[#B8B8B8] font-light leading-relaxed">
-                                        Currently serving as Chief Technology Officer at Aptive Mind, where I lead technology strategy and
-                                        engineering initiatives. My journey began with the PIAIC certified engineering diploma in AI and Cloud Native
-                                        technologies, which laid the foundation for my expertise in modern development practices.
-                                    </p>
-
-                                    <p className="text-sm text-[#B8B8B8] font-light leading-relaxed">
-                                        I've progressed from a frontend developer intern at Al-Basirr Technologies to full-stack roles at Dot Escapist
-                                        and Auroxa Tech, where I mastered AI workflows, deployment pipelines, and system architecture. My experience
-                                        spans from building scalable applications to leading teams and driving technical innovation.
-                                    </p>
+                                <div className="space-y-2 xl:space-y-3 pl-11">
+                                    <h3 className="text-2xl xl:text-3xl font-bebas text-white">APTIVE MIND</h3>
+                                    <div className="text-sm xl:text-base text-gray-500">Full Stack Engineer</div>
+                                    <div className="text-xs xl:text-sm text-gray-700 font-mono">Nov 2025 — Present</div>
                                 </div>
+                            </div>
 
-                                {/* Stats */}
-                                <div className="grid grid-cols-2 gap-8 pt-8 border-t border-white/[0.1]">
+                            {/* Stats - Clean */}
+                            <div className="space-y-4 xl:space-y-6">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-8 h-px bg-white/10"></div>
+                                    <span className="text-xs text-gray-700 uppercase tracking-widest">Overview</span>
+                                </div>
+                                <div className="grid grid-cols-2 gap-6 xl:gap-8 pl-11">
                                     <div>
-                                        <div className="text-4xl font-bebas text-[#E0E0E0] mb-2" style={{ textShadow: '0 0 20px rgba(224, 224, 224, 0.1)' }}>
-                                            2.5+
-                                        </div>
-                                        <div className="text-[9px] font-mono text-gray-500 uppercase tracking-[0.2em]">
-                                            Years Experience
-                                        </div>
+                                        <div className="text-3xl xl:text-4xl font-bebas text-white tabular-nums mb-1">2.5+</div>
+                                        <div className="text-xs xl:text-sm text-gray-600">Years</div>
                                     </div>
                                     <div>
-                                        <div className="text-4xl font-bebas text-[#E0E0E0] mb-2" style={{ textShadow: '0 0 20px rgba(224, 224, 224, 0.1)' }}>
-                                            15+
-                                        </div>
-                                        <div className="text-[9px] font-mono text-gray-500 uppercase tracking-[0.2em]">
-                                            Projects Delivered
-                                        </div>
+                                        <div className="text-3xl xl:text-4xl font-bebas text-white tabular-nums mb-1">30+</div>
+                                        <div className="text-xs xl:text-sm text-gray-600">Projects</div>
+                                    </div>
+                                    <div>
+                                        <div className="text-3xl xl:text-4xl font-bebas text-white tabular-nums mb-1">05</div>
+                                        <div className="text-xs xl:text-sm text-gray-600">Roles</div>
+                                    </div>
+                                    <div>
+                                        <div className="text-3xl xl:text-4xl font-bebas text-white tabular-nums mb-1">15+</div>
+                                        <div className="text-xs xl:text-sm text-gray-600">Technologies</div>
                                     </div>
                                 </div>
                             </div>
+
+                            {/* Links - With Centered Background Icons */}
+                            <div className="relative space-y-4 xl:space-y-6">
+                                <div className="flex items-center gap-3 relative z-10">
+                                    <div className="w-8 h-px bg-white/10"></div>
+                                    <span className="text-xs text-gray-700 uppercase tracking-widest">Connect</span>
+                                </div>
+
+                                {/* Links Container with Centered Background */}
+                                <div className="relative pl-11 min-h-[120px]">
+                                    {/* Shared Centered Background Icons - Extended to full width */}
+                                    <div className="absolute -left-11 right-0 top-0 bottom-0 flex items-center justify-center pointer-events-none">
+                                        {socialLinks.map((link) => {
+                                            const Icon = link.icon;
+                                            return (
+                                                <div
+                                                    key={link.name}
+                                                    className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${hoveredLink === link.name ? 'opacity-100' : 'opacity-0'}`}
+                                                >
+                                                    <Icon
+                                                        className="w-40 h-40"
+                                                        style={{ color: link.color, opacity: link.opacity }}
+                                                    />
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+
+                                    {/* Links */}
+                                    <div className="relative space-y-2 z-10">
+                                        {socialLinks.map((link) => (
+                                            <motion.a
+                                                key={link.name}
+                                                href={link.url}
+                                                className="block py-2 text-sm xl:text-base text-gray-500 hover:text-white transition-colors duration-300"
+                                                whileHover={{ x: 4 }}
+                                                onMouseEnter={() => setHoveredLink(link.name)}
+                                                onMouseLeave={() => setHoveredLink(null)}
+                                            >
+                                                {link.name}
+                                            </motion.a>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Location */}
+                            <div className="space-y-4 xl:space-y-6">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-8 h-px bg-white/10"></div>
+                                    <span className="text-xs text-gray-700 uppercase tracking-widest">Based in</span>
+                                </div>
+                                <div className="pl-11">
+                                    <div className="text-sm xl:text-base text-gray-500">Islamabad, Pakistan</div>
+                                    <div className="text-xs xl:text-sm text-gray-700">UTC+5</div>
+                                </div>
+                            </div>
                         </motion.div>
-
                     </div>
-
                 </div>
             </div>
-
-            {/* Scroll Indicator */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 2.8 }}
-                className="absolute bottom-12 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-4 opacity-40"
-            >
-                <span className="text-[8px] font-mono text-white/70 uppercase tracking-[0.45em]">Scroll</span>
-                <motion.div
-                    animate={{ y: [0, 12, 0] }}
-                    transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
-                    className="w-px h-16 bg-gradient-to-b from-white/50 via-white/30 to-transparent"
-                />
-            </motion.div>
-
         </section>
     );
 }
