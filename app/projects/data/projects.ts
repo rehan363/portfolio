@@ -74,7 +74,7 @@ export const projects: Project[] = [
             short: "AI Legal Assistant",
             desc: "AI-powered platform featuring 'TALYA', an automated legal assistant. Generates compliant legal documents in minutes, handles domiciliation, and streamlines the entire 7-day formation process."
         },
-        image: "/gocreation_landing_page_screenshot_1768829344794.png",
+        image: "/projects/gocreation.png",
         performance: {
             latency: "120ms",
             accuracy: "99.5%",
@@ -99,7 +99,7 @@ export const projects: Project[] = [
             short: "Premium Vetted Housing",
             desc: "Curated marketplace for luxury short-term rentals (Margalla View, Sky One Park). Features simple trust-based booking, verified listings, and 'Isa Husain' architectural heritage properties."
         },
-        image: "/projects/aerodash.png", // Placeholder mapping for now
+        image: "/projects/expatstays.png",
         performance: {
             latency: "85ms",
             accuracy: "N/A",
@@ -124,7 +124,7 @@ export const projects: Project[] = [
             short: "Immersive Venue Experience",
             desc: "High-performance website featuring cinematic visual storytelling, automated inquiry routing, and SEO optimization for event keywords."
         },
-        image: "/projects/luxe.png", // Placeholder
+        image: "/projects/goldenchariot.png",
         performance: {
             latency: "60ms",
             accuracy: "100%",
