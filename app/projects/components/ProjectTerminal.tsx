@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Project } from '../data/projects';
 
@@ -224,7 +225,16 @@ export default function ProjectTerminal({ project, onClose }: ProjectTerminalPro
                                     {/* Header Image - Full Width, High Fidelity */}
                                     <div className="w-full relative border-b border-zinc-800 group">
                                         <div className="aspect-[21/9] w-full relative overflow-hidden bg-[#0A0A0A]">
-                                            <img src={project.image} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-700 hover:scale-[1.01]" alt="" />
+                                            {project.image ? (
+                                                <Image src={project.image} fill className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-700 hover:scale-[1.01]" alt="" />
+                                            ) : (
+                                                <div className="w-full h-full bg-[#050505] flex items-center justify-center relative overflow-hidden">
+                                                    <div className="absolute inset-0 opacity-10"
+                                                        style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 10 L30 50 M10 30 L50 30' stroke='white' stroke-width='1' fill='none' opacity='0.2'/%3E%3C/svg%3E")` }}
+                                                    />
+                                                    <div className="text-zinc-700 font-mono text-sm tracking-[0.5em] uppercase">NO_VISUAL_DATA</div>
+                                                </div>
+                                            )}
                                             <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-80" />
                                         </div>
                                         <div className="absolute bottom-6 right-6 flex gap-2">
@@ -253,75 +263,89 @@ export default function ProjectTerminal({ project, onClose }: ProjectTerminalPro
                                                 <p className="font-sans text-zinc-400 leading-relaxed text-sm lg:text-base">
                                                     {project.solution.desc}
                                                 </p>
-                                            </div>
-                                        </div>
 
-                                        {/* Right: Technical Metadata Sidebars */}
-                                        <div className="lg:col-span-4 p-8 bg-[#080808] flex flex-col gap-10">
-                                            <div>
-                                                <h4 className="text-[9px] font-mono text-zinc-600 uppercase tracking-widest mb-4">Dependencies</h4>
-                                                <div className="flex flex-wrap gap-2">
-                                                    {project.tech_stack.map(tech => (
-                                                        <span key={tech} className="px-2 py-1 text-[10px] font-mono text-zinc-400 bg-zinc-900 border border-zinc-800 rounded-sm">
-                                                            {tech}
-                                                        </span>
-                                                    ))}
+                                                {project.link && (
+                                                    <div className="mt-8 pt-8 border-t border-zinc-800">
+                                                        <a
+                                                            href={project.link}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="inline-flex items-center gap-2 text-zinc-300 hover:text-[#D10000] transition-colors font-bebas text-xl tracking-wide group/link"
+                                                        >
+                                                            <span>INITIATE LIVE SEQUENCE</span>
+                                                            <span className="transform transition-transform group-hover/link:translate-x-1">&rarr;</span>
+                                                        </a>
+                                                    </div>
+                                                )}
+                                            </div>
+
+                                            {/* Right: Technical Metadata Sidebars */}
+                                            <div className="lg:col-span-4 p-8 bg-[#080808] flex flex-col gap-10">
+                                                <div>
+                                                    <h4 className="text-[9px] font-mono text-zinc-600 uppercase tracking-widest mb-4">Dependencies</h4>
+                                                    <div className="flex flex-wrap gap-2">
+                                                        {project.tech_stack.map(tech => (
+                                                            <span key={tech} className="px-2 py-1 text-[10px] font-mono text-zinc-400 bg-zinc-900 border border-zinc-800 rounded-sm">
+                                                                {tech}
+                                                            </span>
+                                                        ))}
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                            <div>
-                                                <h4 className="text-[9px] font-mono text-zinc-600 uppercase tracking-widest mb-4">Metrics</h4>
-                                                <ul className="space-y-3">
-                                                    <li className="flex justify-between text-[11px] font-mono border-b border-zinc-800/50 pb-2">
-                                                        <span className="text-zinc-500">Daily Req</span>
-                                                        <span className="text-white">1.2M+</span>
-                                                    </li>
-                                                    <li className="flex justify-between text-[11px] font-mono border-b border-zinc-800/50 pb-2">
-                                                        <span className="text-zinc-500">Error Rate</span>
-                                                        <span className="text-emerald-500">&lt;0.01%</span>
-                                                    </li>
-                                                    <li className="flex justify-between text-[11px] font-mono border-b border-zinc-800/50 pb-2">
-                                                        <span className="text-zinc-500">Avg Latency</span>
-                                                        <span className="text-white">{project.performance.latency}</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            )}
+                                                <div>
+                                                    <h4 className="text-[9px] font-mono text-zinc-600 uppercase tracking-widest mb-4">Metrics</h4>
+                                                    <ul className="space-y-3">
+                                                        <li className="flex justify-between text-[11px] font-mono border-b border-zinc-800/50 pb-2">
+                                                            <span className="text-zinc-500">Daily Req</span>
+                                                            <span className="text-white">1.2M+</span>
+                                                        </li>
+                                                        <li className="flex justify-between text-[11px] font-mono border-b border-zinc-800/50 pb-2">
+                                                            <span className="text-zinc-500">Error Rate</span>
+                                                            <span className="text-emerald-500">&lt;0.01%</span>
+                                                        </li>
+                                                        <li className="flex justify-between text-[11px] font-mono border-b border-zinc-800/50 pb-2">
+                                                            <span className="text-zinc-500">Avg Latency</span>
+                                                            <span className="text-white">{project.performance.latency}</span>
+                                                        </li>
+                                                    </ul>
+                                 </div>
+                                </div>
+                            </div>
+                </div>
+            </motion.div>
+                        )}
 
 
-                            {/* === TAB: 02 SOURCE CODE === */}
-                            {activeTab === 'LOGIC' && (
-                                <motion.div
-                                    key="logic"
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    className="h-full flex flex-col bg-[#050505]"
-                                >
-                                    {/* IDE Toolbar */}
-                                    <div className="h-9 border-b border-zinc-800 flex items-center px-4 gap-4 bg-[#080808]">
-                                        <div className="flex items-center gap-2 px-3 py-1 bg-[#050505] border-t border-l border-r border-zinc-800 rounded-t-sm translate-y-[1px]">
-                                            <span className="text-[9px] font-mono text-zinc-300">core_logic.ts</span>
-                                        </div>
-                                        <span className="text-[9px] font-mono text-zinc-600">utils.py</span>
-                                        <span className="text-[9px] font-mono text-zinc-600">config.json</span>
-                                    </div>
+            {/* === TAB: 02 SOURCE CODE === */}
+            {activeTab === 'LOGIC' && (
+                <motion.div
+                    key="logic"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="h-full flex flex-col bg-[#050505]"
+                >
+                    {/* IDE Toolbar */}
+                    <div className="h-9 border-b border-zinc-800 flex items-center px-4 gap-4 bg-[#080808]">
+                        <div className="flex items-center gap-2 px-3 py-1 bg-[#050505] border-t border-l border-r border-zinc-800 rounded-t-sm translate-y-[1px]">
+                            <span className="text-[9px] font-mono text-zinc-300">core_logic.ts</span>
+                        </div>
+                        <span className="text-[9px] font-mono text-zinc-600">utils.py</span>
+                        <span className="text-[9px] font-mono text-zinc-600">config.json</span>
+                    </div>
 
-                                    {/* Editor Body */}
-                                    <div className="flex-1 flex overflow-hidden">
-                                        {/* Line Numbers */}
-                                        <div className="w-10 bg-[#080808] border-r border-zinc-800 pt-6 flex flex-col items-end px-2 text-[9px] font-mono text-zinc-700 select-none opacity-50">
-                                            {Array.from({ length: 25 }).map((_, i) => <div key={i} className="leading-6">{i + 1}</div>)}
-                                        </div>
+                    {/* Editor Body */}
+                    <div className="flex-1 flex overflow-hidden">
+                        {/* Line Numbers */}
+                        <div className="w-10 bg-[#080808] border-r border-zinc-800 pt-6 flex flex-col items-end px-2 text-[9px] font-mono text-zinc-700 select-none opacity-50">
+                            {Array.from({ length: 25 }).map((_, i) => <div key={i} className="leading-6">{i + 1}</div>)}
+                        </div>
 
-                                        {/* Code Area */}
-                                        <div className="flex-1 p-6 overflow-auto bg-[#050505]">
-                                            <pre className="font-mono text-xs md:text-sm leading-6 text-zinc-400">
-                                                <code className="language-typescript">
-                                                    {`import { NeuralCore, VectorDB } from '@internal/sys';
+                        {/* Code Area */}
+                        <div className="flex-1 p-6 overflow-auto bg-[#050505]">
+                            <pre className="font-mono text-xs md:text-sm leading-6 text-zinc-400">
+                                <code className="language-typescript">
+                                    {`import { NeuralCore, VectorDB } from '@internal/sys';
 import { StreamProtocol } from '@internal/net';
 
 /**
@@ -374,133 +398,133 @@ export class InferenceEngine extends NeuralCore {
         }
     }
 }`}
-                                                </code>
-                                            </pre>
-                                        </div>
+                                </code>
+                            </pre>
+                        </div>
 
-                                        {/* Debug Sidebar (Right) */}
-                                        <div className="w-60 border-l border-zinc-800 bg-[#080808] hidden lg:flex flex-col">
-                                            <div className="p-3 border-b border-zinc-800 text-[8px] font-mono text-zinc-500 uppercase tracking-widest">Local Variables</div>
-                                            <div className="p-4 space-y-4 text-[9px] font-mono">
-                                                <div className="bg-zinc-900/50 p-2 rounded border border-zinc-800/50">
-                                                    <div className="text-[#D10000] mb-1">this.tensors</div>
-                                                    <div className="text-zinc-500">allocated: 2048MB</div>
-                                                </div>
-                                                <div className="bg-zinc-900/50 p-2 rounded border border-zinc-800/50">
-                                                    <div className="text-emerald-500 mb-1">signal.state</div>
-                                                    <div className="text-zinc-500">'READY'</div>
-                                                </div>
-                                                <div className="bg-zinc-900/50 p-2 rounded border border-zinc-800/50">
-                                                    <div className="text-blue-400 mb-1">threads.active</div>
-                                                    <div className="text-zinc-500">24 / 32</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            )}
-
-
-                            {/* === TAB: 03 TOPOLOGY === */}
-                            {activeTab === 'ARCH' && (
-                                <motion.div
-                                    key="arch"
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    className="h-full flex flex-col"
-                                >
-                                    {/* Diagram Canvas */}
-                                    <div className="flex-1 flex flex-col items-center justify-center p-4 md:p-12 relative overflow-hidden">
-                                        {/* Background Grid */}
-                                        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#555 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-
-                                        <div className="text-[9px] font-mono text-zinc-600 mb-8 absolute top-8 left-8">
-                                            SYSTEM_TOPOLOGY_V4.2 // LIVE_VIEW
-                                        </div>
-
-                                        <div className="flex items-center gap-6 p-12 border border-zinc-800/40 rounded-xl bg-zinc-900/10 backdrop-blur-sm relative z-10">
-
-                                            <ArchNode icon="🌐" label="Client" sub="Next.js" status="idle" delay={0.1} />
-
-                                            <DataStream delay={0} />
-
-                                            <ArchNode icon="🛡️" label="Gateway" sub="Nginx/WAF" status="active" delay={0.2} />
-
-                                            <DataStream delay={1} />
-
-                                            <ArchNode icon="🧠" label="Neural Core" sub={project.codename} status="processing" type="core" delay={0.3} />
-
-                                            <DataStream delay={2} />
-
-                                            <ArchNode icon="💾" label="Vector DB" sub="Pinecone" status="idle" delay={0.4} />
-                                        </div>
-
-                                        <div className="absolute bottom-8 text-center">
-                                            <div className="text-[8px] font-mono text-zinc-600 mb-1">TRAFFIC INSPECTOR</div>
-                                            <div className="px-3 py-1 bg-zinc-900 border border-zinc-800 rounded text-[9px] font-mono text-emerald-500">
-                                                200 OK • 24ms • 1.2KB
-                                            </div>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            )}
+                        {/* Debug Sidebar (Right) */}
+                        <div className="w-60 border-l border-zinc-800 bg-[#080808] hidden lg:flex flex-col">
+                            <div className="p-3 border-b border-zinc-800 text-[8px] font-mono text-zinc-500 uppercase tracking-widest">Local Variables</div>
+                            <div className="p-4 space-y-4 text-[9px] font-mono">
+                                <div className="bg-zinc-900/50 p-2 rounded border border-zinc-800/50">
+                                    <div className="text-[#D10000] mb-1">this.tensors</div>
+                                    <div className="text-zinc-500">allocated: 2048MB</div>
+                                </div>
+                                <div className="bg-zinc-900/50 p-2 rounded border border-zinc-800/50">
+                                    <div className="text-emerald-500 mb-1">signal.state</div>
+                                    <div className="text-zinc-500">'READY'</div>
+                                </div>
+                                <div className="bg-zinc-900/50 p-2 rounded border border-zinc-800/50">
+                                    <div className="text-blue-400 mb-1">threads.active</div>
+                                    <div className="text-zinc-500">24 / 32</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
+            )}
 
 
-                            {/* === TAB: 04 TELEMETRY === */}
-                            {activeTab === 'METRICS' && (
-                                <motion.div
-                                    key="metrics"
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    className="h-full p-8 md:p-12 flex flex-col overflow-auto"
-                                >
-                                    <div className="flex items-center justify-between mb-10 border-b border-zinc-800 pb-4">
-                                        <h3 className="text-2xl font-bebas text-white">Live Telemetry</h3>
-                                        <div className="flex items-center gap-2">
-                                            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                                            <div className="text-[9px] font-mono text-zinc-500">REAL-TIME</div>
-                                        </div>
-                                    </div>
+            {/* === TAB: 03 TOPOLOGY === */}
+            {activeTab === 'ARCH' && (
+                <motion.div
+                    key="arch"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="h-full flex flex-col"
+                >
+                    {/* Diagram Canvas */}
+                    <div className="flex-1 flex flex-col items-center justify-center p-4 md:p-12 relative overflow-hidden">
+                        {/* Background Grid */}
+                        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#555 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
 
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl">
+                        <div className="text-[9px] font-mono text-zinc-600 mb-8 absolute top-8 left-8">
+                            SYSTEM_TOPOLOGY_V4.2 // LIVE_VIEW
+                        </div>
 
-                                        {/* Visual Bars */}
-                                        <div className="space-y-6">
-                                            <MetricBar label="Inference Latency" value={parseInt(project.performance.latency)} max={200} unit="ms" />
-                                            <MetricBar label="Cache Hit Rate" value={94} max={100} unit="%" />
-                                            <MetricBar label="GPU Utilization" value={34} max={100} unit="%" />
-                                            <MetricBar label="Memory" value={4.2} max={16} unit="GB" />
-                                        </div>
+                        <div className="flex items-center gap-6 p-12 border border-zinc-800/40 rounded-xl bg-zinc-900/10 backdrop-blur-sm relative z-10">
 
-                                        {/* Console Log */}
-                                        <div className="bg-[#030303] border border-zinc-800 rounded-sm flex flex-col h-72 font-mono text-[9px]">
-                                            <div className="flex items-center justify-between px-4 py-2 border-b border-zinc-800 bg-[#080808]">
-                                                <span className="text-zinc-500">stdout</span>
-                                                <span className="text-zinc-700">bash</span>
-                                            </div>
-                                            <div className="flex-1 p-4 space-y-1.5 overflow-hidden text-zinc-500 opacity-80">
-                                                <div>$ init_sequence --force</div>
-                                                <div className="text-zinc-600">[info] Loading weights from s3://models/{project.codename.toLowerCase()}... (302ms)</div>
-                                                <div className="text-zinc-600">[info] Weights loaded. VRAM usage: 4.2GB</div>
-                                                <div className="text-zinc-600">[info] Warmup batch complete.</div>
-                                                <div className="text-zinc-300">$ start_server --port=8080</div>
-                                                <div className="text-emerald-600">[success] Server listening on port 8080</div>
-                                                <div>[req] POST /api/v1/inference - 200 OK (12ms)</div>
-                                                <div>[req] POST /api/v1/inference - 200 OK (14ms)</div>
-                                                <div>[req] POST /api/v1/inference - 200 OK (11ms)</div>
-                                                <div className="animate-pulse">_</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
+                            <ArchNode icon="🌐" label="Client" sub="Next.js" status="idle" delay={0.1} />
+
+                            <DataStream delay={0} />
+
+                            <ArchNode icon="🛡️" label="Gateway" sub="Nginx/WAF" status="active" delay={0.2} />
+
+                            <DataStream delay={1} />
+
+                            <ArchNode icon="🧠" label="Neural Core" sub={project.codename} status="processing" type="core" delay={0.3} />
+
+                            <DataStream delay={2} />
+
+                            <ArchNode icon="💾" label="Vector DB" sub="Pinecone" status="idle" delay={0.4} />
+                        </div>
+
+                        <div className="absolute bottom-8 text-center">
+                            <div className="text-[8px] font-mono text-zinc-600 mb-1">TRAFFIC INSPECTOR</div>
+                            <div className="px-3 py-1 bg-zinc-900 border border-zinc-800 rounded text-[9px] font-mono text-emerald-500">
+                                200 OK • 24ms • 1.2KB
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
+            )}
+
+
+            {/* === TAB: 04 TELEMETRY === */}
+            {activeTab === 'METRICS' && (
+                <motion.div
+                    key="metrics"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="h-full p-8 md:p-12 flex flex-col overflow-auto"
+                >
+                    <div className="flex items-center justify-between mb-10 border-b border-zinc-800 pb-4">
+                        <h3 className="text-2xl font-bebas text-white">Live Telemetry</h3>
+                        <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                            <div className="text-[9px] font-mono text-zinc-500">REAL-TIME</div>
+                        </div>
                     </div>
 
-                </main>
-            </motion.div>
-        </motion.div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl">
+
+                        {/* Visual Bars */}
+                        <div className="space-y-6">
+                            <MetricBar label="Inference Latency" value={parseInt(project.performance.latency)} max={200} unit="ms" />
+                            <MetricBar label="Cache Hit Rate" value={94} max={100} unit="%" />
+                            <MetricBar label="GPU Utilization" value={34} max={100} unit="%" />
+                            <MetricBar label="Memory" value={4.2} max={16} unit="GB" />
+                        </div>
+
+                        {/* Console Log */}
+                        <div className="bg-[#030303] border border-zinc-800 rounded-sm flex flex-col h-72 font-mono text-[9px]">
+                            <div className="flex items-center justify-between px-4 py-2 border-b border-zinc-800 bg-[#080808]">
+                                <span className="text-zinc-500">stdout</span>
+                                <span className="text-zinc-700">bash</span>
+                            </div>
+                            <div className="flex-1 p-4 space-y-1.5 overflow-hidden text-zinc-500 opacity-80">
+                                <div>$ init_sequence --force</div>
+                                <div className="text-zinc-600">[info] Loading weights from s3://models/{project.codename.toLowerCase()}... (302ms)</div>
+                                <div className="text-zinc-600">[info] Weights loaded. VRAM usage: 4.2GB</div>
+                                <div className="text-zinc-600">[info] Warmup batch complete.</div>
+                                <div className="text-zinc-300">$ start_server --port=8080</div>
+                                <div className="text-emerald-600">[success] Server listening on port 8080</div>
+                                <div>[req] POST /api/v1/inference - 200 OK (12ms)</div>
+                                <div>[req] POST /api/v1/inference - 200 OK (14ms)</div>
+                                <div>[req] POST /api/v1/inference - 200 OK (11ms)</div>
+                                <div className="animate-pulse">_</div>
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
+            )}
+        </AnimatePresence>
+                </div >
+
+            </main >
+        </motion.div >
+    </motion.div >
     );
 }

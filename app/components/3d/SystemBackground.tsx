@@ -71,7 +71,7 @@ function Meteor({ speed = 1, ...props }: any) {
 export default function SystemBackground() {
     return (
         <div className="fixed inset-0 z-0 pointer-events-none bg-black">
-            <Canvas camera={{ position: [0, 0, 1] }}>
+            <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 1] }}>
                 <color attach="background" args={['#030303']} />
                 <Stars />
                 {/* Reduced Meteor Count */}

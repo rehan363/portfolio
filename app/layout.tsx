@@ -6,21 +6,58 @@ const bebasNeue = Bebas_Neue({
   weight: "400",
   variable: "--font-bebas",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Adam | Solution Architect",
-  description: "Portfolio of Muhammad Adam - Solution Architect",
+  title: "Muhammad Adam | Full Stack Engineer & Solution Architect",
+  description: "Portfolio of Muhammad Adam - A Full Stack Engineer and Solution Architect specializing in AI-powered solutions, scalable architectures, and modern web technologies.",
+  applicationName: "Muhammad Adam Portfolio",
+  authors: [{ name: "Muhammad Adam", url: "https://github.com/AdamChoudary" }],
+  keywords: ["Full Stack Engineer", "Solution Architect", "AI Developer", "Next.js", "Python", "FastAPI", "React", "TypeScript", "Islamabad", "Pakistan"],
+  creator: "Muhammad Adam",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://your-portfolio-url.com", // TODO: Update with actual URL
+    title: "Muhammad Adam | Full Stack Engineer",
+    description: "Building AI-powered solutions and scalable architectures.",
+    siteName: "Muhammad Adam Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Muhammad Adam | Full Stack Engineer",
+    description: "Building AI-powered solutions and scalable architectures.",
+    creator: "@yourhandle", // TODO: Update if available
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 import SingularityCursor from "./components/ui/SingularityCursor";

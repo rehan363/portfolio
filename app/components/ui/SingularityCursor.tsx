@@ -8,13 +8,13 @@ export default function SingularityCursor() {
     const mouseY = useMotionValue(-100);
 
     // --- PHYSICS (The "Executive" System) ---
-    // 1. Primary Dot: Instant tracking (No lag)
-    const dotConfig = { damping: 40, stiffness: 500, mass: 0.05 };
+    // 1. Primary Dot: Instant tracking (No lag) - Snappier
+    const dotConfig = { damping: 35, stiffness: 1000, mass: 0.05 };
     const dotX = useSpring(mouseX, dotConfig);
     const dotY = useSpring(mouseY, dotConfig);
 
-    // 2. Secondary Ring: Smooth, architectural trail
-    const ringConfig = { damping: 25, stiffness: 150, mass: 0.2 };
+    // 2. Secondary Ring: Smooth, architectural trail - Faster follow
+    const ringConfig = { damping: 30, stiffness: 300, mass: 0.1 };
     const ringX = useSpring(mouseX, ringConfig);
     const ringY = useSpring(mouseY, ringConfig);
 

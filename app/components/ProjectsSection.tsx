@@ -2,28 +2,30 @@
 import SectionWrapper from "./SectionWrapper";
 import React from 'react';
 
-const projects = [
-    {
-        id: "01",
-        title: "OUIIMI • MARKETPLACE",
-        category: "SERVICE_MARKETPLACE",
-        image: "/ouiimi_portfolio_thumbnail_1768828611462.png",
-        year: "2024",
-        description: "A full-stack service booking marketplace connecting customers with local beauty and wellness businesses. Features a fair 5% revenue-share model, real-time multi-staff scheduling, and split payments via Stripe.",
-        tech: ["Next.js 14", "MongoDB", "Stripe", "TailwindCSS"],
-        status: "LIVE"
-    },
-    {
-        id: "02",
-        title: "GOCREATION • AI",
-        category: "LEGAL_AI_PLATFORM",
-        image: "/gocreation_landing_page_screenshot_1768829344794.png",
-        year: "2024",
-        description: "AI-powered legal platform for automated company formation in Morocco. Combines conversational AI (TALYA) with LangGraph for dynamic document generation and multilingual support.",
-        tech: ["Next.js 15", "LangGraph", "FastAPI", "OpenAI"],
-        status: "LIVE"
-    }
-];
+// ... (imports will be handled dynamically)
+
+import { projects } from '../projects/data/projects';
+import Image from 'next/image';
+
+// Fallback Visual for Voice/Confidential Projects (if no image)
+const FallbackVisual = ({ category }: { category: string }) => {
+    return (
+        <div className="w-full h-full bg-[#080808] flex items-center justify-center relative overflow-hidden">
+            {/* Waveform Pattern for Voice/AI */}
+            <div className="absolute inset-0 opacity-20"
+                style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 5 L20 35 M5 15 L5 25 M35 15 L35 25' stroke='white' stroke-width='1' fill='none' opacity='0.5'/%3E%3C/svg%3E")` }}
+            />
+            <div className="z-10 text-center">
+                <div className="text-[40px] mb-2 transition-transform duration-300 group-hover:scale-110">
+                    {category === 'CONVERSATIONAL_AI' ? 'II||II' : '///'}
+                </div>
+                <div className="text-[10px] font-mono text-gray-500 tracking-widest uppercase">
+                    {category === 'CONFIDENTIAL' ? 'RESTRICTED_ACCESS' : 'AUDIO_STREAM'}
+                </div>
+            </div>
+        </div>
+    )
+}
 
 export default function ProjectsSection() {
     return (
@@ -40,13 +42,13 @@ export default function ProjectsSection() {
                     <div className="hidden md:block text-right">
                         <div className="flex items-center gap-2 justify-end mb-2">
                             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                            <span className="text-xs font-mono text-white">ALL SYSTEMS NOMINAL</span>
+                            <span className="text-xs font-mono text-white">SYSTEM ONLINE</span>
                         </div>
-                        <p className="text-gray-500 font-mono text-xs">AWAITING INPUT...</p>
+                        <p className="text-gray-500 font-mono text-xs">Total Indices: {projects.length}</p>
                     </div>
                 </div>
 
-                {/* Projects Grid - "Technical Blueprint" Style */}
+                {/* Projects Grid */}
                 <div className="grid grid-cols-1 gap-24">
                     {projects.map((project, index) => (
                         <div key={project.id} className="group relative">
@@ -60,12 +62,17 @@ export default function ProjectsSection() {
                                     <div className="absolute -right-4 -bottom-4 w-8 h-8 border-b border-r border-[#D10000]/50 transition-all duration-500 group-hover:border-[#D10000]"></div>
 
                                     <div className="relative aspect-video bg-[#0A0A0A] border border-white/10 overflow-hidden group-hover:border-white/20 transition-colors">
-                                        {/* Project Image */}
-                                        <img
-                                            src={project.image}
-                                            alt={project.title}
-                                            className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700 grayscale group-hover:grayscale-0"
-                                        />
+                                        {/* Project Image or Fallback */}
+                                        {project.image ? (
+                                            <Image
+                                                src={project.image}
+                                                alt={project.title}
+                                                fill
+                                                className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700 grayscale group-hover:grayscale-0"
+                                            />
+                                        ) : (
+                                            <FallbackVisual category={project.category} />
+                                        )}
 
                                         {/* Overlay Gradient */}
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-500"></div>
@@ -86,34 +93,47 @@ export default function ProjectsSection() {
                                         </span>
                                     </div>
 
-                                    <h3 className="text-5xl font-bebas text-white mb-4 group-hover:text-[#D10000] transition-colors duration-300">
+                                    <h3 className="text-4xl md:text-5xl font-bebas text-white mb-4 group-hover:text-[#D10000] transition-colors duration-300">
                                         {project.title}
                                     </h3>
 
                                     <div className="text-xs font-mono text-gray-500 mb-6 uppercase tracking-widest">
-                                        {project.category}
+                                        {project.category} // {project.classification}
                                     </div>
 
-                                    <p className="text-gray-400 font-sans leading-relaxed mb-8 border-l border-white/10 pl-6 group-hover:border-[#D10000] transition-colors">
-                                        {project.description}
+                                    <p className="text-gray-400 font-sans leading-relaxed mb-8 border-l border-white/10 pl-6 group-hover:border-[#D10000] transition-colors text-sm">
+                                        {project.solution.desc}
                                     </p>
 
                                     {/* Tech Stack Matrix */}
                                     <div className="mb-8">
                                         <div className="text-[10px] font-mono text-gray-600 mb-3 uppercase">Tech Stack</div>
                                         <div className="flex flex-wrap gap-2">
-                                            {project.tech.map((t) => (
-                                                <span key={t} className="text-xs font-mono text-gray-300 bg-white/5 px-3 py-1.5 border border-white/5 group-hover:border-white/10 transition-colors">
+                                            {project.tech_stack.map((t) => (
+                                                <span key={t} className="text-[10px] font-mono text-gray-300 bg-white/5 px-3 py-1.5 border border-white/5 group-hover:border-white/10 transition-colors">
                                                     {t}
                                                 </span>
                                             ))}
                                         </div>
                                     </div>
 
-                                    <button className="self-start relative px-6 py-3 bg-white text-black font-bebas text-lg tracking-wide hover:bg-[#D10000] hover:text-white transition-all duration-300 group/btn">
-                                        CASE STUDY
-                                        <span className="inline-block ml-2 transition-transform group-hover/btn:translate-x-1">&rarr;</span>
-                                    </button>
+                                    <div className="flex gap-4">
+                                        <button className="relative px-6 py-3 bg-white text-black font-bebas text-lg tracking-wide hover:bg-[#D10000] hover:text-white transition-all duration-300 group/btn">
+                                            CASE STUDY
+                                            <span className="inline-block ml-2 transition-transform group-hover/btn:translate-x-1">&rarr;</span>
+                                        </button>
+
+                                        {project.link && (
+                                            <a
+                                                href={project.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="px-6 py-3 border border-white/20 text-white font-bebas text-lg tracking-wide hover:bg-white/10 transition-all duration-300 flex items-center justify-center"
+                                            >
+                                                LIVE DEMO
+                                            </a>
+                                        )}
+                                    </div>
 
                                 </div>
                             </div>

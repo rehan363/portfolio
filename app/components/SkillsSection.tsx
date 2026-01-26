@@ -272,7 +272,7 @@ export default function SkillsSection() {
 }
 
 // Stats Card Component
-function StatsCard({ label, value, sublabel }: { label: string; value: string; sublabel: string }) {
+const StatsCard = React.memo(function StatsCard({ label, value, sublabel }: { label: string; value: string; sublabel: string }) {
     return (
         <div className="p-6 bg-white/[0.03] border border-white/[0.08] hover:border-white/[0.12] hover:bg-white/[0.05] transition-all group">
             <div className="text-5xl font-bebas text-white mb-1 tabular-nums group-hover:text-[#D10000] transition-colors">
@@ -282,10 +282,10 @@ function StatsCard({ label, value, sublabel }: { label: string; value: string; s
             <div className="text-xs font-mono text-gray-600">{sublabel}</div>
         </div>
     );
-}
+});
 
 // Featured Card Component  
-function FeaturedCard({ tech, index }: { tech: Technology; index: number }) {
+const FeaturedCard = React.memo(function FeaturedCard({ tech, index }: { tech: Technology; index: number }) {
     const Icon = tech.icon;
 
     return (
@@ -337,10 +337,10 @@ function FeaturedCard({ tech, index }: { tech: Technology; index: number }) {
             </div>
         </motion.div>
     );
-}
+});
 
 // Category Section
-function CategorySection({ category, technologies }: { category: any; technologies: Technology[] }) {
+const CategorySection = React.memo(function CategorySection({ category, technologies }: { category: any; technologies: Technology[] }) {
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -367,10 +367,10 @@ function CategorySection({ category, technologies }: { category: any; technologi
             </div>
         </motion.div>
     );
-}
+});
 
 // Tech Card Component
-function TechCard({ tech, index }: { tech: Technology; index: number }) {
+const TechCard = React.memo(function TechCard({ tech, index }: { tech: Technology; index: number }) {
     const Icon = tech.icon;
 
     return (
@@ -415,7 +415,7 @@ function TechCard({ tech, index }: { tech: Technology; index: number }) {
             </div>
         </motion.div>
     );
-}
+});
 
 // List View Component
 function ListView({ technologies }: { technologies: Technology[] }) {

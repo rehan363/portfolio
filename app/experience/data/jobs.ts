@@ -19,42 +19,37 @@ export interface Job {
 export const jobs: Job[] = [
     {
         id: "ROLE-01",
-        role: "CHIEF TECHNOLOGY OFFICER",
+        role: "FULL STACK ENGINEER",
         company: "APTIVE MIND",
-        period: "NOV 2025 - PRESENT",
-        description: "Leading technology strategy and engineering teams at Islamabad-based tech company. Overseeing product development, technical architecture, and innovation initiatives for AI-powered solutions.",
+        period: "NOV 2025 — PRESENT",
+        description: "Building scalable full-stack applications with modern tech stacks. Working on cutting-edge AI-powered solutions and enterprise-grade systems.",
         achievements: [
-            "Established technical vision and product roadmap for AI-powered solutions.",
-            "Built and scaled engineering team focusing on cutting-edge AI technologies.",
-            "Implemented strategic partnerships and technology stack decisions.",
-            "Driving innovation in agentic AI and modern full-stack development."
+            "Building scalable full-stack applications with modern tech stacks.",
+            "Working on cutting-edge AI-powered solutions and enterprise-grade systems."
         ],
-        skills: ["Leadership", "Technical Strategy", "Team Building", "AI Architecture", "Product Development"],
+        skills: ["Next.js", "FastAPI", "Docker", "TypeScript", "Python"],
         metrics: [
-            { label: "Team Size", value: "Growing" },
-            { label: "Focus", value: "AI/ML" },
-            { label: "Location", value: "Islamabad" }
+            { label: "Type", value: "Full-time" },
+            { label: "Status", value: "Active Role" },
+            { label: "Impact", value: "High Impact" }
         ],
-        classification: "FULL_TIME // CTO"
+        classification: "FULL_TIME // ENGINEER"
     },
     {
         id: "ROLE-02",
         role: "FULL STACK ENGINEER",
         company: "AUROXA TECH",
-        period: "JUL 2025 - NOV 2025",
-        description: "Led full-stack development projects with focus on AI workflows and infrastructure at Innovista Rawal, DHA Phase-1, Islamabad. Managed deployment pipelines, load balancing, cache optimization, and proxy configurations.",
+        period: "JUL — NOV 2025",
+        description: "Led full-stack engineering initiatives. Managed agentic AI workflows, deployment pipelines, load balancing, cache systems, and proxy architectures.",
         achievements: [
-            "Architected and deployed agentic AI workflows using OpenAI Agent SDK and LiveKit.",
-            "Implemented complete CI/CD pipeline management for production deployments.",
-            "Optimized caching strategies with Redis for high-performance applications.",
-            "Led project development from conception to deployment with Dapr and Docker.",
-            "Managed backend infrastructure with FastAPI and Next.js full-stack integration."
+            "Led full-stack engineering initiatives.",
+            "Managed agentic AI workflows, deployment pipelines, load balancing, cache systems, and proxy architectures."
         ],
-        skills: ["FastAPI", "VAPI SDK", "OpenAI Agent SDK", "LiveKit", "Dapr", "Docker", "Next.js", "Redis"],
+        skills: ["FastAPI", "VAPI SDK", "OpenAI SDK", "LiveKit", "Dapr", "Docker", "Next.js", "Redis"],
         metrics: [
-            { label: "Role", value: "Project Lead" },
-            { label: "Stack", value: "Full-Stack" },
-            { label: "Focus", value: "AI Workflows" }
+            { label: "Type", value: "Full-time" },
+            { label: "Duration", value: "4 Months" },
+            { label: "Impact", value: "Critical Impact" }
         ],
         classification: "FULL_TIME"
     },
@@ -62,62 +57,54 @@ export const jobs: Job[] = [
         id: "ROLE-03",
         role: "FRONTEND DEVELOPER",
         company: "DOT ESCAPIST",
-        period: "AUG 2024 - JUN 2025",
-        description: "Developed and maintained full-stack applications with Django backend at G-13, Islamabad. Implemented CRUD operations, managed database connectivity, and optimized UI flows.",
+        period: "AUG 2024 — JUN 2025",
+        description: "Developed full-stack applications with Django backends. Implemented CRUD operations, optimized UI flows, managed API routes, and built secure server actions.",
         achievements: [
-            "Built complete CRUD operations for multiple production applications.",
-            "Integrated Django backend with modern frontend frameworks.",
-            "Managed database connectivity and API route handling.",
-            "Implemented server actions for optimal performance.",
-            "Designed and optimized UI flows for seamless user experience."
+            "Developed full-stack applications with Django backends.",
+            "Implemented CRUD operations, optimized UI flows, managed API routes, and built secure server actions."
         ],
-        skills: ["Django", "Next.js", "Database Connectivity", "API Routes", "Server Actions"],
+        skills: ["Django", "Next.js", "React", "PostgreSQL"],
         metrics: [
-            { label: "Projects", value: "5+" },
-            { label: "Stack", value: "Full-Stack" },
-            { label: "Duration", value: "10 Months" }
+            { label: "Type", value: "Full-time" },
+            { label: "Duration", value: "10 Months" },
+            { label: "Impact", value: "High Impact" }
         ],
         classification: "FULL_TIME"
     },
     {
         id: "ROLE-04",
-        role: "FRONTEND DEVELOPER INTERN",
+        role: "FRONTEND DEVELOPER",
         company: "AL-BASIRR TECHNOLOGIES",
-        period: "JUN 2024 - AUG 2024",
-        description: "Completed paid internship at NSTP, Islamabad focusing on frontend development. Gained hands-on experience in API connectivity, backend integration, and modern web development practices.",
+        period: "JUN — AUG 2024",
+        description: "Gained intensive practical experience in API connectivity and enterprise-level frontend development. Focused on backend integration and responsive user interfaces.",
         achievements: [
-            "Mastered API connectivity and management best practices.",
-            "Implemented backend integration for multiple client projects.",
-            "Gained proficiency in modern frontend frameworks and tools.",
-            "Contributed to production-ready applications using Next.js and TailwindCSS."
+            "Gained intensive practical experience in API connectivity and enterprise-level frontend development.",
+            "Focused on backend integration and responsive user interfaces."
         ],
-        skills: ["Next.js", "HTML5", "TailwindCSS", "API Management", "Backend Integration"],
+        skills: ["Next.js", "TailwindCSS", "HTML5"],
         metrics: [
-            { label: "Type", value: "Paid Intern" },
-            { label: "Duration", value: "3 Months" },
-            { label: "Location", value: "NSTP, Islamabad" }
+            { label: "Type", value: "Internship" },
+            { label: "Duration", value: "2 Months" },
+            { label: "Level", value: "Foundation" }
         ],
         classification: "INTERNSHIP"
     },
     {
         id: "ROLE-05",
-        role: "AI & CLOUD NATIVE STUDENT",
+        role: "AI ENGINEERING DIPLOMA",
         company: "PIAIC (AIR UNIVERSITY)",
-        period: "JUN 2023 - PRESENT",
-        description: "Pursuing certified engineering diploma in Artificial Intelligence and Cloud Native technologies at Air University, Islamabad. Building expertise in modern AI frameworks, cloud infrastructure, and full-stack development.",
+        period: "JUN 2023 — PRESENT",
+        description: "Certified engineering diploma in AI and Cloud Native technologies. Mastering modern development practices, agentic AI frameworks, and cloud-native architectures.",
         achievements: [
-            "Mastered Docker containerization and Git version control.",
-            "Built full-stack applications with TypeScript, Python, and FastAPI.",
-            "Developed expertise in modern frontend frameworks (React, Next.js).",
-            "Learned advanced AI concepts with OpenAI Agents SDK, LangGraph, and CrewAI.",
-            "Implemented Model Context Protocol (MCP) integrations."
+            "Certified engineering diploma in AI and Cloud Native technologies.",
+            "Mastering modern development practices, agentic AI frameworks, and cloud-native architectures."
         ],
-        skills: ["Docker", "Git", "TypeScript", "Python", "FastAPI", "Next.js", "React", "OpenAI Agents SDK", "LangGraph", "CrewAI", "MCP"],
+        skills: ["Python", "FastAPI", "Docker", "TypeScript", "Next.js", "React", "OpenAI SDK", "LangGraph", "CrewAI", "MCP", "Git", "TailwindCSS", "HTML5", "CSS"],
         metrics: [
-            { label: "Program", value: "AI & Cloud" },
-            { label: "Institution", value: "Air University" },
-            { label: "Status", value: "Active" }
+            { label: "Type", value: "Education" },
+            { label: "Status", value: "Ongoing" },
+            { label: "Level", value: "Certified" }
         ],
-        classification: "EDUCATION // ONGOING"
+        classification: "EDUCATION"
     }
 ];

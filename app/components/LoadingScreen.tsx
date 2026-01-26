@@ -43,33 +43,25 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
     }, [onComplete]);
 
     return (
-        <div
-            className={`fixed inset-0 z-[100] flex items-center justify-center transition-colors duration-300 ${isTransparent ? 'bg-transparent pointer-events-none' : 'bg-black'}`}
-        >
-            {/* Background Stairs Transition */}
+        <div className="fixed inset-0 z-[100] pointer-events-none">
+            {/* 1. Black Background Layer - Fades out when stairs cover the screen */}
+            <div
+                className={`absolute inset-0 bg-black transition-opacity duration-300 ${isTransparent ? 'opacity-0' : 'opacity-100'}`}
+            ></div>
+
+            {/* 2. Stairs Transition - Remains visible to play its animation */}
             {startStairs && <StairsTransition onComplete={() => { }} />}
 
-            {/* Text Content - Hide when transparent (stairs are covering it anyway) */}
-            {!isTransparent && (
-                <div className="relative overflow-hidden z-20">
-                    <h1 className="flex font-bebas text-white text-[10vw] md:text-9xl tracking-[0.2em] overflow-hidden">
-                        {text.split("").map((char, i) => (
-                            <span
-                                key={i}
-                                className={`inline-block transform transition-all duration-800 ease-[cubic-bezier(0.2,0.8,0.2,1)] ${showLetters
-                                    ? "translate-y-0 opacity-100 blur-0"
-                                    : "translate-y-full opacity-0 blur-md"
-                                    }`}
-                                style={{
-                                    transitionDelay: `${i * 80}ms`
-                                }}
-                            >
-                                {char}
-                            </span>
-                        ))}
+            {/* 3. Text Content - Centered */}
+            <div className={`absolute inset-0 flex items-center justify-center z-20 transition-opacity duration-300 ${isTransparent ? 'opacity-0' : 'opacity-100'}`}>
+                <div className="relative overflow-hidden">
+                    <h1 className="font-bebas text-white text-[10vw] md:text-9xl tracking-[0.2em]">
+                        <span className={`inline-block transition-all duration-700 ${showLetters ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                            PORTFOLIO
+                        </span>
                     </h1>
                 </div>
-            )}
+            </div>
         </div>
     );
 }

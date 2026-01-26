@@ -9,10 +9,10 @@ import { projects, ProjectCategory, Project } from './data/projects';
 
 const categories: { id: ProjectCategory | 'ALL', label: string }[] = [
     { id: 'ALL', label: 'ALL SYSTEMS' },
-    { id: 'NEURAL_VOICE', label: 'VOICE AI' },
-    { id: 'CONVERSATIONAL_AI', label: 'CHATBOTS' },
-    { id: 'ALGORITHMIC_FINANCE', label: 'FINTECH' },
-    { id: 'DEEP_RESEARCH', label: 'R&D' },
+    { id: 'CONVERSATIONAL_AI', label: 'AI AGENTS' },
+    { id: 'SERVICE_MARKETPLACE', label: 'MARKETPLACE' },
+    { id: 'REAL_ESTATE', label: 'REAL ESTATE' },
+    { id: 'PROPRIETARY', label: 'CLASSIFIED' },
 ];
 
 export default function ProjectsPage() {

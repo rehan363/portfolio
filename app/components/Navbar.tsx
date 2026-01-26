@@ -9,11 +9,14 @@ export default function Navbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
+            const isScrolled = window.scrollY > 50;
+            if (isScrolled !== scrolled) {
+                setScrolled(isScrolled);
+            }
         };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [scrolled]);
 
     // Live Clock
     useEffect(() => {
@@ -151,7 +154,7 @@ export default function Navbar() {
 
                             {/* CTA Button */}
                             <a
-                                href="#contact"
+                                href="/contact"
                                 className="group relative overflow-hidden px-5 py-2.5 border border-white/20 hover:border-[#D10000] transition-colors"
                             >
                                 <div className="absolute inset-0 bg-[#D10000] translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
