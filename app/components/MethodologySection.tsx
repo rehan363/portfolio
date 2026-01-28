@@ -42,7 +42,7 @@ export default function MethodologySection() {
                         PROBLEM SOLVING <span className="text-[#D10000]">MATRIX</span>
                     </h2>
                     <p className="text-gray-500 font-mono text-xs tracking-widest uppercase">
-                        // EXECUTION_ALGORITHM
+                        {"// EXECUTION_ALGORITHM"}
                     </p>
                 </div>
 
@@ -86,6 +86,6 @@ export default function MethodologySection() {
                     </div>
                 </div>
             </div>
-        </SectionWrapper>
+        </SectionWrapper >
     );
 }

@@ -82,7 +82,7 @@ export default function ExperiencePage() {
                         className="relative inline-block"
                     >
                         <h1 className="text-[13vw] leading-[0.8] font-playfair font-medium text-[#E0E0E0] mix-blend-difference select-none tracking-tighter relative z-10">
-                            <ScrambleText text="ARCHIVE" trigger="auto" scrambleSpeed={40} revealSpeed={80} />
+                            <ScrambleText text="ARCHIVE" trigger="auto" scrambleSpeed={40} />
                         </h1>
                         <span className="absolute top-0 left-0 text-[13vw] leading-[0.8] font-playfair font-medium text-white/5 tracking-tighter blur-sm -z-10 translate-y-4">ARCHIVE</span>
 

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
@@ -57,7 +58,7 @@ export default function Navbar() {
                         {/* LEFT: Brand + Status */}
                         <div className="flex items-center gap-6">
                             {/* Logo Mark - Enhanced */}
-                            <a href="/" className="group flex items-center gap-4">
+                            <Link href="/" className="group flex items-center gap-4">
                                 <div className="relative">
                                     {/* Glow Effect on Hover */}
                                     <div className="absolute -inset-2 bg-[var(--acc-red)]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -89,7 +90,7 @@ export default function Navbar() {
                                         Full Stack Engineer
                                     </div>
                                 </div>
-                            </a>
+                            </Link>
 
                             {/* Status Indicator */}
                             <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 bg-white/[0.02] border border-white/5">
