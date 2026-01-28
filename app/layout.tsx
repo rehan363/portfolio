@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
@@ -42,11 +42,6 @@ export const metadata: Metadata = {
     description: "Building AI-powered solutions and scalable architectures.",
     creator: "@yourhandle", // TODO: Update if available
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
   robots: {
     index: true,
     follow: true,
@@ -60,7 +55,16 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 import SingularityCursor from "./components/ui/SingularityCursor";
+
+
+import SystemBackgroundWrapper from "./components/3d/SystemBackgroundWrapper";
 
 export default function RootLayout({
   children,
@@ -72,6 +76,7 @@ export default function RootLayout({
       <body
         className={`${bebasNeue.variable} ${inter.variable} ${playfair.variable} antialiased`}
       >
+        <SystemBackgroundWrapper />
         <SingularityCursor />
         {children}
       </body>

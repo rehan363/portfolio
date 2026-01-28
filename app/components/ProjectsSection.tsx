@@ -98,7 +98,9 @@ export default function ProjectsSection() {
                                     </h3>
 
                                     <div className="text-xs font-mono text-gray-500 mb-6 uppercase tracking-widest">
-                                        {project.category} // {project.classification}
+                                        {project.category} {
+                                            // {project.classification}
+                                        }
                                     </div>
 
                                     <p className="text-gray-400 font-sans leading-relaxed mb-8 border-l border-white/10 pl-6 group-hover:border-[#D10000] transition-colors text-sm">

@@ -72,29 +72,18 @@ export default function ProcessPage() {
                         </p>
                     </motion.div>
 
-                    {/* Neural Network Visualization */}
+                    {/* Neural Network Visualization - Desktop Only */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5, duration: 1 }}
-                        className="max-w-5xl mx-auto mb-24"
+                        className="hidden md:block max-w-5xl mx-auto mb-24"
                     >
                         <svg
                             viewBox="0 0 900 240"
                             className="w-full h-auto"
                             preserveAspectRatio="xMidYMid meet"
                         >
-                            {/* Glow Filter */}
-                            <defs>
-                                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                                    <feGaussianBlur stdDeviation="3" result="coloredBlur" />
-                                    <feMerge>
-                                        <feMergeNode in="coloredBlur" />
-                                        <feMergeNode in="SourceGraphic" />
-                                    </feMerge>
-                                </filter>
-                            </defs>
-
                             {/* Input Label */}
                             <text x="50" y="125" textAnchor="middle" fill="var(--fg-muted)" fontSize="10" fontFamily="JetBrains Mono, monospace">
                                 INPUT
@@ -138,6 +127,46 @@ export default function ProcessPage() {
                         </svg>
                     </motion.div>
 
+                    {/* Mobile Vertical Process List */}
+                    <div className="md:hidden flex flex-col gap-8 mb-24 relative pl-8">
+                        {/* Connecting Line */}
+                        <div className="absolute left-[39px] top-4 bottom-4 w-px bg-zinc-800" />
+
+                        {phases.map((phase, i) => (
+                            <motion.div
+                                key={phase.id}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.5 + (i * 0.1) }}
+                                onClick={() => handlePhaseClick(phase.id)}
+                                className="relative flex items-center gap-6 group cursor-pointer"
+                            >
+                                {/* Node */}
+                                <div className={`
+                                    relative z-10 w-14 h-14 rounded-full border-2 flex items-center justify-center bg-[#050505] transition-all duration-300
+                                    ${activePhase === phase.id
+                                        ? 'border-[#D10000] shadow-[0_0_15px_rgba(209,0,0,0.4)] scale-110'
+                                        : 'border-zinc-800'
+                                    }
+                                `}>
+                                    <span className={`text-lg transition-colors ${activePhase === phase.id ? 'text-white' : 'text-zinc-600'}`}>
+                                        {phase.icon}
+                                    </span>
+                                </div>
+
+                                {/* Text Info */}
+                                <div className="flex flex-col">
+                                    <span className={`text-[10px] font-mono tracking-widest uppercase mb-1 transition-colors ${activePhase === phase.id ? 'text-[#D10000]' : 'text-zinc-500'}`}>
+                                        Step 0{phase.id}
+                                    </span>
+                                    <span className={`text-xl font-bebas tracking-wide transition-colors ${activePhase === phase.id ? 'text-white' : 'text-zinc-400'}`}>
+                                        {phase.code}
+                                    </span>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+
                     {/* Content Panel */}
                     <ContentPanel
                         phase={activePhaseData}
@@ -178,8 +207,13 @@ export default function ProcessPage() {
                                 <p><span className="text-[var(--fg-cinema)]">&gt;</span> loading cognitive_frameworks...</p>
                                 <p><span className="text-[var(--acc-red)]">&gt;</span> <span className="text-[var(--acc-red)]">READY:</span> awaiting problem input</p>
                                 <p className="text-[var(--fg-muted)] pt-2">
-                                // This is how I think. Not linear, but iterative.<br />
-                                // Each phase informs the next. Each iteration refines.
+                                    {
+                                        // This is how I think. Not linear, but iterative.
+                                    }
+                                    <br />
+                                    {
+                                        // Each phase informs the next. Each iteration refines.
+                                    }
                                 </p>
                             </div>
                         </div>

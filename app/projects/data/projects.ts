@@ -148,6 +148,7 @@ export const projects: Project[] = [
             short: "Real-time Voice Support",
             desc: "Low-latency voice agent capable of natural, interruptible conversations. Handles customer queries, processes tickets, and escalates complex issues."
         },
+        image: "/projects/jordan_voice.png",
         performance: {
             latency: "400ms", // Voice-to-voice latency
             accuracy: "95%",
@@ -171,6 +172,7 @@ export const projects: Project[] = [
             short: "Automated Onboarding",
             desc: "Voice agent that identifies existing customers via DB lookup and registers new ones by collecting details and dispatching secure registration forms via SMS."
         },
+        image: "/projects/fontis_agent.png",
         performance: {
             latency: "600ms",
             accuracy: "98%",
@@ -194,6 +196,7 @@ export const projects: Project[] = [
             short: "Autonomous Scheduling",
             desc: "Voice agent integrated with GoHighLevel calendar. Qualifies leads, checks availability, and books appointments directly into the CRM."
         },
+        image: "/projects/hvac_bot.png",
         performance: {
             latency: "550ms",
             accuracy: "96%",

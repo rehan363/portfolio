@@ -7,7 +7,6 @@ interface ScrambleTextProps {
     text: string;
     className?: string;
     scrambleSpeed?: number;
-    revealSpeed?: number;
     trigger?: "hover" | "auto";
 }
 
@@ -15,21 +14,19 @@ export default function ScrambleText({
     text,
     className = "",
     scrambleSpeed = 30,
-    revealSpeed = 50,
     trigger = "auto"
 }: ScrambleTextProps) {
     const [display, setDisplay] = useState(text);
     const [isScrambling, setIsScrambling] = useState(false);
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-    const startScramble = () => {
+    const startScramble = React.useCallback(() => {
         if (isScrambling) return;
         setIsScrambling(true);
 
         let iteration = 0;
-        const maxIterations = text.length * 3;
 
-        clearInterval(intervalRef.current!);
+        if (intervalRef.current) clearInterval(intervalRef.current);
 
         intervalRef.current = setInterval(() => {
             setDisplay(
@@ -45,19 +42,29 @@ export default function ScrambleText({
             );
 
             if (iteration >= text.length) {
-                clearInterval(intervalRef.current!);
+                if (intervalRef.current) clearInterval(intervalRef.current);
                 setIsScrambling(false);
             }
 
-            iteration += 1 / 3; // Slower reveal
+            iteration += 1 / 3; // Hardcoded reveal cadence
         }, scrambleSpeed);
-    };
+    }, [isScrambling, text, scrambleSpeed]);
 
     useEffect(() => {
         if (trigger === "auto") {
-            startScramble();
+            // Avoid synchronous state update warning
+            const timer = setTimeout(() => {
+                startScramble();
+            }, 0);
+            return () => clearTimeout(timer);
         }
-    }, [trigger]);
+    }, [trigger, startScramble]);
+
+    useEffect(() => {
+        return () => {
+            if (intervalRef.current) clearInterval(intervalRef.current);
+        };
+    }, []);
 
     return (
         <span

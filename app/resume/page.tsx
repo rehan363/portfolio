@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { FaGithub, FaGlobe, FaEnvelope, FaMapMarkerAlt, FaPrint, FaArrowLeft, FaPhone } from "react-icons/fa";
+import Link from "next/link";
+import { FaGithub, FaEnvelope, FaMapMarkerAlt, FaPrint, FaArrowLeft, FaPhone } from "react-icons/fa";
 
 export default function ResumePage() {
     const handlePrint = () => {
@@ -12,9 +13,9 @@ export default function ResumePage() {
         <div className="min-h-screen bg-[#111111] text-white p-4 md:p-8 flex flex-col items-center print:bg-white print:p-0">
             {/* Controls - No Print */}
             <div className="print:hidden fixed top-0 left-0 right-0 p-4 flex justify-between items-center bg-[#111111]/90 backdrop-blur-md z-50 border-b border-white/10">
-                <a href="/" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+                <Link href="/" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
                     <FaArrowLeft /> Back to Portfolio
-                </a>
+                </Link>
                 <button
                     onClick={handlePrint}
                     className="flex items-center gap-2 px-4 py-2 bg-[#D10000] text-white rounded-sm hover:bg-[#a00000] transition-colors font-mono uppercase tracking-wider text-sm"

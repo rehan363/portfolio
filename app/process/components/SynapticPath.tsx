@@ -27,19 +27,33 @@ export default function SynapticPath({ start, end, isActive, delay = 0 }: Synapt
                 strokeDasharray="8 8"
             />
 
-            {/* Active Glow Path */}
+            {/* Active Glow Path - Vector based for performance */}
             {isActive && (
-                <motion.path
-                    d={pathD}
-                    fill="none"
-                    stroke="#D10000"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    animate={{ pathLength: 1, opacity: 1 }}
-                    transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
-                    filter="url(#glow)"
-                />
+                <>
+                    {/* Outer Glow (Simulated with thick transparent stroke) */}
+                    <motion.path
+                        d={pathD}
+                        fill="none"
+                        stroke="#D10000"
+                        strokeWidth={6}
+                        strokeLinecap="round"
+                        strokeOpacity={0.2}
+                        initial={{ pathLength: 0, opacity: 0 }}
+                        animate={{ pathLength: 1, opacity: 1 }}
+                        transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
+                    />
+                    {/* Core Path */}
+                    <motion.path
+                        d={pathD}
+                        fill="none"
+                        stroke="#D10000"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        initial={{ pathLength: 0, opacity: 0 }}
+                        animate={{ pathLength: 1, opacity: 1 }}
+                        transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
+                    />
+                </>
             )}
 
             {/* Traveling Pulse - Data packet visualization */}

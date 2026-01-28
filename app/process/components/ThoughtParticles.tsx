@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useMemo } from 'react';
+import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 import * as THREE from 'three';
@@ -16,9 +16,14 @@ function generateDataStream(count: number) {
 
 function ThoughtStream() {
     const ref = useRef<any>(null);
-    const positions = useMemo(() => generateDataStream(2000), []);
+    const [positions, setPositions] = React.useState<Float32Array | null>(null);
+
+    React.useEffect(() => {
+        setPositions(generateDataStream(2000));
+    }, []);
 
     useFrame((state, delta) => {
+        if (!positions) return;
         if (ref.current) {
             ref.current.rotation.y += delta * 0.05;
             ref.current.rotation.x += delta * 0.02;
@@ -28,6 +33,8 @@ function ThoughtStream() {
             ref.current.scale.set(scale, scale, scale);
         }
     });
+
+    if (!positions) return null;
 
     return (
         <Points ref={ref} positions={positions} stride={3} frustumCulled={false}>
@@ -45,6 +52,17 @@ function ThoughtStream() {
 
 function DataNodes() {
     const ref = useRef<any>(null);
+    const [nodes, setNodes] = React.useState<{ position: [number, number, number] }[]>([]);
+
+    React.useEffect(() => {
+        setNodes(Array.from({ length: 8 }, (_, i) => ({
+            position: [
+                (Math.random() - 0.5) * 6,
+                (Math.random() - 0.5) * 4,
+                (Math.random() - 0.5) * 3
+            ] as [number, number, number]
+        })));
+    }, []);
 
     useFrame((state) => {
         if (ref.current) {
@@ -54,15 +72,7 @@ function DataNodes() {
         }
     });
 
-    const nodes = useMemo(() => {
-        return Array.from({ length: 8 }, (_, i) => ({
-            position: [
-                (Math.random() - 0.5) * 6,
-                (Math.random() - 0.5) * 4,
-                (Math.random() - 0.5) * 3
-            ] as [number, number, number]
-        }));
-    }, []);
+    if (nodes.length === 0) return null;
 
     return (
         <group ref={ref}>
@@ -78,14 +88,9 @@ function DataNodes() {
 
 function ConnectionLines() {
     const ref = useRef<any>(null);
+    const [lines, setLines] = React.useState<THREE.BufferGeometry | null>(null);
 
-    useFrame((state) => {
-        if (ref.current) {
-            ref.current.rotation.z = Math.sin(state.clock.elapsedTime * 0.2) * 0.1;
-        }
-    });
-
-    const lines = useMemo(() => {
+    React.useEffect(() => {
         const geometry = new THREE.BufferGeometry();
         const positions: number[] = [];
 
@@ -101,8 +106,16 @@ function ConnectionLines() {
         }
 
         geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-        return geometry;
+        setLines(geometry);
     }, []);
+
+    useFrame((state) => {
+        if (ref.current) {
+            ref.current.rotation.z = Math.sin(state.clock.elapsedTime * 0.2) * 0.1;
+        }
+    });
+
+    if (!lines) return null;
 
     return (
         <lineSegments ref={ref} geometry={lines}>

@@ -6,6 +6,7 @@ export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState("");
     const [currentTime, setCurrentTime] = useState("");
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -18,23 +19,17 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [scrolled]);
 
-    // Live Clock
+    // Scroll Lock when Mobile Menu is Open
     useEffect(() => {
-        const updateTime = () => {
-            const now = new Date();
-            setCurrentTime(now.toLocaleTimeString('en-US', {
-                hour12: false,
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit'
-            }));
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
         };
-        // Initial delay to avoid hydration mismatch/immediate render loop
-        const interval = setInterval(updateTime, 1000);
-        updateTime(); // Sync once after mount is safe
-
-        return () => clearInterval(interval);
-    }, []);
+    }, [isMobileMenuOpen]);
 
     const navLinks = [
         { name: "EXPERIENCE", href: "/experience", code: "01" },
@@ -153,10 +148,10 @@ export default function Navbar() {
                             {/* Divider */}
                             <div className="hidden lg:block w-px h-8 bg-white/10" />
 
-                            {/* CTA Button */}
+                            {/* CTA Button - Hidden on Mobile */}
                             <a
                                 href="/contact"
-                                className="group relative overflow-hidden px-5 py-2.5 border border-white/20 hover:border-[#D10000] transition-colors"
+                                className="hidden md:flex group relative overflow-hidden px-5 py-2.5 border border-white/20 hover:border-[#D10000] transition-colors"
                             >
                                 <div className="absolute inset-0 bg-[#D10000] translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                                 <span className="relative text-[10px] font-mono text-white tracking-[0.2em]">
@@ -165,10 +160,22 @@ export default function Navbar() {
                             </a>
 
                             {/* Mobile Menu Toggle */}
-                            <button className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 border border-white/10 hover:border-[#D10000] transition-colors">
-                                <span className="w-5 h-0.5 bg-white" />
-                                <span className="w-3 h-0.5 bg-white ml-auto" />
-                                <span className="w-5 h-0.5 bg-white" />
+                            <button
+                                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                                className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 border border-white/10 hover:border-[#D10000] transition-colors z-50 relative"
+                            >
+                                <motion.span
+                                    animate={isMobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+                                    className="w-5 h-0.5 bg-white origin-center"
+                                />
+                                <motion.span
+                                    animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
+                                    className="w-3 h-0.5 bg-white ml-auto"
+                                />
+                                <motion.span
+                                    animate={isMobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+                                    className="w-5 h-0.5 bg-white origin-center"
+                                />
                             </button>
                         </div>
                     </div>
@@ -180,6 +187,94 @@ export default function Navbar() {
                 ? "bg-gradient-to-r from-transparent via-white/10 to-transparent"
                 : "bg-transparent"
                 }`} />
+
+            {/* MOBILE MENU OVERLAY */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="fixed inset-0 z-40 bg-[var(--bg-void)]/95 backdrop-blur-2xl flex flex-col pt-32 px-6 md:hidden h-[100dvh]"
+                    >
+                        {/* Background Elements */}
+                        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--acc-red)]/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+                            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-500/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
+                            {/* Grid Pattern */}
+                            <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+                        </div>
+
+                        <div className="flex flex-col gap-2 relative z-10">
+                            {navLinks.map((link, i) => (
+                                <motion.a
+                                    key={link.name}
+                                    href={link.href}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: i * 0.1 }}
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className="flex items-baseline gap-4 border-b border-white/5 py-5 group"
+                                >
+                                    <span className="text-xs font-mono text-[#D10000] opacity-60">{link.code}</span>
+                                    <span className="text-4xl font-bebas text-white/50 group-hover:text-white transition-colors tracking-wide">
+                                        {link.name}
+                                    </span>
+                                    <span className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-[#D10000]">
+                                        →
+                                    </span>
+                                </motion.a>
+                            ))}
+                        </div>
+
+                        {/* Mobile Connect Button */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.4 }}
+                            className="mt-8 relative z-10"
+                        >
+                            <a
+                                href="/contact"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="flex items-center justify-center gap-3 w-full bg-[#D10000] hover:bg-[#A00000] text-white py-4 transition-colors group"
+                            >
+                                <span className="font-mono text-sm tracking-[0.2em]">START A PROJECT</span>
+                                <span className="group-hover:translate-x-1 transition-transform">→</span>
+                            </a>
+                        </motion.div>
+
+                        {/* Mobile Footer Info */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.5 }}
+                            className="mt-auto pb-8 space-y-4 relative z-10"
+                        >
+                            <div className="h-px w-full bg-white/10 mb-6" />
+                            <div className="flex justify-between items-end">
+                                <div className="space-y-2">
+                                    <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
+                                        System Status: <span className="text-emerald-500">Online</span>
+                                    </div>
+                                    <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
+                                        Loc: Islamabad, PK
+                                    </div>
+                                </div>
+                                <div className="text-right">
+                                    <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-1">
+                                        Local Time
+                                    </div>
+                                    <div className="text-xl font-mono text-white/80 tabular-nums">
+                                        {currentTime}
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </motion.nav>
     );
 }

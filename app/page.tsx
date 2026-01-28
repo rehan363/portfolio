@@ -2,18 +2,14 @@
 import HeroSection from "./components/HeroSection";
 import ExperienceSection from "./components/ExperienceSection";
 
-import SkillsSection from "./components/SkillsSection";
-import ProjectsSection from "./components/ProjectsSection";
-import MethodologySection from "./components/MethodologySection";
-import Navbar from "./components/Navbar";
+const SkillsSection = dynamic(() => import("./components/SkillsSection"), { ssr: false });
+const ProjectsSection = dynamic(() => import("./components/ProjectsSection"), { ssr: false });
+const MethodologySection = dynamic(() => import("./components/MethodologySection"), { ssr: false });
+const Navbar = dynamic(() => import("./components/Navbar"), { ssr: true }); // Keep Navbar critical
 import LoadingScreen from "./components/LoadingScreen";
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence } from "framer-motion";
 import dynamic from 'next/dynamic';
-
-const SystemBackground = dynamic(() => import("./components/3d/SystemBackground"), {
-  ssr: false,
-});
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,7 +20,6 @@ export default function Home() {
         {isLoading && <LoadingScreen key="loader" onComplete={() => setIsLoading(false)} />}
       </AnimatePresence>
 
-      <SystemBackground />
       <Navbar />
 
       {/* Scrollable Sections - Rendered immediately so they are visible upon reveal */}
