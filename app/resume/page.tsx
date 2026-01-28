@@ -24,20 +24,20 @@ export default function ResumePage() {
                 </button>
             </div>
 
-            {/* Resume A4 Container - Dense Creamy Theme */}
-            <div className={`w-[210mm] h-[297mm] bg-[#F3F2F0] text-[#1A1A1A] shadow-2xl overflow-hidden relative print:border-0 print:shadow-none print:w-full print:h-screen print:absolute print:top-0 print:left-0 print:m-0 mt-16 print:mt-0 flex flex-col`}>
+            {/* Resume A4 Container - Responsive */}
+            <div className={`w-full max-w-[210mm] md:w-[210mm] min-h-[min(297mm,100vh)] md:h-[297mm] h-auto bg-[#F3F2F0] text-[#1A1A1A] shadow-2xl overflow-hidden relative print:border-0 print:shadow-none print:w-full print:h-screen print:absolute print:top-0 print:left-0 print:m-0 mt-16 print:mt-0 flex flex-col`}>
 
                 {/* Header / Hero */}
-                <header className="flex items-start justify-between px-10 py-8 border-b border-gray-300 bg-[#EAE8E6]">
-                    <div className="flex-1 pr-6 pt-2">
-                        <h1 className="text-5xl font-bebas tracking-wide text-[#000000] mb-1 leading-none">MUHAMMAD ADAM</h1>
-                        <p className="text-[#D10000] font-mono tracking-[0.2em] uppercase text-xs mb-3 font-bold">Full Stack Engineer & Solution Architect</p>
-                        <p className="text-gray-700 text-xs leading-relaxed max-w-xl font-medium text-justify">
+                <header className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between px-6 py-6 md:px-10 md:py-8 border-b border-gray-300 bg-[#EAE8E6] text-center md:text-left gap-6 md:gap-0">
+                    <div className="flex-1 md:pr-6 md:pt-2">
+                        <h1 className="text-4xl md:text-5xl font-bebas tracking-wide text-[#000000] mb-2 md:mb-1 leading-none">MUHAMMAD ADAM</h1>
+                        <p className="text-[#D10000] font-mono tracking-[0.2em] uppercase text-xs mb-4 md:mb-3 font-bold">Full Stack Engineer & Solution Architect</p>
+                        <p className="text-gray-700 text-xs leading-relaxed max-w-xl font-medium text-justify md:text-justify mx-auto md:mx-0">
                             Results-driven Engineer specializing in scalable AI architectures and full-stack systems. Expert in constructing agentic workflows and production-grade applications using Next.js and Python. Committed to clean code, high-performance computing, and cloud-native solutions.
                         </p>
                     </div>
                     {/* Photo */}
-                    <div className="w-28 h-28 relative shrink-0 rounded-full overflow-hidden border-[3px] border-white shadow-md">
+                    <div className="w-24 h-24 md:w-28 md:h-28 relative shrink-0 rounded-full overflow-hidden border-[3px] border-white shadow-md">
                         <Image
                             src="/me.png"
                             alt="Muhammad Adam"
@@ -47,9 +47,9 @@ export default function ResumePage() {
                     </div>
                 </header>
 
-                <div className="grid grid-cols-[30%_70%] flex-1">
+                <div className="flex flex-col md:grid md:grid-cols-[30%_70%] flex-1">
                     {/* Sidebar (Left) - Darker Warm Grey */}
-                    <aside className="bg-[#EAE8E6] p-6 space-y-8 border-r border-gray-300 h-full">
+                    <aside className="bg-[#EAE8E6] p-6 space-y-8 border-b md:border-b-0 md:border-r border-gray-300 h-auto md:h-full">
                         {/* Contact */}
                         <section>
                             <h3 className="text-base font-bebas text-[#000000] border-b-2 border-[#D10000] pb-1 mb-3">Contact</h3>
@@ -113,7 +113,7 @@ export default function ResumePage() {
                     </aside>
 
                     {/* Main Content (Right) - Dense Cream */}
-                    <main className="p-8 pt-6 space-y-6 bg-[#F3F2F0]">
+                    <main className="p-6 md:p-8 pt-6 space-y-6 bg-[#F3F2F0]">
                         {/* Experience */}
                         <section>
                             <h2 className="text-xl font-bebas text-[#000000] mb-4 flex items-center gap-2">
