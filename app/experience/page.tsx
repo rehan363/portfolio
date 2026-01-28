@@ -69,11 +69,11 @@ export default function ExperiencePage() {
             <Navbar />
 
             {/* --- CONTENT --- */}
-            <div className="relative z-10 pt-32 pb-40">
+            <div className="relative z-10 pt-24 md:pt-32 pb-40">
 
                 {/* HEADER */}
                 <header
-                    className="mb-[15vh] px-6 md:px-0 max-w-[1800px] mx-auto text-center relative selection:bg-none perspective-1000 py-20"
+                    className="mb-[10vh] md:mb-[15vh] px-6 md:px-0 max-w-[1800px] mx-auto text-center relative selection:bg-none perspective-1000 py-12 md:py-20"
                 >
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
@@ -81,19 +81,19 @@ export default function ExperiencePage() {
                         transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
                         className="relative inline-block"
                     >
-                        <h1 className="text-[13vw] leading-[0.8] font-playfair font-medium text-[#E0E0E0] mix-blend-difference select-none tracking-tighter relative z-10">
+                        <h1 className="text-[15vw] md:text-[13vw] leading-[0.8] font-playfair font-medium text-[#E0E0E0] mix-blend-difference select-none tracking-tighter relative z-10">
                             <ScrambleText text="ARCHIVE" trigger="auto" scrambleSpeed={40} />
                         </h1>
-                        <span className="absolute top-0 left-0 text-[13vw] leading-[0.8] font-playfair font-medium text-white/5 tracking-tighter blur-sm -z-10 translate-y-4">ARCHIVE</span>
+                        <span className="absolute top-0 left-0 text-[15vw] md:text-[13vw] leading-[0.8] font-playfair font-medium text-white/5 tracking-tighter blur-sm -z-10 translate-y-2 md:translate-y-4">ARCHIVE</span>
 
-                        <div className="absolute inset-0 flex items-center justify-center z-20 translate-y-24">
-                            <p className="text-[10px] md:text-xs font-light text-white/40 tracking-[0.6em] uppercase font-mono">
+                        <div className="absolute inset-0 flex items-center justify-center z-20 translate-y-12 md:translate-y-24">
+                            <p className="text-[9px] md:text-xs font-light text-white/40 tracking-[0.6em] uppercase font-mono bg-[#050505]/50 px-4 py-1 backdrop-blur-sm">
                                 Selected Works
                             </p>
                         </div>
                     </motion.div>
 
-                    <div className="w-px h-16 bg-gradient-to-b from-white/10 to-transparent mx-auto mt-12 mb-4" />
+                    <div className="w-px h-12 md:h-16 bg-gradient-to-b from-white/10 to-transparent mx-auto mt-8 md:mt-12 mb-4" />
                     <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: isLoaded ? 1 : 0, rotate: 360 }}
@@ -103,7 +103,7 @@ export default function ExperiencePage() {
                 </header>
 
                 {/* THE LIVING ARCHIVE GALLERY */}
-                <div className="flex flex-col gap-[15vh] max-w-[1400px] mx-auto px-6 md:px-12">
+                <div className="flex flex-col gap-[10vh] md:gap-[15vh] max-w-[1400px] mx-auto px-6 md:px-12">
                     {jobs.map((job, i) => (
                         <KineticModule key={job.id} job={job} index={i} isLoaded={isLoaded} />
                     ))}
@@ -158,10 +158,10 @@ function KineticModule({ job, index, isLoaded }: { job: any, index: number, isLo
             {/* PARALLAX ETCHED NUMBER */}
             <motion.div
                 style={{ y: parallaxY }} // Parallax movement
-                className={`absolute top-0 ${isEven ? 'left-0 md:left-[-5%]' : 'left-0 md:right-[-5%]'} z-0 pointer-events-none select-none opacity-20`}
+                className={`absolute top-0 ${isEven ? 'left-0 md:left-[-5%]' : 'right-0 md:left-auto md:right-[-5%]'} z-0 pointer-events-none select-none opacity-20`}
             >
                 <span
-                    className="text-[10rem] md:text-[20rem] font-bebas leading-none tracking-tighter text-transparent mix-blend-overlay"
+                    className="text-[6rem] md:text-[20rem] font-bebas leading-none tracking-tighter text-transparent mix-blend-overlay"
                     style={{
                         WebkitTextStroke: '2px rgba(255,255,255,0.08)',
                     }}
@@ -179,7 +179,7 @@ function KineticModule({ job, index, isLoaded }: { job: any, index: number, isLo
             >
                 <div className="
                     relative overflow-hidden
-                    p-8 md:p-10
+                    p-6 md:p-10
                     border border-white/10 bg-white/[0.02] backdrop-blur-[4px]
                     group-hover:border-white/20 group-hover:bg-white/[0.03]
                     transition-colors duration-500
@@ -198,13 +198,13 @@ function KineticModule({ job, index, isLoaded }: { job: any, index: number, isLo
                     {/* Metadata Header */}
                     <div className="flex flex-col gap-2 mb-8 relative z-10">
                         <div className="flex flex-wrap justify-between items-baseline gap-2">
-                            <h2 className="text-3xl md:text-5xl font-playfair font-medium text-white leading-none tracking-tight">
+                            <h2 className="text-2xl md:text-5xl font-playfair font-medium text-white leading-none tracking-tight">
                                 <ChromaticText text={job.role} />
                             </h2>
-                            <span className="text-[10px] md:text-xs font-mono text-white/50 bg-white/5 px-3 py-1 rounded-full border border-white/5">{job.period}</span>
+                            <span className="text-[9px] md:text-xs font-mono text-white/50 bg-white/5 px-3 py-1 rounded-full border border-white/5">{job.period}</span>
                         </div>
 
-                        <h3 className="text-lg font-playfair italic text-white/60 tracking-wide">{job.company}</h3>
+                        <h3 className="text-sm md:text-lg font-playfair italic text-white/60 tracking-wide">{job.company}</h3>
                     </div>
 
                     {/* Content */}
@@ -214,7 +214,7 @@ function KineticModule({ job, index, isLoaded }: { job: any, index: number, isLo
                         </p>
 
                         {/* Metrics */}
-                        <div className="flex flex-wrap gap-8 border-t border-white/5 pt-6">
+                        <div className="flex flex-wrap gap-4 md:gap-8 border-t border-white/5 pt-6">
                             {job.metrics.slice(0, 3).map((m: any) => (
                                 <div key={m.label}>
                                     <div className="text-[9px] uppercase tracking-widest text-[#71717A] mb-1">{m.label}</div>
@@ -228,13 +228,14 @@ function KineticModule({ job, index, isLoaded }: { job: any, index: number, isLo
                 </div>
             </motion.div>
 
-            {/* MAGNETIC REVEAL - "Outcomes" (Restored Side Position) */}
+            {/* MAGNETIC REVEAL - "Outcomes" (Modified for touch/mobile) */}
             <motion.div
-                className={`w-full md:w-[280px] relative z-10 ${isEven ? 'pl-6 md:pl-0' : 'pr-6 md:pr-0 text-right'} group/reveal`}
+                className={`w-full md:w-[280px] relative z-10 ${isEven ? 'pl-0 md:pl-6' : 'pr-0 md:pr-6 text-left md:text-right'} group/reveal`}
                 initial="collapsed"
                 whileHover="expanded"
+                whileTap="expanded" // Enable tap interaction on mobile
             >
-                <div className={`flex items-center gap-4 cursor-pointer py-2 ${!isEven && 'flex-row-reverse'}`}>
+                <div className={`flex items-center gap-4 cursor-pointer py-2 ${!isEven && 'flex-row md:flex-row-reverse'}`}>
                     <div className="w-1.5 h-1.5 rounded-full border border-white/20 group-hover/reveal:bg-white transition-colors" />
                     <span className="text-[10px] font-mono text-white/40 tracking-widest uppercase group-hover/reveal:text-white transition-colors">
                         Outcomes
@@ -250,7 +251,7 @@ function KineticModule({ job, index, isLoaded }: { job: any, index: number, isLo
                     transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                     className="overflow-hidden"
                 >
-                    <ul className={`space-y-3 ${isEven ? 'border-l pl-4' : 'border-r pr-4'} border-white/10 py-2`}>
+                    <ul className={`space-y-3 ${isEven ? 'border-l pl-4' : 'border-l pl-4 md:border-l-0 md:border-r md:pl-0 md:pr-4'} border-white/10 py-2`}>
                         {job.achievements.map((ach: string, i: number) => (
                             <li key={i} className="text-[11px] text-[#A1A1AA] font-light leading-relaxed hover:text-white transition-colors">
                                 {ach}
