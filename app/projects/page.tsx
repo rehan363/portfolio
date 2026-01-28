@@ -82,6 +82,7 @@ export default function ProjectsPage() {
                                     key={project.id}
                                     project={project}
                                     index={i}
+                                    priority={i < 4}
                                     onClick={() => setSelectedProject(project)}
                                 />
                             ))}

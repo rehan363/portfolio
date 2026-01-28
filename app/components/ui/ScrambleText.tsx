@@ -21,12 +21,12 @@ export default function ScrambleText({
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
     const startScramble = React.useCallback(() => {
-        if (isScrambling) return;
-        setIsScrambling(true);
+        // Use functional state update to check current value, but better to use ref to avoid dependency cycle
+        // However, standard pattern:
+        if (intervalRef.current) clearInterval(intervalRef.current);
 
         let iteration = 0;
-
-        if (intervalRef.current) clearInterval(intervalRef.current);
+        setIsScrambling(true);
 
         intervalRef.current = setInterval(() => {
             setDisplay(
@@ -46,9 +46,9 @@ export default function ScrambleText({
                 setIsScrambling(false);
             }
 
-            iteration += 1 / 3; // Hardcoded reveal cadence
+            iteration += 1 / 3;
         }, scrambleSpeed);
-    }, [isScrambling, text, scrambleSpeed]);
+    }, [text, scrambleSpeed]);
 
     useEffect(() => {
         if (trigger === "auto") {

@@ -11,9 +11,9 @@ import Image from 'next/image';
 const FallbackVisual = ({ category }: { category: string }) => {
     return (
         <div className="w-full h-full bg-[#080808] flex items-center justify-center relative overflow-hidden">
-            {/* Waveform Pattern for Voice/AI */}
+            {/* Waveform Pattern for Voice/AI - Simplified Static SVG */}
             <div className="absolute inset-0 opacity-20"
-                style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 5 L20 35 M5 15 L5 25 M35 15 L35 25' stroke='white' stroke-width='1' fill='none' opacity='0.5'/%3E%3C/svg%3E")` }}
+                style={{ backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')" }}
             />
             <div className="z-10 text-center">
                 <div className="text-[40px] mb-2 transition-transform duration-300 group-hover:scale-110">

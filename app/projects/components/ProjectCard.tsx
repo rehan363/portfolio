@@ -8,9 +8,10 @@ interface ProjectCardProps {
     project: Project;
     index: number;
     onClick: () => void;
+    priority?: boolean;
 }
 
-export default function ProjectCard({ project, index, onClick }: ProjectCardProps) {
+export default function ProjectCard({ project, index, onClick, priority = false }: ProjectCardProps) {
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -30,8 +31,9 @@ export default function ProjectCard({ project, index, onClick }: ProjectCardProp
                     <Image
                         src={project.image}
                         fill
+                        priority={priority}
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 grayscale group-hover:grayscale-0 will-change-transform"
+                        className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 grayscale group-hover:grayscale-0 will-change-transform"
                         alt={project.title}
                     />
                 ) : (
