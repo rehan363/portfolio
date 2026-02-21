@@ -43,11 +43,11 @@ export const projects: Project[] = [
         tech_stack: ["Next.js 14", "React 18", "MongoDB", "Stripe", "TailwindCSS"],
         problem: {
             short: "Inefficient bookings",
-            desc: "Small service businesses struggle with high platform fees (15-30%), no-shows, and complex booking management, while customers face fragmented discovery."
+            desc: "Small service businesses struggle with high platform fees (15-30%), no-shows, data drift across map listings, and complex booking management."
         },
         solution: {
             short: "Fair-revenue marketplace",
-            desc: "Full-stack marketplace with 5% revenue split model. Features real-time multi-staff scheduling, double-booking prevention, and secure split payments via Stripe."
+            desc: "Full-stack marketplace with 5% revenue split model. Features high-throughput sync engines for bulk listings, 100% data accuracy via API orchestration, and secure Stripe payments."
         },
         image: "/ouiimi_portfolio_thumbnail_1768828611462.png",
         performance: {
@@ -97,7 +97,7 @@ export const projects: Project[] = [
         },
         solution: {
             short: "Premium Vetted Housing",
-            desc: "Curated marketplace for luxury short-term rentals (Margalla View, Sky One Park). Features simple trust-based booking, verified listings, and 'Isa Husain' architectural heritage properties."
+            desc: "Curated marketplace for luxury short-term rentals. Features automated data syndication via location aggregators (Yext, Uberall) to ensure verified, high-precision listings."
         },
         image: "/projects/expatstays.png",
         performance: {

@@ -25,7 +25,8 @@ export const jobs: Job[] = [
         description: "Building scalable full-stack applications with modern tech stacks. Working on cutting-edge AI-powered solutions and enterprise-grade systems.",
         achievements: [
             "Building scalable full-stack applications with modern tech stacks.",
-            "Working on cutting-edge AI-powered solutions and enterprise-grade systems."
+            "Architecting enterprise-grade systems for large-scale location data orchestration and AI-powered automation.",
+            "Integrating advanced AI-powered solutions into complex business logic."
         ],
         skills: ["Next.js", "FastAPI", "Docker", "TypeScript", "Python"],
         metrics: [
@@ -42,8 +43,9 @@ export const jobs: Job[] = [
         period: "JUL — NOV 2025",
         description: "Led full-stack engineering initiatives. Managed agentic AI workflows, deployment pipelines, load balancing, cache systems, and proxy architectures.",
         achievements: [
-            "Led full-stack engineering initiatives.",
-            "Managed agentic AI workflows, deployment pipelines, load balancing, cache systems, and proxy architectures."
+            "Led full-stack engineering initiatives and managed high-throughput REST API pipelines.",
+            "Engineered bulk data synchronization systems for large-scale datasets with 100% accuracy.",
+            "Managed agentic AI workflows, deployment pipelines, load balancing, and proxy architectures."
         ],
         skills: ["FastAPI", "VAPI SDK", "OpenAI SDK", "LiveKit", "Dapr", "Docker", "Next.js", "Redis"],
         metrics: [
@@ -79,6 +81,7 @@ export const jobs: Job[] = [
         description: "Gained intensive practical experience in API connectivity and enterprise-level frontend development. Focused on backend integration and responsive user interfaces.",
         achievements: [
             "Gained intensive practical experience in API connectivity and enterprise-level frontend development.",
+            "Troubleshot complex REST API errors, verification hurdles, and data conflicts during large-scale integrations.",
             "Focused on backend integration and responsive user interfaces."
         ],
         skills: ["Next.js", "TailwindCSS", "HTML5"],

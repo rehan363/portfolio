@@ -60,6 +60,11 @@ const technologies: Technology[] = [
     { id: 'mcp', name: 'MCP', icon: FaProjectDiagram, color: '#8B5CF6', category: 'ai', proficiency: 75, proficiencyLevel: 'Advanced', yearsExperience: 0.5, startDate: '2025-06', relatedTechs: ['openai'] },
     { id: 'livekit', name: 'LiveKit', icon: HiCube, color: '#07B0CE', category: 'ai', proficiency: 70, proficiencyLevel: 'Intermediate', yearsExperience: 0.5, startDate: '2025-07', relatedTechs: ['openai'] },
     { id: 'vapi', name: 'VAPI SDK', icon: TbBrandOpenai, color: '#6366F1', category: 'ai', proficiency: 75, proficiencyLevel: 'Advanced', yearsExperience: 0.5, startDate: '2025-07', relatedTechs: ['openai', 'livekit'] },
+
+    // New Technical Specializations
+    { id: 'bulk-sync', name: 'Bulk Data Sync', icon: HiCube, color: '#FFD700', category: 'infra', proficiency: 85, proficiencyLevel: 'Advanced', yearsExperience: 1.5, startDate: '2024-01', relatedTechs: ['fastapi', 'postgresql'], featured: true },
+    { id: 'api-opt', name: 'REST API Optimization', icon: SiFastapi, color: '#00BFFF', category: 'backend', proficiency: 90, proficiencyLevel: 'Expert', yearsExperience: 2.0, startDate: '2023-08', relatedTechs: ['fastapi', 'python'], featured: true },
+    { id: 'aggregator', name: 'Aggregator Coordination', icon: FaProjectDiagram, color: '#ADFF2F', category: 'backend', proficiency: 80, proficiencyLevel: 'Advanced', yearsExperience: 1.0, startDate: '2024-06', relatedTechs: ['bulk-sync'] },
 ];
 
 const categories = {
