@@ -14,23 +14,23 @@ interface ExperienceItem {
 export default function ExperienceCard({ item, index }: { item: ExperienceItem, index: number }) {
     return (
         <TiltCard className="w-full" intensity={10}>
-            <div className="relative bg-[#0A0A0A]/80 backdrop-blur-md border border-white/5 p-8 rounded-xl overflow-hidden group hover:border-[#D10000]/30 transition-colors duration-500">
+            <div className="relative bg-[#0A0A0A]/80 backdrop-blur-md border border-white/5 p-8 rounded-xl overflow-hidden group hover:border-[#4A70A9]/30 transition-colors duration-500">
 
                 {/* HUD Elements - Corners */}
-                <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/20 group-hover:border-[#D10000]/50 transition-colors" />
-                <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-white/20 group-hover:border-[#D10000]/50 transition-colors" />
-                <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/20 group-hover:border-[#D10000]/50 transition-colors" />
-                <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/20 group-hover:border-[#D10000]/50 transition-colors" />
+                <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/20 group-hover:border-[#4A70A9]/50 transition-colors" />
+                <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-white/20 group-hover:border-[#4A70A9]/50 transition-colors" />
+                <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/20 group-hover:border-[#4A70A9]/50 transition-colors" />
+                <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/20 group-hover:border-[#4A70A9]/50 transition-colors" />
 
                 {/* Background Gradient Hint */}
-                <div className="absolute right-0 top-0 w-64 h-64 bg-[#D10000] rounded-full filter blur-[100px] opacity-0 group-hover:opacity-5 transition-opacity duration-700 pointer-events-none" />
+                <div className="absolute right-0 top-0 w-64 h-64 bg-[#4A70A9] rounded-full filter blur-[100px] opacity-0 group-hover:opacity-5 transition-opacity duration-700 pointer-events-none" />
 
                 {/* Header Content */}
                 <div className="relative z-10 flex flex-col md:flex-row md:items-baseline justify-between mb-8 pb-6 border-b border-white/5">
                     <div>
-                        <h3 className="text-4xl font-bebas text-white mb-2 group-hover:text-[#D10000] transition-colors duration-300 tracking-wide">{item.role}</h3>
+                        <h3 className="text-4xl font-bebas text-white mb-2 group-hover:text-[#4A70A9] transition-colors duration-300 tracking-wide">{item.role}</h3>
                         <div className="flex items-center gap-3">
-                            <span className="text-sm font-mono text-[#D10000] tracking-widest uppercase">
+                            <span className="text-sm font-mono text-[#4A70A9] tracking-widest uppercase">
                                 {item.company}
                             </span>
                             <span className="w-1 h-1 bg-gray-600 rounded-full"></span>

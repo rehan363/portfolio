@@ -37,15 +37,15 @@ export default function PhaseCard({
             transition={{ duration: 0.5 }}
         >
             {/* Corner Markers */}
-            <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-[#D10000] opacity-50 group-hover:opacity-100 transition-opacity" />
-            <div className="absolute -top-1 -right-1 w-4 h-4 border-t-2 border-r-2 border-[#D10000] opacity-50 group-hover:opacity-100 transition-opacity" />
-            <div className="absolute -bottom-1 -left-1 w-4 h-4 border-b-2 border-l-2 border-[#D10000] opacity-50 group-hover:opacity-100 transition-opacity" />
-            <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-[#D10000] opacity-50 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-[#4A70A9] opacity-50 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute -top-1 -right-1 w-4 h-4 border-t-2 border-r-2 border-[#4A70A9] opacity-50 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute -bottom-1 -left-1 w-4 h-4 border-b-2 border-l-2 border-[#4A70A9] opacity-50 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-[#4A70A9] opacity-50 group-hover:opacity-100 transition-opacity" />
 
             <motion.div
                 layout
                 className={`relative overflow-hidden bg-[#0A0A0A] border transition-all duration-500 ${isActive
-                        ? 'border-[#D10000] p-8'
+                        ? 'border-[#4A70A9] p-8'
                         : 'border-white/10 p-6 hover:border-white/30'
                     }`}
             >
@@ -57,7 +57,7 @@ export default function PhaseCard({
                 {/* Header */}
                 <div className="relative z-10">
                     <div className="flex items-center gap-3 mb-4">
-                        <span className="text-[10px] font-mono text-[#D10000] tracking-widest border border-[#D10000]/30 px-2 py-1">
+                        <span className="text-[10px] font-mono text-[#4A70A9] tracking-widest border border-[#4A70A9]/30 px-2 py-1">
                             {phase}
                         </span>
                         <span className="text-[10px] font-mono text-gray-600">
@@ -65,7 +65,7 @@ export default function PhaseCard({
                         </span>
                     </div>
 
-                    <h3 className="text-3xl font-bebas text-white mb-2 group-hover:text-[#D10000] transition-colors">
+                    <h3 className="text-3xl font-bebas text-white mb-2 group-hover:text-[#4A70A9] transition-colors">
                         {title}
                     </h3>
                     <p className="text-sm text-gray-500 font-mono uppercase tracking-wider mb-4">
@@ -94,7 +94,7 @@ export default function PhaseCard({
                             transition={{ duration: 0.4 }}
                             className="relative z-10"
                         >
-                            <p className="text-gray-300 leading-relaxed mb-8 border-l-2 border-[#D10000] pl-4">
+                            <p className="text-gray-300 leading-relaxed mb-8 border-l-2 border-[#4A70A9] pl-4">
                                 {description}
                             </p>
 
@@ -112,7 +112,7 @@ export default function PhaseCard({
                                             transition={{ delay: i * 0.1 }}
                                             className="flex items-start gap-3 text-sm text-gray-400"
                                         >
-                                            <span className="w-1.5 h-1.5 bg-[#D10000] rounded-full mt-2 flex-shrink-0" />
+                                            <span className="w-1.5 h-1.5 bg-[#4A70A9] rounded-full mt-2 flex-shrink-0" />
                                             {detail}
                                         </motion.li>
                                     ))}
@@ -143,10 +143,10 @@ export default function PhaseCard({
                             <div className="flex items-center justify-between pt-6 border-t border-white/10">
                                 <div>
                                     <span className="text-[10px] font-mono text-gray-600 block mb-1">OUTPUT</span>
-                                    <span className="text-sm font-mono text-[#D10000]">{output}</span>
+                                    <span className="text-sm font-mono text-[#4A70A9]">{output}</span>
                                 </div>
-                                <div className="w-8 h-8 border border-[#D10000] flex items-center justify-center group-hover:bg-[#D10000] transition-colors">
-                                    <span className="text-[#D10000] group-hover:text-white text-lg">→</span>
+                                <div className="w-8 h-8 border border-[#4A70A9] flex items-center justify-center group-hover:bg-[#4A70A9] transition-colors">
+                                    <span className="text-[#4A70A9] group-hover:text-white text-lg">→</span>
                                 </div>
                             </div>
                         </motion.div>
@@ -157,7 +157,7 @@ export default function PhaseCard({
                 {!isActive && (
                     <div className="absolute bottom-4 right-4 flex items-center gap-2 text-[10px] font-mono text-gray-600">
                         <span>EXPAND</span>
-                        <span className="text-[#D10000]">+</span>
+                        <span className="text-[#4A70A9]">+</span>
                     </div>
                 )}
             </motion.div>

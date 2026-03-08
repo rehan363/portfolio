@@ -39,7 +39,7 @@ export default function MethodologySection() {
             <div className="max-w-5xl mx-auto">
                 <div className="mb-20 text-center">
                     <h2 className="text-5xl md:text-7xl font-bebas text-white mb-4">
-                        PROBLEM SOLVING <span className="text-[#D10000]">MATRIX</span>
+                        PROBLEM SOLVING <span className="text-[#4A70A9]">MATRIX</span>
                     </h2>
                     <p className="text-gray-500 font-mono text-xs tracking-widest uppercase">
                         {"// EXECUTION_ALGORITHM"}
@@ -57,7 +57,7 @@ export default function MethodologySection() {
                                 {/* Content Block */}
                                 <div className="flex-1 w-full text-left md:text-right group-even:text-left">
                                     <div className={`flex flex-col ${index % 2 === 0 ? 'md:items-start' : 'md:items-end'}`}>
-                                        <div className="text-[10px] font-mono text-[#D10000] mb-2 tracking-widest uppercase border border-[#D10000]/20 px-2 py-1 inline-block">
+                                        <div className="text-[10px] font-mono text-[#4A70A9] mb-2 tracking-widest uppercase border border-[#4A70A9]/20 px-2 py-1 inline-block">
                                             {step.phase}
                                         </div>
                                         <h3 className="text-3xl font-bebas text-white mb-3">
@@ -73,7 +73,7 @@ export default function MethodologySection() {
                                 </div>
 
                                 {/* Center Node */}
-                                <div className="relative z-10 flex-shrink-0 w-10 h-10 bg-[#050505] border border-white/20 rounded-full flex items-center justify-center group-hover:border-[#D10000] group-hover:bg-[#D10000] transition-colors duration-500">
+                                <div className="relative z-10 flex-shrink-0 w-10 h-10 bg-[#050505] border border-white/20 rounded-full flex items-center justify-center group-hover:border-[#4A70A9] group-hover:bg-[#4A70A9] transition-colors duration-500">
                                     <span className="text-[10px] font-mono font-bold text-white">
                                         {step.id}
                                     </span>

@@ -14,7 +14,7 @@ export default function ContactPage() {
 
     // Simple copy to clipboard
     const copyEmail = () => {
-        navigator.clipboard.writeText("chaudhrayadam@gmail.com");
+        navigator.clipboard.writeText("rehan007313@gmail.com");
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };
@@ -34,8 +34,8 @@ export default function ContactPage() {
                     className="text-center mb-12 max-w-4xl"
                 >
                     <div className="flex items-center justify-center gap-3 mb-4">
-                        <div className="w-2 h-2 bg-[#D10000] rounded-full animate-pulse" />
-                        <span className="text-xs font-mono text-[#D10000] tracking-[0.3em] uppercase">Secure Uplink Established</span>
+                        <div className="w-2 h-2 bg-[#4A70A9] rounded-full animate-pulse" />
+                        <span className="text-xs font-mono text-[#4A70A9] tracking-[0.3em] uppercase">Secure Uplink Established</span>
                     </div>
                     <h1 className="text-6xl md:text-8xl font-bebas text-white leading-[0.8] mb-6">
                         INITIATE <br /> <span className="opacity-50">TRANSMISSION</span>
@@ -58,11 +58,11 @@ export default function ContactPage() {
                     >
                         {/* Email Node */}
                         <div className="group relative">
-                            <div className="absolute -left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-white/10 to-transparent group-hover:via-[#D10000]/50 transition-all duration-300" />
+                            <div className="absolute -left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-white/10 to-transparent group-hover:via-[#4A70A9]/50 transition-all duration-300" />
                             <h3 className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-2">Direct Frequency</h3>
                             <div className="flex items-center gap-4">
-                                <a href="mailto:chaudhrayadam@gmail.com" className="text-2xl md:text-3xl font-bebas text-white hover:text-[#D10000] transition-colors tracking-wide">
-                                    CHAUDHRAYADAM@GMAIL.COM
+                                <a href="mailto:rehan007313@gmail.com" className="text-2xl md:text-3xl font-bebas text-white hover:text-[#4A70A9] transition-colors tracking-wide">
+                                    REHAN007313@GMAIL.COM
                                 </a>
                                 <button
                                     onClick={copyEmail}
@@ -76,16 +76,16 @@ export default function ContactPage() {
 
                         {/* GitHub Node */}
                         <div className="group relative">
-                            <div className="absolute -left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-white/10 to-transparent group-hover:via-[#D10000]/50 transition-all duration-300" />
+                            <div className="absolute -left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-white/10 to-transparent group-hover:via-[#4A70A9]/50 transition-all duration-300" />
                             <h3 className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-2">Code Repository</h3>
                             <a
-                                href="https://github.com/AdamChoudary"
+                                href="https://github.com/rehan363"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-3 text-2xl md:text-3xl font-bebas text-white hover:text-[#D10000] transition-colors tracking-wide"
+                                className="flex items-center gap-3 text-2xl md:text-3xl font-bebas text-white hover:text-[#4A70A9] transition-colors tracking-wide"
                             >
                                 <FaGithub />
-                                <span>GITHUB.COM/ADAMCHOUDARY</span>
+                                <span>GITHUB.COM/REHAN363</span>
                                 <span className="text-xs font-mono text-gray-600 ml-2 border border-white/10 px-2 py-0.5 rounded">PUBLICACCESS</span>
                             </a>
                         </div>
@@ -107,14 +107,14 @@ export default function ContactPage() {
                             <span>STATUS: READY</span>
                         </div>
 
-                        <form className="space-y-6" action="mailto:chaudhrayadam@gmail.com" method="post" encType="text/plain">
+                        <form className="space-y-6" action="mailto:rehan007313@gmail.com" method="post" encType="text/plain">
                             <div className="space-y-2">
                                 <label className="text-xs font-mono text-gray-500 uppercase">Input // Identity</label>
                                 <input
                                     type="text"
                                     name="identity"
                                     placeholder="DESIGNATION"
-                                    className="w-full bg-[#050505] border border-white/10 text-white p-3 font-mono text-sm focus:border-[#D10000] focus:outline-none transition-colors"
+                                    className="w-full bg-[#050505] border border-white/10 text-white p-3 font-mono text-sm focus:border-[#4A70A9] focus:outline-none transition-colors"
                                 />
                             </div>
                             <div className="space-y-2">
@@ -123,11 +123,11 @@ export default function ContactPage() {
                                     name="payload"
                                     rows={4}
                                     placeholder="TRANSMISSION CONTENT..."
-                                    className="w-full bg-[#050505] border border-white/10 text-white p-3 font-mono text-sm focus:border-[#D10000] focus:outline-none transition-colors resize-none"
+                                    className="w-full bg-[#050505] border border-white/10 text-white p-3 font-mono text-sm focus:border-[#4A70A9] focus:outline-none transition-colors resize-none"
                                 />
                             </div>
 
-                            <button className="w-full bg-white text-black font-bebas text-xl py-3 tracking-widest hover:bg-[#D10000] hover:text-white transition-all duration-300 flex items-center justify-center gap-3">
+                            <button className="w-full bg-white text-black font-bebas text-xl py-3 tracking-widest hover:bg-[#4A70A9] hover:text-white transition-all duration-300 flex items-center justify-center gap-3">
                                 <FaPaperPlane className="text-sm" />
                                 <span>TRANSMIT PAYLOAD</span>
                             </button>

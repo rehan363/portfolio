@@ -31,31 +31,7 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-    // 1. OUIIMI
-    {
-        id: "PRJ-01",
-        codename: "OUIIMI_PF",
-        title: "OUIIMI MARKETPLACE",
-        category: "SERVICE_MARKETPLACE",
-        status: "ONLINE",
-        classification: "PRODUCTION // PUBLIC",
-        link: "https://ouiimi.com",
-        tech_stack: ["Next.js 14", "React 18", "MongoDB", "Stripe", "TailwindCSS"],
-        problem: {
-            short: "Inefficient bookings",
-            desc: "Small service businesses struggle with high platform fees (15-30%), no-shows, data drift across map listings, and complex booking management."
-        },
-        solution: {
-            short: "Fair-revenue marketplace",
-            desc: "Full-stack marketplace with 5% revenue split model. Features high-throughput sync engines for bulk listings, 100% data accuracy via API orchestration, and secure Stripe payments."
-        },
-        image: "/ouiimi_portfolio_thumbnail_1768828611462.png",
-        performance: {
-            latency: "<50ms",
-            accuracy: "100%",
-            uptime: "99.9%"
-        }
-    },
+
     // 2. GOCREATION
     {
         id: "PRJ-02",
@@ -79,56 +55,6 @@ export const projects: Project[] = [
             latency: "120ms",
             accuracy: "99.5%",
             uptime: "99.9%"
-        }
-    },
-    // 3. MY EXPAT STAYS
-    {
-        id: "PRJ-03",
-        codename: "EXPAT_STAYS",
-        title: "MY EXPAT STAYS",
-        category: "REAL_ESTATE",
-        status: "ONLINE",
-        classification: "PRODUCTION // PUBLIC",
-        link: "https://myexpatstays.com",
-        tech_stack: ["Next.js", "PostgreSQL", "Google Maps API", "Vercel"],
-        problem: {
-            short: "Trust & Quality",
-            desc: "Overseas Pakistanis struggle to find trusted, premium vetted accommodation that meets international standards when visiting or relocating back home."
-        },
-        solution: {
-            short: "Premium Vetted Housing",
-            desc: "Curated marketplace for luxury short-term rentals. Features automated data syndication via location aggregators (Yext, Uberall) to ensure verified, high-precision listings."
-        },
-        image: "/projects/expatstays.png",
-        performance: {
-            latency: "85ms",
-            accuracy: "N/A",
-            uptime: "99.9%"
-        }
-    },
-    // 4. THE GOLDEN CHARIOT
-    {
-        id: "PRJ-04",
-        codename: "GOLDEN_CHARIOT",
-        title: "THE GOLDEN CHARIOT",
-        category: "LUXURY_EVENT",
-        status: "ONLINE",
-        classification: "PRODUCTION // PUBLIC",
-        link: "https://thegoldenchariot.com",
-        tech_stack: ["Next.js", "Framer Motion", "Resend", "TailwindCSS"],
-        problem: {
-            short: "Digital Presence",
-            desc: "A luxury wedding venue required a digital presence that matched its physical grandeur, capable of handling high-volume inquiries and visual showcases."
-        },
-        solution: {
-            short: "Immersive Venue Experience",
-            desc: "High-performance website featuring cinematic visual storytelling, automated inquiry routing, and SEO optimization for event keywords."
-        },
-        image: "/projects/goldenchariot.png",
-        performance: {
-            latency: "60ms",
-            accuracy: "100%",
-            uptime: "99.99%"
         }
     },
     // 5. JORDAN VOICE AGENT

@@ -20,12 +20,12 @@
     --bg-void: #050505;
     --fg-cinema: #E0E0E0;
     --fg-muted: #525252;
-    --acc-red: #D10000;
+    --acc-red: #4A70A9;
 
     --color-bg: var(--bg-void);
     --color-surface: #0A0A0A;
     --color-accent: var(--acc-red);
-    --color-accent-dark: #8B0000;
+    --color-accent-dark: #283C5A;
     --color-text-primary: var(--fg-cinema);
     --color-text-secondary: #A1A1A1;
     --color-text-muted: var(--fg-muted);
@@ -228,7 +228,7 @@ body {
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .text-gradient-red {
-  background: linear-gradient(180deg, #D10000 0%, #8B0000 100%);
+  background: linear-gradient(180deg, #4A70A9 0%, #283C5A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

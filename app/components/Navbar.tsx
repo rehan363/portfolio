@@ -44,7 +44,7 @@ export default function Navbar() {
 
     const navLinks = [
         { name: "EXPERIENCE", href: "/experience", code: "01" },
-        { name: "ARSENAL", href: "/skills", code: "02" },
+        { name: "TOOLBOX", href: "/skills", code: "02" },
         { name: "WORK", href: "/projects", code: "03" },
         { name: "PROCESS", href: "/process", code: "04" },
         { name: "RESUME", href: "/resume", code: "05" },
@@ -70,14 +70,14 @@ export default function Navbar() {
                             <div className="flex items-center gap-6">
                                 <Link href="/" className="group flex items-center gap-4" onClick={() => setIsMobileMenuOpen(false)}>
                                     <div className="relative">
-                                        <div className="absolute -inset-2 bg-[#D10000]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                        <div className="absolute -inset-2 bg-[#4A70A9]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                         <motion.div
-                                            className="absolute -inset-1.5 border border-[#D10000]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                            className="absolute -inset-1.5 border border-[#4A70A9]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                             animate={{ rotate: 360 }}
                                             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                                         />
-                                        <div className="relative w-11 h-11 bg-gradient-to-br from-[#D10000] to-[#8a0000] flex items-center justify-center overflow-hidden group-hover:shadow-[0_0_20px_rgba(209,0,0,0.4)] transition-all duration-300">
-                                            <span className="font-bebas text-white text-2xl relative z-10 group-hover:scale-110 transition-transform duration-300">M</span>
+                                        <div className="relative w-11 h-11 bg-gradient-to-br from-[#4A70A9] to-[#283C5A] flex items-center justify-center overflow-hidden group-hover:shadow-[0_0_20px_rgba(131,197,190,0.4)] transition-all duration-300">
+                                            <span className="font-bebas text-white text-2xl relative z-10 group-hover:scale-110 transition-transform duration-300">R</span>
                                             <motion.div
                                                 className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
                                                 initial={{ x: "-100%" }}
@@ -87,11 +87,11 @@ export default function Navbar() {
                                         </div>
                                     </div>
                                     <div className="hidden sm:block">
-                                        <span className="font-bebas text-xl text-[#E0E0E0] tracking-[0.15em] group-hover:text-[#D10000] transition-colors duration-300">
-                                            MUHAMMAD
+                                        <span className="font-bebas text-xl text-[#E0E0E0] tracking-[0.15em] group-hover:text-[#4A70A9] transition-colors duration-300">
+                                            REHAN
                                         </span>
                                         <div className="text-[8px] font-mono text-gray-500 tracking-[0.3em] uppercase">
-                                            Full Stack Engineer
+                                            Full Stack AI Developer
                                         </div>
                                     </div>
                                 </Link>
@@ -117,7 +117,7 @@ export default function Navbar() {
                                             href={link.href}
                                             className="group relative px-5 py-3 transition-colors"
                                         >
-                                            <div className="absolute inset-0 bg-[#D10000] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                            <div className="absolute inset-0 bg-[#4A70A9] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                             <div className="relative flex items-center gap-2">
                                                 <span className="text-[9px] font-mono text-gray-600 group-hover:text-white/50 transition-colors">
                                                     {link.code}
@@ -127,7 +127,7 @@ export default function Navbar() {
                                                 </span>
                                             </div>
                                             <motion.div
-                                                className="absolute bottom-0 left-0 right-0 h-px bg-[#D10000] origin-left"
+                                                className="absolute bottom-0 left-0 right-0 h-px bg-[#4A70A9] origin-left"
                                                 initial={{ scaleX: 0 }}
                                                 whileHover={{ scaleX: 1 }}
                                                 transition={{ duration: 0.3 }}
@@ -149,9 +149,9 @@ export default function Navbar() {
 
                                 <Link
                                     href="/contact"
-                                    className="hidden md:flex group relative overflow-hidden px-5 py-2.5 border border-white/20 hover:border-[#D10000] transition-colors"
+                                    className="hidden md:flex group relative overflow-hidden px-5 py-2.5 border border-white/20 hover:border-[#4A70A9] transition-colors"
                                 >
-                                    <div className="absolute inset-0 bg-[#D10000] translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                                    <div className="absolute inset-0 bg-[#4A70A9] translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                                     <span className="relative text-[10px] font-mono text-white tracking-[0.2em]">
                                         CONNECT
                                     </span>
@@ -171,7 +171,7 @@ export default function Navbar() {
                                         />
                                         <motion.span
                                             animate={isMobileMenuOpen ? { opacity: 0, x: -10 } : { opacity: 1, x: 0 }}
-                                            className="w-2/3 h-[2px] bg-[#D10000] transition-all duration-300 self-end"
+                                            className="w-2/3 h-[2px] bg-[#4A70A9] transition-all duration-300 self-end"
                                         />
                                         <motion.span
                                             animate={isMobileMenuOpen ? { rotate: -45, y: -9 } : { rotate: 0, y: 0 }}
@@ -180,8 +180,8 @@ export default function Navbar() {
                                     </div>
 
                                     {/* Corner Accents */}
-                                    <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#D10000] opacity-0 group-hover:opacity-100 transition-opacity" />
-                                    <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-[#D10000] opacity-0 group-hover:opacity-100 transition-opacity" />
+                                    <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#4A70A9] opacity-0 group-hover:opacity-100 transition-opacity" />
+                                    <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-[#4A70A9] opacity-0 group-hover:opacity-100 transition-opacity" />
                                 </button>
                             </div>
                         </div>
@@ -201,7 +201,7 @@ export default function Navbar() {
                     >
                         {/* Background Decoration */}
                         <div className="absolute inset-0 pointer-events-none">
-                            <div className="absolute top-0 right-0 w-[80vw] h-[80vw] bg-[#D10000]/5 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2" />
+                            <div className="absolute top-0 right-0 w-[80vw] h-[80vw] bg-[#4A70A9]/5 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2" />
                             <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
                         </div>
 
@@ -220,13 +220,13 @@ export default function Navbar() {
                                         className="flex items-center justify-between py-6 border-b border-white/5 group active:bg-white/5 transition-colors"
                                     >
                                         <div className="flex items-center gap-4">
-                                            <span className="text-xs font-mono text-[#D10000]/60">{link.code}</span>
+                                            <span className="text-xs font-mono text-[#4A70A9]/60">{link.code}</span>
                                             <span className="text-3xl font-bebas text-[#E0E0E0] tracking-wider group-hover:text-white group-hover:translate-x-2 transition-all">
                                                 {link.name}
                                             </span>
                                         </div>
                                         <motion.span
-                                            className="text-[#D10000] text-xl opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300"
+                                            className="text-[#4A70A9] text-xl opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300"
                                         >
                                             →
                                         </motion.span>
@@ -244,7 +244,7 @@ export default function Navbar() {
                                 <Link
                                     href="/contact"
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className="flex items-center justify-center w-full py-5 bg-[#D10000] text-white font-mono text-sm tracking-[0.2em] hover:bg-[#b00000] transition-colors"
+                                    className="flex items-center justify-center w-full py-5 bg-[#4A70A9] text-white font-mono text-sm tracking-[0.2em] hover:bg-[#283C5A] transition-colors"
                                 >
                                     START A PROJECT
                                 </Link>

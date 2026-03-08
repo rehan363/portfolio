@@ -34,7 +34,7 @@ export default function SynapticPath({ start, end, isActive, delay = 0 }: Synapt
                     <motion.path
                         d={pathD}
                         fill="none"
-                        stroke="#D10000"
+                        stroke="#4A70A9"
                         strokeWidth={6}
                         strokeLinecap="round"
                         strokeOpacity={0.2}
@@ -46,7 +46,7 @@ export default function SynapticPath({ start, end, isActive, delay = 0 }: Synapt
                     <motion.path
                         d={pathD}
                         fill="none"
-                        stroke="#D10000"
+                        stroke="#4A70A9"
                         strokeWidth={2}
                         strokeLinecap="round"
                         initial={{ pathLength: 0, opacity: 0 }}
@@ -59,7 +59,7 @@ export default function SynapticPath({ start, end, isActive, delay = 0 }: Synapt
             {/* Traveling Pulse - Data packet visualization */}
             <motion.circle
                 r={3}
-                fill="#D10000"
+                fill="#4A70A9"
                 initial={{ opacity: 0 }}
                 animate={isActive ? {
                     opacity: [0, 1, 1, 0],

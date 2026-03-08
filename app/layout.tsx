@@ -22,24 +22,24 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Adam | Full Stack Engineer & Solution Architect",
-  description: "Portfolio of Muhammad Adam - A Full Stack Engineer and Solution Architect specializing in AI-powered solutions, scalable architectures, and modern web technologies.",
-  applicationName: "Muhammad Adam Portfolio",
-  authors: [{ name: "Muhammad Adam", url: "https://github.com/AdamChoudary" }],
-  keywords: ["Full Stack Engineer", "Solution Architect", "AI Developer", "Next.js", "Python", "FastAPI", "React", "TypeScript", "Islamabad", "Pakistan"],
-  creator: "Muhammad Adam",
+  title: "REHAN AHMED | Full Stack AI Developer & Agentic AI Specialist",
+  description: "Portfolio of REHAN AHMED - A Full Stack AI Developer and Agentic AI Specialist specializing in AI Driven software solutions, scalable architectures, and modern web technologies.",
+  applicationName: "REHAN AHMED Portfolio",
+  authors: [{ name: "REHAN AHMED", url: "https://github.com/rehan363" }],
+  keywords: ["Full Stack AI Developer", "Agentic AI Specialist", "AI Developer", "Next.js", "Python", "FastAPI", "React", "TypeScript", "Islamabad", "Pakistan"],
+  creator: "REHAN AHMED",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://your-portfolio-url.com", // TODO: Update with actual URL
-    title: "Muhammad Adam | Full Stack Engineer",
-    description: "Building AI-powered solutions and scalable architectures.",
-    siteName: "Muhammad Adam Portfolio",
+    title: "REHAN AHMED | Full Stack AI Developer",
+    description: "Building AI Driven software solutions and scalable architectures.",
+    siteName: "REHAN AHMED Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Adam | Full Stack Engineer",
-    description: "Building AI-powered solutions and scalable architectures.",
+    title: "REHAN AHMED | Full Stack AI Developer",
+    description: "Building AI Driven software solutions and scalable architectures.",
     creator: "@yourhandle", // TODO: Update if available
   },
   robots: {

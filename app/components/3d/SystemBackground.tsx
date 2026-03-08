@@ -34,7 +34,7 @@ function Meteor({ speed = 1, ...props }: any) {
     return (
         <mesh ref={mesh} {...props}>
             <sphereGeometry args={[0.005, 8, 8]} />
-            <meshBasicMaterial color="#D10000" opacity={0.5} transparent />
+            <meshBasicMaterial color="#4A70A9" opacity={0.5} transparent />
         </mesh>
     );
 }

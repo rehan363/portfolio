@@ -36,7 +36,7 @@ export default function ContentPanel({ phase, onClose }: ContentPanelProps) {
                     {/* Top Bar */}
                     <div className="flex items-center justify-between px-8 py-4 border-b border-white/5">
                         <div className="flex items-center gap-4">
-                            <span className="text-[#D10000] font-mono text-xs tracking-[0.3em]">
+                            <span className="text-[#4A70A9] font-mono text-xs tracking-[0.3em]">
                                 PHASE_0{phase.id}
                             </span>
                             <span className="h-4 w-px bg-white/10" />
@@ -75,7 +75,7 @@ export default function ContentPanel({ phase, onClose }: ContentPanelProps) {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.2, duration: 0.5 }}
-                            className="text-gray-300 text-lg leading-relaxed mb-12 border-l-2 border-[#D10000] pl-6"
+                            className="text-gray-300 text-lg leading-relaxed mb-12 border-l-2 border-[#4A70A9] pl-6"
                         >
                             {phase.description}
                         </motion.p>
@@ -90,7 +90,7 @@ export default function ContentPanel({ phase, onClose }: ContentPanelProps) {
                                 transition={{ delay: 0.3, duration: 0.5 }}
                             >
                                 <h3 className="text-[10px] font-mono text-gray-600 tracking-[0.3em] mb-6 flex items-center gap-3">
-                                    <span className="w-6 h-px bg-[#D10000]" />
+                                    <span className="w-6 h-px bg-[#4A70A9]" />
                                     KEY ACTIVITIES
                                 </h3>
                                 <ul className="space-y-4">
@@ -102,7 +102,7 @@ export default function ContentPanel({ phase, onClose }: ContentPanelProps) {
                                             transition={{ delay: 0.4 + i * 0.1, duration: 0.4 }}
                                             className="flex items-start gap-3 text-sm text-gray-400"
                                         >
-                                            <span className="w-1.5 h-1.5 bg-[#D10000] rounded-full mt-2 flex-shrink-0" />
+                                            <span className="w-1.5 h-1.5 bg-[#4A70A9] rounded-full mt-2 flex-shrink-0" />
                                             <span>{detail}</span>
                                         </motion.li>
                                     ))}
@@ -129,7 +129,7 @@ export default function ContentPanel({ phase, onClose }: ContentPanelProps) {
                                                 initial={{ opacity: 0, scale: 0.8 }}
                                                 animate={{ opacity: 1, scale: 1 }}
                                                 transition={{ delay: 0.5 + i * 0.05, duration: 0.3 }}
-                                                className="text-xs font-mono text-gray-300 bg-white/5 border border-white/10 px-3 py-1.5 hover:border-[#D10000]/50 transition-colors"
+                                                className="text-xs font-mono text-gray-300 bg-white/5 border border-white/10 px-3 py-1.5 hover:border-[#4A70A9]/50 transition-colors"
                                             >
                                                 {tool}
                                             </motion.span>
@@ -142,7 +142,7 @@ export default function ContentPanel({ phase, onClose }: ContentPanelProps) {
                                     <h3 className="text-[10px] font-mono text-gray-600 tracking-[0.3em] mb-3">
                                         DELIVERABLE
                                     </h3>
-                                    <p className="text-[#D10000] font-mono text-sm">
+                                    <p className="text-[#4A70A9] font-mono text-sm">
                                         {phase.output}
                                     </p>
                                 </div>
@@ -158,7 +158,7 @@ export default function ContentPanel({ phase, onClose }: ContentPanelProps) {
 
                     {/* Bottom Progress Bar */}
                     <motion.div
-                        className="h-1 bg-[#D10000]"
+                        className="h-1 bg-[#4A70A9]"
                         initial={{ scaleX: 0 }}
                         animate={{ scaleX: 1 }}
                         transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}

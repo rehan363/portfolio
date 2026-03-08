@@ -270,7 +270,7 @@ function ChromaticText({ text }: { text: string }) {
     return (
         <span className="relative inline-block group/text cursor-default">
             <span className="relative z-10">{text}</span>
-            <span className="absolute top-0 left-0 -z-10 text-red-500 opacity-0 group-hover/text:opacity-70 group-hover/text:-translate-x-0.5 transition-all duration-300 mix-blend-screen px-[0.05em]">{text}</span>
+            <span className="absolute top-0 left-0 -z-10 text-teal-500 opacity-0 group-hover/text:opacity-70 group-hover/text:-translate-x-0.5 transition-all duration-300 mix-blend-screen px-[0.05em]">{text}</span>
             <span className="absolute top-0 left-0 -z-10 text-cyan-500 opacity-0 group-hover/text:opacity-70 group-hover/text:translate-x-0.5 transition-all duration-300 mix-blend-screen px-[0.05em]">{text}</span>
         </span>
     );

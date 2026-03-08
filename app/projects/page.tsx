@@ -23,7 +23,7 @@ export default function ProjectsPage() {
         : projects.filter(p => p.category === activeFilter);
 
     return (
-        <main className="relative min-h-screen bg-[#050505] text-white selection:bg-[#D10000] selection:text-white font-sans">
+        <main className="relative min-h-screen bg-[#050505] text-white selection:bg-[#4A70A9] selection:text-white font-sans">
 
             {/* 1. LAYER: BACKGROUND */}
             {/* 1. LAYER: BACKGROUND - Moved to layout.tsx */}
@@ -64,7 +64,7 @@ export default function ProjectsPage() {
                                         key={cat.id}
                                         onClick={() => setActiveFilter(cat.id)}
                                         className={`text-xs font-mono tracking-widest uppercase transition-colors duration-300
-                                            ${activeFilter === cat.id ? 'text-[#D10000] underline underline-offset-4 decoration-[#D10000]' : 'text-zinc-600 hover:text-zinc-300'}
+                                            ${activeFilter === cat.id ? 'text-[#4A70A9] underline underline-offset-4 decoration-[#4A70A9]' : 'text-zinc-600 hover:text-zinc-300'}
                                         `}
                                     >
                                         [{cat.label}]

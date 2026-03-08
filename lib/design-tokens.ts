@@ -101,9 +101,9 @@ export const designTokens = {
     // ═══════════════════════════════════════════════════════════
     colors: {
         // Primary
-        accent: '#D10000',
-        accentDark: '#8B0000',
-        accentGlow: 'rgba(209, 0, 0, 0.2)',
+        accent: '#4A70A9',
+        accentDark: '#283C5A',
+        accentGlow: 'rgba(74, 112, 169, 0.2)',
 
         // Neutrals
         black: '#030303',

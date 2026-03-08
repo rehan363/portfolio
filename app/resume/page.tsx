@@ -18,7 +18,7 @@ export default function ResumePage() {
                 </Link>
                 <button
                     onClick={handlePrint}
-                    className="flex items-center gap-2 px-4 py-2 bg-[#D10000] text-white rounded-sm hover:bg-[#a00000] transition-colors font-mono uppercase tracking-wider text-sm"
+                    className="flex items-center gap-2 px-4 py-2 bg-[#4A70A9] text-white rounded-sm hover:bg-[#a00000] transition-colors font-mono uppercase tracking-wider text-sm"
                 >
                     <FaPrint /> Print / Save PDF
                 </button>
@@ -30,8 +30,8 @@ export default function ResumePage() {
                 {/* Header / Hero */}
                 <header className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between px-6 py-6 md:px-10 md:py-8 border-b border-gray-300 bg-[#EAE8E6] text-center md:text-left gap-6 md:gap-0">
                     <div className="flex-1 md:pr-6 md:pt-2">
-                        <h1 className="text-4xl md:text-5xl font-bebas tracking-wide text-[#000000] mb-2 md:mb-1 leading-none">MUHAMMAD ADAM</h1>
-                        <p className="text-[#D10000] font-mono tracking-[0.2em] uppercase text-xs mb-4 md:mb-3 font-bold">Full Stack Engineer & Solution Architect</p>
+                        <h1 className="text-4xl md:text-5xl font-bebas tracking-wide text-[#000000] mb-2 md:mb-1 leading-none">REHAN AHMED</h1>
+                        <p className="text-[#4A70A9] font-mono tracking-[0.2em] uppercase text-xs mb-4 md:mb-3 font-bold">Full Stack AI Developer & Agentic AI Specialist</p>
                         <p className="text-gray-700 text-xs leading-relaxed max-w-xl font-medium text-justify md:text-justify mx-auto md:mx-0">
                             Results-driven Engineer specializing in scalable AI architectures and full-stack systems. Expert in constructing agentic workflows and production-grade applications using Next.js and Python. Committed to clean code, high-performance computing, and cloud-native solutions.
                         </p>
@@ -40,7 +40,7 @@ export default function ResumePage() {
                     <div className="w-24 h-24 md:w-28 md:h-28 relative shrink-0 rounded-full overflow-hidden border-[3px] border-white shadow-md">
                         <Image
                             src="/me.png"
-                            alt="Muhammad Adam"
+                            alt="REHAN AHMED"
                             fill
                             className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
                         />
@@ -52,22 +52,22 @@ export default function ResumePage() {
                     <aside className="bg-[#EAE8E6] p-6 space-y-8 border-b md:border-b-0 md:border-r border-gray-300 h-auto md:h-full">
                         {/* Contact */}
                         <section>
-                            <h3 className="text-base font-bebas text-[#000000] border-b-2 border-[#D10000] pb-1 mb-3">Contact</h3>
+                            <h3 className="text-base font-bebas text-[#000000] border-b-2 border-[#4A70A9] pb-1 mb-3">Contact</h3>
                             <div className="space-y-2.5 text-xs text-gray-800 font-medium">
-                                <a href="tel:+923038705165" className="flex items-center gap-2 hover:text-[#D10000] transition-colors">
-                                    <FaPhone className="text-[#D10000] shrink-0" />
-                                    <span>+92 303 8705165</span>
+                                <a href="tel:+923360007313" className="flex items-center gap-2 hover:text-[#4A70A9] transition-colors">
+                                    <FaPhone className="text-[#4A70A9] shrink-0" />
+                                    <span>+92 336 0007313</span>
                                 </a>
-                                <a href="mailto:chaudhrayadam@gmail.com" className="flex items-center gap-2 hover:text-[#D10000] transition-colors">
-                                    <FaEnvelope className="text-[#D10000] shrink-0" />
-                                    <span className="truncate">chaudhrayadam@gmail.com</span>
+                                <a href="mailto:rehan007313@gmail.com" className="flex items-center gap-2 hover:text-[#4A70A9] transition-colors">
+                                    <FaEnvelope className="text-[#4A70A9] shrink-0" />
+                                    <span className="truncate">rehan007313@gmail.com</span>
                                 </a>
-                                <a href="https://github.com/AdamChoudary" className="flex items-center gap-2 hover:text-[#D10000] transition-colors">
-                                    <FaGithub className="text-[#D10000] shrink-0" />
-                                    <span>AdamChoudary</span>
+                                <a href="https://github.com/rehan363" className="flex items-center gap-2 hover:text-[#4A70A9] transition-colors">
+                                    <FaGithub className="text-[#4A70A9] shrink-0" />
+                                    <span>rehan363</span>
                                 </a>
                                 <div className="flex items-center gap-2">
-                                    <FaMapMarkerAlt className="text-[#D10000] shrink-0" />
+                                    <FaMapMarkerAlt className="text-[#4A70A9] shrink-0" />
                                     <span>Islamabad, Pakistan</span>
                                 </div>
                             </div>
@@ -75,10 +75,10 @@ export default function ResumePage() {
 
                         {/* Education */}
                         <section>
-                            <h3 className="text-base font-bebas text-[#000000] border-b-2 border-[#D10000] pb-1 mb-3">Education</h3>
+                            <h3 className="text-base font-bebas text-[#000000] border-b-2 border-[#4A70A9] pb-1 mb-3">Education</h3>
                             <div>
                                 <div className="text-[#000000] font-bold text-xs">AI Engineering Diploma</div>
-                                <div className="text-[#D10000] text-[10px] font-mono mb-0.5 font-bold">PIAIC (Air University)</div>
+                                <div className="text-[#4A70A9] text-[10px] font-mono mb-0.5 font-bold">PIAIC (Air University)</div>
                                 <div className="text-gray-600 text-[10px] font-semibold">2023 — Present</div>
                                 <p className="text-[10px] text-gray-600 mt-1 leading-tight">Generative AI, Cloud Native Computing & Agentic Systems.</p>
                             </div>
@@ -86,9 +86,9 @@ export default function ResumePage() {
 
                         {/* Skills */}
                         <section>
-                            <h3 className="text-base font-bebas text-[#000000] border-b-2 border-[#D10000] pb-1 mb-3">Technical Arsenal</h3>
+                            <h3 className="text-base font-bebas text-[#000000] border-b-2 border-[#4A70A9] pb-1 mb-3">Technical Toolbox</h3>
                             <div className="flex flex-wrap gap-1.5">
-                                {["Python", "TypeScript", "Next.js", "FastAPI", "Django", "OpenAI Agents SDK", "LiveKit Voice Agents", "LangChain", "Docker", "CI/CD workflows", "Fly.io", "MongoDB", "PostgreSQL", "React", "Redis", "VAPI", "TailwindCSS"].map(tech => (
+                                {["Python", "TypeScript", "Next.js", "FastAPI", "Django", "OpenAI Agents SDK", "Google AI SDK", "Claude Code", "Gemini CLI", "LiveKit Voice Agents", "LangChain", "Docker", "CI/CD Workflows", "Kubernetes", "Fly.io", "Vercel", "MongoDB", "PostgreSQL", "React", "Redis", "VAPI", "TailwindCSS"].map(tech => (
                                     <span key={tech} className="px-1.5 py-0.5 bg-white border border-gray-300 text-[10px] text-gray-800 rounded-sm font-semibold shadow-sm">
                                         {tech}
                                     </span>
@@ -98,7 +98,7 @@ export default function ResumePage() {
 
                         {/* Languages */}
                         <section>
-                            <h3 className="text-base font-bebas text-[#000000] border-b-2 border-[#D10000] pb-1 mb-3">Languages</h3>
+                            <h3 className="text-base font-bebas text-[#000000] border-b-2 border-[#4A70A9] pb-1 mb-3">Languages</h3>
                             <div className="space-y-1.5 text-xs text-gray-800 font-medium">
                                 <div className="flex justify-between border-b border-gray-300 pb-0.5">
                                     <span>English</span>
@@ -117,19 +117,19 @@ export default function ResumePage() {
                         {/* Experience */}
                         <section>
                             <h2 className="text-xl font-bebas text-[#000000] mb-4 flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 bg-[#D10000] rounded-full"></span>
+                                <span className="w-1.5 h-1.5 bg-[#4A70A9] rounded-full"></span>
                                 PROFESSIONAL EXPERIENCE
                             </h2>
 
                             <div className="space-y-5 border-l-2 border-gray-300 ml-1 pl-5">
                                 {/* Aptive Mind */}
                                 <div className="relative group">
-                                    <div className="absolute -left-[27px] top-1.5 w-2.5 h-2.5 bg-[#D10000] rounded-full border-2 border-[#F3F2F0]"></div>
+                                    <div className="absolute -left-[27px] top-1.5 w-2.5 h-2.5 bg-[#4A70A9] rounded-full border-2 border-[#F3F2F0]"></div>
                                     <div className="flex justify-between items-baseline mb-0.5">
-                                        <h3 className="text-sm font-bold text-[#000000] uppercase">Full Stack Engineer</h3>
+                                        <h3 className="text-sm font-bold text-[#000000] uppercase">Full Stack AI Developer</h3>
                                         <span className="font-mono text-[10px] text-gray-600 font-bold bg-[#Eae8e6] px-1.5 rounded">Nov 2025 — Present</span>
                                     </div>
-                                    <div className="text-[#D10000] text-xs font-bold mb-1 uppercase tracking-wide">Aptive Mind</div>
+                                    <div className="text-[#4A70A9] text-xs font-bold mb-1 uppercase tracking-wide">Aptive Mind</div>
                                     <p className="text-xs text-gray-700 leading-snug font-medium text-justify">
                                         Architecting enterprise-grade full-stack solutions. Integrating Python/FastAPI backends with Next.js frontends to deliver high-performance AI-powered applications.
                                     </p>
@@ -139,39 +139,32 @@ export default function ResumePage() {
                                 <div className="relative group">
                                     <div className="absolute -left-[27px] top-1.5 w-2.5 h-2.5 bg-gray-400 rounded-full border-2 border-[#F3F2F0]"></div>
                                     <div className="flex justify-between items-baseline mb-0.5">
-                                        <h3 className="text-sm font-bold text-[#000000] uppercase">Full Stack Engineer</h3>
+                                        <h3 className="text-sm font-bold text-[#000000] uppercase">Full Stack AI Developer</h3>
                                         <span className="font-mono text-[10px] text-gray-600 font-bold bg-[#Eae8e6] px-1.5 rounded">Jul — Nov 2025</span>
                                     </div>
-                                    <div className="text-[#D10000] text-xs font-bold mb-1 uppercase tracking-wide">Auroxa Tech</div>
+                                    <div className="text-[#4A70A9] text-xs font-bold mb-1 uppercase tracking-wide">Auroxa Tech</div>
                                     <p className="text-xs text-gray-700 leading-snug font-medium text-justify">
                                         Engineered agentic systems using VAPI and OpenAI (Realtime API). Implemented robust deployment pipelines using Docker and Nginx, optimized with Redis caching.
                                     </p>
                                 </div>
-
-                                {/* Dot Escapist */}
-                                <div className="relative group">
-                                    <div className="absolute -left-[27px] top-1.5 w-2.5 h-2.5 bg-gray-400 rounded-full border-2 border-[#F3F2F0]"></div>
-                                    <div className="flex justify-between items-baseline mb-0.5">
-                                        <h3 className="text-sm font-bold text-[#000000] uppercase">Frontend Developer</h3>
-                                        <span className="font-mono text-[10px] text-gray-600 font-bold bg-[#Eae8e6] px-1.5 rounded">Aug 2024 — Jun 2025</span>
-                                    </div>
-                                    <div className="text-[#D10000] text-xs font-bold mb-1 uppercase tracking-wide">Dot Escapist</div>
-                                    <p className="text-xs text-gray-700 leading-snug font-medium text-justify">
-                                        Developed responsive full-stack applications. Streamlined API integration between Django backends and Next.js interfaces, ensuring rigorous type safety and performance.
-                                    </p>
                                 </div>
+                            </div>
+                        </section>
 
-                                {/* Al-Basirr */}
+                        {/* Education */}
+                        <section className="mt-4">
+                            <h2 className="text-xl font-bebas text-[#000000] mb-4 flex items-center gap-2">
+                                <span className="w-1.5 h-1.5 bg-[#4A70A9] rounded-full"></span>
+                                EDUCATION
+                            </h2>
+                            <div className="relative border-l border-gray-300 ml-3 pl-6">
                                 <div className="relative group">
                                     <div className="absolute -left-[27px] top-1.5 w-2.5 h-2.5 bg-gray-400 rounded-full border-2 border-[#F3F2F0]"></div>
                                     <div className="flex justify-between items-baseline mb-0.5">
-                                        <h3 className="text-sm font-bold text-[#000000] uppercase">Frontend Intern</h3>
-                                        <span className="font-mono text-[10px] text-gray-600 font-bold bg-[#Eae8e6] px-1.5 rounded">Jun — Aug 2024</span>
+                                        <h3 className="text-sm font-bold text-[#000000] uppercase">BS in Computer Science</h3>
+                                        <span className="font-mono text-[10px] text-gray-600 font-bold bg-[#Eae8e6] px-1.5 rounded">2023 — 2027</span>
                                     </div>
-                                    <div className="text-[#D10000] text-xs font-bold mb-1 uppercase tracking-wide">Al-Basirr Technologies</div>
-                                    <p className="text-xs text-gray-700 leading-snug font-medium text-justify">
-                                        Optimized frontend architecture for enterprise clients. Handled complex API state management and responsive UI implementation.
-                                    </p>
+                                    <div className="text-[#4A70A9] text-xs font-bold mb-1 uppercase tracking-wide">University of the Punjab</div>
                                 </div>
                             </div>
                         </section>
@@ -179,14 +172,14 @@ export default function ResumePage() {
                         {/* Projects */}
                         <section className="mt-2">
                             <h2 className="text-xl font-bebas text-[#000000] mb-4 flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 bg-[#D10000] rounded-full"></span>
+                                <span className="w-1.5 h-1.5 bg-[#4A70A9] rounded-full"></span>
                                 NOTABLE PROJECTS
                             </h2>
                             <div className="grid grid-cols-1 gap-3">
                                 <div className="bg-white border border-gray-300 p-3 rounded-sm shadow-sm">
                                     <div className="flex justify-between items-center mb-1">
                                         <h4 className="text-sm font-bold text-[#000000]">OUIIMI Marketplace</h4>
-                                        <span className="text-[9px] font-mono text-[#D10000] uppercase font-bold">ouiimi.com</span>
+                                        <span className="text-[9px] font-mono text-[#4A70A9] uppercase font-bold">ouiimi.com</span>
                                     </div>
                                     <p className="text-[11px] text-gray-700 mb-1.5 font-medium leading-tight">
                                         Fair-revenue service marketplace with real-time scheduling. Features complex multi-staff calendar management and split-payment processing via Stripe.
@@ -197,7 +190,7 @@ export default function ResumePage() {
                                 <div className="bg-white border border-gray-300 p-3 rounded-sm shadow-sm">
                                     <div className="flex justify-between items-center mb-1">
                                         <h4 className="text-sm font-bold text-[#000000]">GoCreation AI</h4>
-                                        <span className="text-[9px] font-mono text-[#D10000] uppercase font-bold">gocreation.ma</span>
+                                        <span className="text-[9px] font-mono text-[#4A70A9] uppercase font-bold">gocreation.ma</span>
                                     </div>
                                     <p className="text-[11px] text-gray-700 mb-1.5 font-medium leading-tight">
                                         Automated legal tech platform for company formation in Morocco. Generates compliant legal PDFs in minutes using an Agentic AI workflow.
@@ -210,7 +203,7 @@ export default function ResumePage() {
                 </div>
 
                 {/* Footer Decor */}
-                <div className="h-1.5 bg-[#D10000] w-full"></div>
+                <div className="h-1.5 bg-[#4A70A9] w-full"></div>
             </div>
 
             <style jsx global>{`
@@ -226,6 +219,6 @@ export default function ResumePage() {
                     }
                 }
             `}</style>
-        </div>
+        </div >
     );
 }

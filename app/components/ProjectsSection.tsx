@@ -34,7 +34,7 @@ export default function ProjectsSection() {
                 {/* Header */}
                 <div className="flex items-end justify-between mb-20 border-b border-white/10 pb-8">
                     <div>
-                        <div className="text-[#D10000] font-mono text-sm tracking-widest mb-2">PORTFOLIO_INDEX // SELECTED</div>
+                        <div className="text-[#4A70A9] font-mono text-sm tracking-widest mb-2">PORTFOLIO_INDEX // SELECTED</div>
                         <h2 className="font-bebas text-6xl md:text-8xl text-white leading-none">
                             ENGINEERED <br /> <span className="opacity-50">SOLUTIONS</span>
                         </h2>
@@ -58,8 +58,8 @@ export default function ProjectsSection() {
                                 {/* 1. Visual Block (Left) */}
                                 <div className="lg:col-span-7 relative">
                                     {/* Decorators */}
-                                    <div className="absolute -left-4 -top-4 w-8 h-8 border-t border-l border-[#D10000]/50 transition-all duration-500 group-hover:border-[#D10000]"></div>
-                                    <div className="absolute -right-4 -bottom-4 w-8 h-8 border-b border-r border-[#D10000]/50 transition-all duration-500 group-hover:border-[#D10000]"></div>
+                                    <div className="absolute -left-4 -top-4 w-8 h-8 border-t border-l border-[#4A70A9]/50 transition-all duration-500 group-hover:border-[#4A70A9]"></div>
+                                    <div className="absolute -right-4 -bottom-4 w-8 h-8 border-b border-r border-[#4A70A9]/50 transition-all duration-500 group-hover:border-[#4A70A9]"></div>
 
                                     <div className="relative aspect-video bg-[#0A0A0A] border border-white/10 overflow-hidden group-hover:border-white/20 transition-colors">
                                         {/* Project Image or Fallback */}
@@ -78,7 +78,7 @@ export default function ProjectsSection() {
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-500"></div>
 
                                         {/* Hover Reveal Content */}
-                                        <div className="absolute inset-0 bg-[#D10000]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay"></div>
+                                        <div className="absolute inset-0 bg-[#4A70A9]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay"></div>
                                     </div>
                                 </div>
 
@@ -86,14 +86,14 @@ export default function ProjectsSection() {
                                 <div className="lg:col-span-5 flex flex-col justify-center">
 
                                     <div className="flex items-center gap-4 mb-6">
-                                        <span className="text-[#D10000] font-mono text-xl">0{index + 1}</span>
+                                        <span className="text-[#4A70A9] font-mono text-xl">0{index + 1}</span>
                                         <span className="h-px bg-white/10 flex-grow"></span>
                                         <span className="text-xs font-mono text-gray-400 border border-white/10 px-2 py-1 rounded">
                                             {project.status}
                                         </span>
                                     </div>
 
-                                    <h3 className="text-4xl md:text-5xl font-bebas text-white mb-4 group-hover:text-[#D10000] transition-colors duration-300">
+                                    <h3 className="text-4xl md:text-5xl font-bebas text-white mb-4 group-hover:text-[#4A70A9] transition-colors duration-300">
                                         {project.title}
                                     </h3>
 
@@ -103,7 +103,7 @@ export default function ProjectsSection() {
                                         }
                                     </div>
 
-                                    <p className="text-gray-400 font-sans leading-relaxed mb-8 border-l border-white/10 pl-6 group-hover:border-[#D10000] transition-colors text-sm">
+                                    <p className="text-gray-400 font-sans leading-relaxed mb-8 border-l border-white/10 pl-6 group-hover:border-[#4A70A9] transition-colors text-sm">
                                         {project.solution.desc}
                                     </p>
 
@@ -120,7 +120,7 @@ export default function ProjectsSection() {
                                     </div>
 
                                     <div className="flex gap-4">
-                                        <button className="relative px-6 py-3 bg-white text-black font-bebas text-lg tracking-wide hover:bg-[#D10000] hover:text-white transition-all duration-300 group/btn">
+                                        <button className="relative px-6 py-3 bg-white text-black font-bebas text-lg tracking-wide hover:bg-[#4A70A9] hover:text-white transition-all duration-300 group/btn">
                                             CASE STUDY
                                             <span className="inline-block ml-2 transition-transform group-hover/btn:translate-x-1">&rarr;</span>
                                         </button>

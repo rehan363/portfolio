@@ -38,7 +38,7 @@ export default function FlowConnector({
                         y1={isHorizontal ? "10" : "0"}
                         x2={isHorizontal ? "100" : "10"}
                         y2={isHorizontal ? "10" : "100"}
-                        stroke="#D10000"
+                        stroke="#4A70A9"
                         strokeWidth="2"
                         strokeLinecap="round"
                         initial={{ pathLength: 0, opacity: 0 }}
@@ -71,7 +71,7 @@ export default function FlowConnector({
                     {[...Array(3)].map((_, i) => (
                         <motion.div
                             key={i}
-                            className="absolute w-1 h-1 bg-[#D10000] rounded-full"
+                            className="absolute w-1 h-1 bg-[#4A70A9] rounded-full"
                             style={{
                                 [isHorizontal ? 'top' : 'left']: '50%',
                                 transform: 'translate(-50%, -50%)'

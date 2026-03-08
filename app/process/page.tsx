@@ -61,7 +61,7 @@ export default function ProcessPage() {
                         <h1 className="text-[15vw] md:text-[12vw] lg:text-[10vw] font-bebas text-[var(--fg-cinema)] leading-[0.85] mb-8">
                             THE
                             <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--acc-red)] via-red-600 to-[var(--acc-red)]">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--acc-red)] via-teal-600 to-[var(--acc-red)]">
                                 ALGORITHM
                             </span>
                         </h1>
@@ -145,7 +145,7 @@ export default function ProcessPage() {
                                 <div className={`
                                     relative z-10 w-14 h-14 rounded-full border-2 flex items-center justify-center bg-[#050505] transition-all duration-300
                                     ${activePhase === phase.id
-                                        ? 'border-[#D10000] shadow-[0_0_15px_rgba(209,0,0,0.4)] scale-110'
+                                        ? 'border-[#4A70A9] shadow-[0_0_15px_rgba(209,0,0,0.4)] scale-110'
                                         : 'border-zinc-800'
                                     }
                                 `}>
@@ -156,7 +156,7 @@ export default function ProcessPage() {
 
                                 {/* Text Info */}
                                 <div className="flex flex-col">
-                                    <span className={`text-[10px] font-mono tracking-widest uppercase mb-1 transition-colors ${activePhase === phase.id ? 'text-[#D10000]' : 'text-zinc-500'}`}>
+                                    <span className={`text-[10px] font-mono tracking-widest uppercase mb-1 transition-colors ${activePhase === phase.id ? 'text-[#4A70A9]' : 'text-zinc-500'}`}>
                                         Step 0{phase.id}
                                     </span>
                                     <span className={`text-xl font-bebas tracking-wide transition-colors ${activePhase === phase.id ? 'text-white' : 'text-zinc-400'}`}>
@@ -196,7 +196,7 @@ export default function ProcessPage() {
                     >
                         <div className="bg-[#0A0A0A]/60 backdrop-blur-sm border border-[var(--color-border)] p-6">
                             <div className="flex items-center gap-2 mb-4">
-                                <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                                <div className="w-2.5 h-2.5 rounded-full bg-teal-500/80" />
                                 <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
                                 <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
                                 <span className="ml-3 text-[10px] font-mono text-gray-600">neural_algorithm.log</span>

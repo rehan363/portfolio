@@ -36,7 +36,7 @@ export default function PhaseNeuron({
                     cy={position.y}
                     r={52}
                     fill="none"
-                    stroke="#D10000"
+                    stroke="#4A70A9"
                     strokeWidth={1}
                     opacity={0.3}
                     initial={{ scale: 0.8, opacity: 0 }}
@@ -54,7 +54,7 @@ export default function PhaseNeuron({
                 cy={position.y}
                 r={44}
                 fill="none"
-                stroke={isActive ? "#D10000" : isCompleted ? "#4A4A4A" : "#1a1a1a"}
+                stroke={isActive ? "#4A70A9" : isCompleted ? "#4A4A4A" : "#1a1a1a"}
                 strokeWidth={1}
                 animate={{
                     r: [44, 46, 44],
@@ -73,12 +73,12 @@ export default function PhaseNeuron({
                 cx={position.x}
                 cy={position.y}
                 r={40}
-                fill={isActive ? "#D10000" : "#0a0a0a"}
-                stroke={isActive ? "#D10000" : isCompleted ? "#4A4A4A" : "#1a1a1a"}
+                fill={isActive ? "#4A70A9" : "#0a0a0a"}
+                stroke={isActive ? "#4A70A9" : isCompleted ? "#4A4A4A" : "#1a1a1a"}
                 strokeWidth={2}
                 whileHover={{
                     scale: 1.1,
-                    stroke: "#D10000",
+                    stroke: "#4A70A9",
                     transition: { duration: 0.2 }
                 }}
             />

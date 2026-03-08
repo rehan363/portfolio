@@ -40,7 +40,7 @@ function ThoughtStream() {
         <Points ref={ref} positions={positions} stride={3} frustumCulled={false}>
             <PointMaterial
                 transparent
-                color="#D10000"
+                color="#4A70A9"
                 size={0.015}
                 sizeAttenuation={true}
                 depthWrite={false}
@@ -119,7 +119,7 @@ function ConnectionLines() {
 
     return (
         <lineSegments ref={ref} geometry={lines}>
-            <lineBasicMaterial color="#D10000" transparent opacity={0.1} />
+            <lineBasicMaterial color="#4A70A9" transparent opacity={0.1} />
         </lineSegments>
     );
 }

@@ -6,7 +6,7 @@ import {
     SiPython, SiTypescript, SiJavascript, SiHtml5, SiCss3, SiGit,
     SiNextdotjs, SiReact, SiTailwindcss,
     SiFastapi, SiDjango, SiPostgresql, SiRedis,
-    SiDocker
+    SiDocker, SiFlydotio, SiVercel, SiKubernetes, SiGithubactions, SiGooglegemini, SiAnthropic
 } from "react-icons/si";
 import { TbBrandOpenai } from "react-icons/tb";
 import { FaProjectDiagram, FaSearch } from "react-icons/fa";
@@ -51,20 +51,27 @@ const technologies: Technology[] = [
 
     // Infrastructure
     { id: 'docker', name: 'Docker', icon: SiDocker, color: '#2496ED', category: 'infra', proficiency: 85, proficiencyLevel: 'Advanced', yearsExperience: 1.5, startDate: '2024-01', relatedTechs: ['fastapi', 'nextjs'], featured: true },
+    { id: 'flyio', name: 'Fly.io', icon: SiFlydotio, color: '#4451ED', category: 'infra', proficiency: 90, proficiencyLevel: 'Expert', yearsExperience: 1.5, startDate: '2024-01', relatedTechs: ['docker', 'fastapi'], featured: true },
+    { id: 'vercel', name: 'Vercel', icon: SiVercel, color: '#FFFFFF', category: 'infra', proficiency: 95, proficiencyLevel: 'Expert', yearsExperience: 2.0, startDate: '2023-08', relatedTechs: ['nextjs', 'react'], featured: true },
+    { id: 'kubernetes', name: 'Kubernetes', icon: SiKubernetes, color: '#326CE5', category: 'infra', proficiency: 40, proficiencyLevel: 'Beginner', yearsExperience: 0.3, startDate: '2025-06', relatedTechs: ['docker'] },
+    { id: 'cicd', name: 'CI/CD', icon: SiGithubactions, color: '#2088FF', category: 'infra', proficiency: 45, proficiencyLevel: 'Beginner', yearsExperience: 0.5, startDate: '2025-01', relatedTechs: ['git', 'docker'] },
     { id: 'dapr', name: 'Dapr', icon: HiCube, color: '#0D2192', category: 'infra', proficiency: 70, proficiencyLevel: 'Intermediate', yearsExperience: 0.5, startDate: '2025-07', relatedTechs: ['docker'] },
 
-    // AI Arsenal
+    // AI Toolbox
     { id: 'openai', name: 'OpenAI Agents SDK', icon: TbBrandOpenai, color: '#10A37F', category: 'ai', proficiency: 90, proficiencyLevel: 'Expert', yearsExperience: 1.5, startDate: '2024-01', relatedTechs: ['langgraph', 'python'] },
     { id: 'langgraph', name: 'LangGraph', icon: FaProjectDiagram, color: '#1C3C3C', category: 'ai', proficiency: 85, proficiencyLevel: 'Advanced', yearsExperience: 1.0, startDate: '2024-06', relatedTechs: ['openai', 'python'] },
     { id: 'crewai', name: 'CrewAI', icon: FaProjectDiagram, color: '#FF6B6B', category: 'ai', proficiency: 80, proficiencyLevel: 'Advanced', yearsExperience: 1.0, startDate: '2024-06', relatedTechs: ['openai', 'python'] },
     { id: 'mcp', name: 'MCP', icon: FaProjectDiagram, color: '#8B5CF6', category: 'ai', proficiency: 75, proficiencyLevel: 'Advanced', yearsExperience: 0.5, startDate: '2025-06', relatedTechs: ['openai'] },
+    { id: 'google-sdk', name: 'Google AI SDK', icon: SiGooglegemini, color: '#8E75FF', category: 'ai', proficiency: 85, proficiencyLevel: 'Advanced', yearsExperience: 1.0, startDate: '2024-06', relatedTechs: ['python'] },
     { id: 'livekit', name: 'LiveKit', icon: HiCube, color: '#07B0CE', category: 'ai', proficiency: 70, proficiencyLevel: 'Intermediate', yearsExperience: 0.5, startDate: '2025-07', relatedTechs: ['openai'] },
     { id: 'vapi', name: 'VAPI SDK', icon: TbBrandOpenai, color: '#6366F1', category: 'ai', proficiency: 75, proficiencyLevel: 'Advanced', yearsExperience: 0.5, startDate: '2025-07', relatedTechs: ['openai', 'livekit'] },
+    { id: 'claude-code', name: 'Claude Code', icon: SiAnthropic, color: '#D97757', category: 'ai', proficiency: 90, proficiencyLevel: 'Expert', yearsExperience: 1.0, startDate: '2024-06', relatedTechs: ['python', 'typescript'] },
+    { id: 'gemini-cli', name: 'Gemini CLI', icon: SiGooglegemini, color: '#4A70A9', category: 'ai', proficiency: 90, proficiencyLevel: 'Expert', yearsExperience: 1.0, startDate: '2024-06', relatedTechs: ['python'] },
 
     // New Technical Specializations
-    { id: 'bulk-sync', name: 'Bulk Data Sync', icon: HiCube, color: '#FFD700', category: 'infra', proficiency: 85, proficiencyLevel: 'Advanced', yearsExperience: 1.5, startDate: '2024-01', relatedTechs: ['fastapi', 'postgresql'], featured: true },
+
     { id: 'api-opt', name: 'REST API Optimization', icon: SiFastapi, color: '#00BFFF', category: 'backend', proficiency: 90, proficiencyLevel: 'Expert', yearsExperience: 2.0, startDate: '2023-08', relatedTechs: ['fastapi', 'python'], featured: true },
-    { id: 'aggregator', name: 'Aggregator Coordination', icon: FaProjectDiagram, color: '#ADFF2F', category: 'backend', proficiency: 80, proficiencyLevel: 'Advanced', yearsExperience: 1.0, startDate: '2024-06', relatedTechs: ['bulk-sync'] },
+    { id: 'aggregator', name: 'Aggregator Coordination', icon: FaProjectDiagram, color: '#ADFF2F', category: 'backend', proficiency: 80, proficiencyLevel: 'Advanced', yearsExperience: 1.0, startDate: '2024-06', relatedTechs: ['fastapi'] },
 ];
 
 const categories = {
@@ -72,7 +79,7 @@ const categories = {
     interface: { label: 'INTERFACE LAYER', description: 'Frontend frameworks', icon: '🎨' },
     backend: { label: 'ENGINE ROOM', description: 'Backend & databases', icon: '⚙️' },
     infra: { label: 'INFRASTRUCTURE', description: 'DevOps & deployment', icon: '🚀' },
-    ai: { label: 'AI ARSENAL', description: 'AI & agentic systems', icon: '🤖' },
+    ai: { label: 'AI TOOLBOX', description: 'AI & agentic systems', icon: '🤖' },
 };
 
 export default function SkillsSection() {
@@ -127,11 +134,11 @@ export default function SkillsSection() {
             >
                 <div className="space-y-3">
                     <div className="flex items-center gap-4">
-                        <div className="w-1 h-1 bg-[#D10000] rounded-full"></div>
+                        <div className="w-1 h-1 bg-[#4A70A9] rounded-full"></div>
                         <span className="text-[11px] font-mono text-gray-600 uppercase tracking-[0.3em]">Technical Stack Overview</span>
                     </div>
                     <h2 className="text-6xl md:text-7xl lg:text-8xl font-bebas text-white leading-[0.85] tracking-tight">
-                        TECHNICAL ARSENAL
+                        TECHNICAL TOOLBOX
                     </h2>
                     <div className="flex items-center gap-3">
                         <div className="h-px w-24 bg-gradient-to-r from-white/20 via-white/10 to-transparent"></div>
@@ -233,7 +240,7 @@ export default function SkillsSection() {
                     transition={{ duration: 0.6, delay: 0.3 }}
                 >
                     <h3 className="text-2xl font-bebas text-white mb-6 flex items-center gap-3">
-                        <span className="w-2 h-2 bg-[#D10000] rounded-full"></span>
+                        <span className="w-2 h-2 bg-[#4A70A9] rounded-full"></span>
                         FEATURED STACK
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
@@ -280,7 +287,7 @@ export default function SkillsSection() {
 const StatsCard = React.memo(function StatsCard({ label, value, sublabel }: { label: string; value: string; sublabel: string }) {
     return (
         <div className="p-6 bg-white/[0.03] border border-white/[0.08] hover:border-white/[0.12] hover:bg-white/[0.05] transition-all group">
-            <div className="text-5xl font-bebas text-white mb-1 tabular-nums group-hover:text-[#D10000] transition-colors">
+            <div className="text-5xl font-bebas text-white mb-1 tabular-nums group-hover:text-[#4A70A9] transition-colors">
                 {value}
             </div>
             <div className="text-sm font-medium text-gray-400 mb-1">{label}</div>

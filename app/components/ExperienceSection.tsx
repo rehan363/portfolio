@@ -106,55 +106,33 @@ const experiences = [
     {
         id: "01",
         period: "Nov 2025 — Present",
-        role: "Full Stack Engineer",
+        role: "Full Stack AI Developer",
         company: "Aptive Mind",
         type: "Full-time",
         location: "Islamabad, PK",
-        scope: "Building scalable full-stack applications with modern tech stacks. Working on cutting-edge AI-powered solutions and enterprise-grade systems.",
+        scope: "Building <span class=\"text-[#4A70A9]\">scalable full-stack applications</span> with modern tech stacks. Working on cutting-edge <span class=\"text-[#4A70A9]\">AI Driven software solutions</span> and enterprise-grade systems.",
         impact: ["Active Role", "High Impact"],
         stack: ["Next.js", "FastAPI", "Docker", "TypeScript", "Python"]
     },
     {
         id: "02",
         period: "Jul — Nov 2025",
-        role: "Full Stack Engineer",
+        role: "Full Stack AI Developer",
         company: "Auroxa Tech",
         type: "Full-time",
         location: "DHA-1, Islamabad, PK",
-        scope: "Led full-stack engineering initiatives. Managed agentic AI workflows, deployment pipelines, load balancing, cache systems, and proxy architectures.",
+        scope: "Led <span class=\"text-[#4A70A9]\">Full Stack AI development</span> initiatives. Managed agentic AI workflows, <span class=\"text-white/70\">deployment pipelines</span>, load balancing, cache systems, and proxy architectures.",
         impact: ["4 Months", "Critical Impact"],
         stack: ["FastAPI", "VAPI SDK", "OpenAI SDK", "LiveKit", "Dapr", "Docker", "Next.js", "Redis"]
     },
     {
         id: "03",
-        period: "Aug 2024 — Jun 2025",
-        role: "Frontend Developer",
-        company: "Dot Escapist",
-        type: "Full-time",
-        location: "G-13, Islamabad, PK",
-        scope: "Developed full-stack applications with Django backends. Implemented CRUD operations, optimized UI flows, managed API routes, and built secure server actions.",
-        impact: ["10 Months", "High Impact"],
-        stack: ["Django", "Next.js", "React", "PostgreSQL"]
-    },
-    {
-        id: "04",
-        period: "Jun — Aug 2024",
-        role: "Frontend Developer",
-        company: "Al-Basirr Technologies",
-        type: "Internship",
-        location: "NSTP, Islamabad, PK",
-        scope: "Gained intensive practical experience in API connectivity and enterprise-level frontend development. Focused on backend integration and responsive user interfaces.",
-        impact: ["2 Months", "Foundation"],
-        stack: ["Next.js", "TailwindCSS", "HTML5"]
-    },
-    {
-        id: "05",
         period: "Jun 2023 — Present",
         role: "AI Engineering Diploma",
         company: "PIAIC (Air University)",
         type: "Education",
         location: "Islamabad, PK",
-        scope: "Certified engineering diploma in AI and Cloud Native technologies. Mastering modern development practices, agentic AI frameworks, and cloud-native architectures.",
+        scope: "Certified engineering diploma in <span class=\"text-[#4A70A9]\">AI and Cloud Native</span> technologies. Mastering modern development practices, <span class=\"text-[#4A70A9]\">agentic AI frameworks</span>, and cloud-native architectures.",
         impact: ["Ongoing", "Certified"],
         stack: ["Python", "FastAPI", "Docker", "TypeScript", "Next.js", "React", "OpenAI SDK", "LangGraph", "CrewAI", "MCP", "Git", "TailwindCSS", "HTML5", "CSS"]
     }
@@ -184,11 +162,11 @@ export default function ExperienceSection() {
                         <span className="text-[11px] font-mono text-gray-500 uppercase tracking-wider">Years</span>
                     </div>
                     <div className="flex items-baseline gap-3">
-                        <span className="text-4xl font-bebas text-white tabular-nums">05</span>
+                        <span className="text-4xl font-bebas text-white tabular-nums">03</span>
                         <span className="text-[11px] font-mono text-gray-500 uppercase tracking-wider">Positions</span>
                     </div>
                     <div className="flex items-baseline gap-3">
-                        <span className="text-4xl font-bebas text-white tabular-nums">30+</span>
+                        <span className="text-4xl font-bebas text-white tabular-nums">20+</span>
                         <span className="text-[11px] font-mono text-gray-500 uppercase tracking-wider">Projects</span>
                     </div>
                 </div>
@@ -211,7 +189,7 @@ export default function ExperienceSection() {
                             className="group relative border-b border-white/[0.05] last:border-0"
                         >
                             {/* Timeline Node - Centered on line */}
-                            <div className="absolute left-[-4px] md:left-[76px] top-8 w-2 h-2 rounded-full bg-[#D10000] opacity-60 group-hover:opacity-100 group-hover:scale-150 transition-all duration-300"></div>
+                            <div className="absolute left-[-4px] md:left-[76px] top-8 w-2 h-2 rounded-full bg-[#4A70A9] opacity-60 group-hover:opacity-100 group-hover:scale-150 transition-all duration-300"></div>
 
                             {/* Card Content - Grid Layout */}
                             <div className="pl-10 md:pl-32 pr-0 md:pr-8 py-8 md:py-12 grid md:grid-cols-[200px_1fr] gap-6 md:gap-12">
@@ -252,7 +230,7 @@ export default function ExperienceSection() {
                                 <div className="space-y-5">
                                     {/* Company & Role */}
                                     <div>
-                                        <h3 className="text-2xl md:text-3xl font-bebas text-white mb-1 leading-none group-hover:text-[#D10000] transition-colors duration-300">
+                                        <h3 className="text-2xl md:text-3xl font-bebas text-white mb-1 leading-none group-hover:text-[#4A70A9] transition-colors duration-300">
                                             {exp.company}
                                         </h3>
                                         <div className="text-base md:text-lg text-white/80 font-light">

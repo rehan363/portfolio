@@ -147,7 +147,7 @@ export default function ProjectDetail({ project, onClose }: ProjectDetailProps) 
                                     href={project.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="pointer-events-auto flex items-center gap-3 px-8 py-4 bg-[#D10000] hover:bg-[#b00000] text-white font-bebas text-xl tracking-widest transition-all rounded-sm shadow-xl hover:shadow-[0_0_20px_rgba(209,0,0,0.4)]"
+                                    className="pointer-events-auto flex items-center gap-3 px-8 py-4 bg-[#4A70A9] hover:bg-[#283C5A] text-white font-bebas text-xl tracking-widest transition-all rounded-sm shadow-xl hover:shadow-[0_0_20px_rgba(209,0,0,0.4)]"
                                 >
                                     <span>LAUNCH PROJECT</span>
                                     <FaExternalLinkAlt className="text-sm" />

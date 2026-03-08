@@ -18,7 +18,7 @@ export default function FloatingMetadata({ currentPhase, totalPhases }: Floating
             <div className="bg-[#0A0A0A]/80 backdrop-blur-sm border border-white/10 p-4 min-w-[160px]">
                 {/* Status Indicator */}
                 <div className="flex items-center gap-2 mb-4">
-                    <div className={`w-2 h-2 rounded-full ${currentPhase ? 'bg-[#D10000] animate-pulse' : 'bg-gray-600'}`} />
+                    <div className={`w-2 h-2 rounded-full ${currentPhase ? 'bg-[#4A70A9] animate-pulse' : 'bg-gray-600'}`} />
                     <span className="text-[10px] font-mono text-gray-500 tracking-widest">
                         {currentPhase ? 'ACTIVE' : 'IDLE'}
                     </span>
@@ -41,9 +41,9 @@ export default function FloatingMetadata({ currentPhase, totalPhases }: Floating
                             <motion.div
                                 key={i}
                                 className={`h-1 flex-1 ${currentPhase && i < currentPhase
-                                        ? 'bg-[#D10000]'
+                                        ? 'bg-[#4A70A9]'
                                         : currentPhase && i === currentPhase - 1
-                                            ? 'bg-[#D10000]'
+                                            ? 'bg-[#4A70A9]'
                                             : 'bg-white/10'
                                     }`}
                                 initial={{ scaleX: 0 }}
