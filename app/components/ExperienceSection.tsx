@@ -117,16 +117,27 @@ const experiences = [
     {
         id: "02",
         period: "Jul — Nov 2025",
-        role: "Full Stack AI Developer",
+        role: "Agentic AI Developer (Voice)",
         company: "Auroxa Tech",
         type: "Full-time",
         location: "DHA-1, Islamabad, PK",
-        scope: "Led <span class=\"text-[#4A70A9]\">Full Stack AI development</span> initiatives. Managed agentic AI workflows, <span class=\"text-white/70\">deployment pipelines</span>, load balancing, cache systems, and proxy architectures.",
+        scope: "Led <span class=\"text-[#4A70A9]\">Agentic AI voice development</span> initiatives. Managed agentic AI workflows, <span class=\"text-white/70\">deployment pipelines</span>, load balancing, cache systems, and proxy architectures.",
         impact: ["4 Months", "Critical Impact"],
         stack: ["FastAPI", "VAPI SDK", "OpenAI SDK", "LiveKit", "Dapr", "Docker", "Next.js", "Redis"]
     },
     {
         id: "03",
+        period: "Jan — Jun 2025",
+        role: "Python AI Developer",
+        company: "VisionAI Mind",
+        type: "Contract",
+        location: "Germany (Remote)",
+        scope: "Developed mission-critical <span class=\"text-[#4A70A9]\">RAG systems</span> and knowledge extraction pipelines. Optimized <span class=\"text-[#4A70A9]\">vector embeddings</span> and scaled AI agent architectures.",
+        impact: ["6 Months", "Research Driven"],
+        stack: ["Python", "FastAPI", "OpenAI", "Pinecone", "BeautifulSoup", "RAG"]
+    },
+    {
+        id: "04",
         period: "Jun 2023 — Present",
         role: "AI Engineering Diploma",
         company: "PIAIC (Air University)",
@@ -162,7 +173,7 @@ export default function ExperienceSection() {
                         <span className="text-[11px] font-mono text-gray-500 uppercase tracking-wider">Years</span>
                     </div>
                     <div className="flex items-baseline gap-3">
-                        <span className="text-4xl font-bebas text-white tabular-nums">03</span>
+                        <span className="text-4xl font-bebas text-white tabular-nums">04</span>
                         <span className="text-[11px] font-mono text-gray-500 uppercase tracking-wider">Positions</span>
                     </div>
                     <div className="flex items-baseline gap-3">

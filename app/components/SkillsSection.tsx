@@ -71,7 +71,6 @@ const technologies: Technology[] = [
     // New Technical Specializations
 
     { id: 'api-opt', name: 'REST API Optimization', icon: SiFastapi, color: '#00BFFF', category: 'backend', proficiency: 90, proficiencyLevel: 'Expert', yearsExperience: 2.0, startDate: '2023-08', relatedTechs: ['fastapi', 'python'], featured: true },
-    { id: 'aggregator', name: 'Aggregator Coordination', icon: FaProjectDiagram, color: '#ADFF2F', category: 'backend', proficiency: 80, proficiencyLevel: 'Advanced', yearsExperience: 1.0, startDate: '2024-06', relatedTechs: ['fastapi'] },
 ];
 
 const categories = {

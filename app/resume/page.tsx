@@ -39,7 +39,7 @@ export default function ResumePage() {
                     {/* Photo */}
                     <div className="w-24 h-24 md:w-28 md:h-28 relative shrink-0 rounded-full overflow-hidden border-[3px] border-white shadow-md">
                         <Image
-                            src="/me.png"
+                            src="/portfolio professional image.png"
                             alt="REHAN AHMED"
                             fill
                             className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
@@ -76,11 +76,18 @@ export default function ResumePage() {
                         {/* Education */}
                         <section>
                             <h3 className="text-base font-bebas text-[#000000] border-b-2 border-[#4A70A9] pb-1 mb-3">Education</h3>
-                            <div>
-                                <div className="text-[#000000] font-bold text-xs">AI Engineering Diploma</div>
-                                <div className="text-[#4A70A9] text-[10px] font-mono mb-0.5 font-bold">PIAIC (Air University)</div>
-                                <div className="text-gray-600 text-[10px] font-semibold">2023 — Present</div>
-                                <p className="text-[10px] text-gray-600 mt-1 leading-tight">Generative AI, Cloud Native Computing & Agentic Systems.</p>
+                            <div className="space-y-4">
+                                <div>
+                                    <div className="text-[#000000] font-bold text-xs leading-tight uppercase">BS in Computer Science</div>
+                                    <div className="text-[#4A70A9] text-[10px] font-mono mb-0.5 font-bold">University of the Punjab</div>
+                                    <div className="text-gray-600 text-[10px] font-semibold">2023 — 2027</div>
+                                </div>
+                                <div>
+                                    <div className="text-[#000000] font-bold text-xs leading-tight uppercase">AI Engineering Diploma</div>
+                                    <div className="text-[#4A70A9] text-[10px] font-mono mb-0.5 font-bold">PIAIC (Air University)</div>
+                                    <div className="text-gray-600 text-[10px] font-semibold">2023 — Present</div>
+                                    <p className="text-[10px] text-gray-600 mt-1 leading-tight">Generative AI, Cloud Native Computing & Agentic Systems.</p>
+                                </div>
                             </div>
                         </section>
 
@@ -88,7 +95,7 @@ export default function ResumePage() {
                         <section>
                             <h3 className="text-base font-bebas text-[#000000] border-b-2 border-[#4A70A9] pb-1 mb-3">Technical Toolbox</h3>
                             <div className="flex flex-wrap gap-1.5">
-                                {["Python", "TypeScript", "Next.js", "FastAPI", "Django", "OpenAI Agents SDK", "Google AI SDK", "Claude Code", "Gemini CLI", "LiveKit Voice Agents", "LangChain", "Docker", "CI/CD Workflows", "Kubernetes", "Fly.io", "Vercel", "MongoDB", "PostgreSQL", "React", "Redis", "VAPI", "TailwindCSS"].map(tech => (
+                                {["Python", "TypeScript", "Next.js", "FastAPI", "Django", "SQLAlchemy", "OpenAI Realtime API", "OpenAI Agents SDK", "Google AI SDK", "Claude Code", "Gemini CLI", "LiveKit Voice Agents", "LangChain", "Docker", "CI/CD Workflows", "Kubernetes", "Fly.io", "Vercel", "MongoDB", "PostgreSQL", "React", "Redis", "VAPI", "TailwindCSS"].map(tech => (
                                     <span key={tech} className="px-1.5 py-0.5 bg-white border border-gray-300 text-[10px] text-gray-800 rounded-sm font-semibold shadow-sm">
                                         {tech}
                                     </span>
@@ -139,7 +146,7 @@ export default function ResumePage() {
                                 <div className="relative group">
                                     <div className="absolute -left-[27px] top-1.5 w-2.5 h-2.5 bg-gray-400 rounded-full border-2 border-[#F3F2F0]"></div>
                                     <div className="flex justify-between items-baseline mb-0.5">
-                                        <h3 className="text-sm font-bold text-[#000000] uppercase">Full Stack AI Developer</h3>
+                                        <h3 className="text-sm font-bold text-[#000000] uppercase">Agentic AI Developer (Voice)</h3>
                                         <span className="font-mono text-[10px] text-gray-600 font-bold bg-[#Eae8e6] px-1.5 rounded">Jul — Nov 2025</span>
                                     </div>
                                     <div className="text-[#4A70A9] text-xs font-bold mb-1 uppercase tracking-wide">Auroxa Tech</div>
@@ -147,24 +154,18 @@ export default function ResumePage() {
                                         Engineered agentic systems using VAPI and OpenAI (Realtime API). Implemented robust deployment pipelines using Docker and Nginx, optimized with Redis caching.
                                     </p>
                                 </div>
-                                </div>
-                            </div>
-                        </section>
 
-                        {/* Education */}
-                        <section className="mt-4">
-                            <h2 className="text-xl font-bebas text-[#000000] mb-4 flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 bg-[#4A70A9] rounded-full"></span>
-                                EDUCATION
-                            </h2>
-                            <div className="relative border-l border-gray-300 ml-3 pl-6">
+                                {/* VisionAI Mind */}
                                 <div className="relative group">
                                     <div className="absolute -left-[27px] top-1.5 w-2.5 h-2.5 bg-gray-400 rounded-full border-2 border-[#F3F2F0]"></div>
                                     <div className="flex justify-between items-baseline mb-0.5">
-                                        <h3 className="text-sm font-bold text-[#000000] uppercase">BS in Computer Science</h3>
-                                        <span className="font-mono text-[10px] text-gray-600 font-bold bg-[#Eae8e6] px-1.5 rounded">2023 — 2027</span>
+                                        <h3 className="text-sm font-bold text-[#000000] uppercase">Python AI Developer</h3>
+                                        <span className="font-mono text-[10px] text-gray-600 font-bold bg-[#Eae8e6] px-1.5 rounded">Jan — Jun 2025</span>
                                     </div>
-                                    <div className="text-[#4A70A9] text-xs font-bold mb-1 uppercase tracking-wide">University of the Punjab</div>
+                                    <div className="text-[#4A70A9] text-xs font-bold mb-1 uppercase tracking-wide">VisionAI Mind (German Startup)</div>
+                                    <p className="text-xs text-gray-700 leading-snug font-medium text-justify">
+                                        Developed mission-critical RAG (Retrieval-Augmented Generation) systems and knowledge extraction pipelines. Optimized vector embeddings and scaled AI agent architectures.
+                                    </p>
                                 </div>
                             </div>
                         </section>
@@ -178,6 +179,51 @@ export default function ResumePage() {
                             <div className="grid grid-cols-1 gap-3">
                                 <div className="bg-white border border-gray-300 p-3 rounded-sm shadow-sm">
                                     <div className="flex justify-between items-center mb-1">
+                                        <h4 className="text-sm font-bold text-[#000000]">The Humanoid Blueprint</h4>
+                                        <span className="text-[9px] font-mono text-[#4A70A9] uppercase font-bold">humanoid-blueprint.com</span>
+                                    </div>
+                                    <p className="text-[11px] text-gray-700 mb-1.5 font-medium leading-tight text-justify">
+                                        Mastering Physical AI through VLA models & robotic autonomy. A spec-driven guide for bridging the gap between digital brains and humanoid bodies using ROS 2 & Isaac Sim.
+                                    </p>
+                                    <div className="text-[9px] font-mono text-gray-500 font-bold">ROS 2 • NVIDIA Isaac Sim • VLA Models</div>
+                                </div>
+
+                                <div className="bg-white border border-gray-300 p-3 rounded-sm shadow-sm">
+                                    <div className="flex justify-between items-center mb-1">
+                                        <h4 className="text-sm font-bold text-[#000000]">AI Receptionist Sara</h4>
+                                        <span className="text-[9px] font-mono text-[#4A70A9] uppercase font-bold text-right leading-none">github.com/innovasaleslab-dev/</span>
+                                    </div>
+                                    <p className="text-[11px] text-gray-700 mb-1.5 font-medium leading-tight text-justify">
+                                        Mission-critical AI receptionist for specialty clinics. Meet Sara: autonomously orchestrating patient qualification for HRT programs, Healthie EHR appointment booking, and real-time Vapi outbound engagement.
+                                    </p>
+                                    <div className="text-[9px] font-mono text-gray-500 font-bold">FastAPI • Healthie EHR • Vapi • Twilio</div>
+                                </div>
+
+                                <div className="bg-white border border-gray-300 p-3 rounded-sm shadow-sm">
+                                    <div className="flex justify-between items-center mb-1">
+                                        <h4 className="text-sm font-bold text-[#000000]">Quizzly.AI</h4>
+                                        <span className="text-[9px] font-mono text-[#4A70A9] uppercase font-bold text-right leading-none">quizgenerator-eta.vercel.app</span>
+                                    </div>
+                                    <p className="text-[11px] text-gray-700 mb-1.5 font-medium leading-tight text-justify">
+                                        AI-powered quiz generation platform. Uses Google ADK and OpenRouter to generate adaptive, on-demand MCQ quizzes on any topic with instant feedback and session persistence.
+                                    </p>
+                                    <div className="text-[9px] font-mono text-gray-500 font-bold">Next.js 14 • FastAPI • Google ADK • PostgreSQL</div>
+                                </div>
+
+
+                                <div className="bg-white border border-gray-300 p-3 rounded-sm shadow-sm">
+                                    <div className="flex justify-between items-center mb-1">
+                                        <h4 className="text-sm font-bold text-[#000000]">Barber Booking Agent</h4>
+                                        <span className="text-[9px] font-mono text-[#4A70A9] uppercase font-bold text-right leading-none">LiveKit Voice Booking</span>
+                                    </div>
+                                    <p className="text-[11px] text-gray-700 mb-1.5 font-medium leading-tight text-justify">
+                                        High-performance AI barber receptionist built on LiveKit. Autonomously handles incoming booking calls, checks real-time availability, and captures appointments directly into the database with sub-400ms latency.
+                                    </p>
+                                    <div className="text-[9px] font-mono text-gray-500 font-bold">LiveKit • OpenAI Realtime • FastAPI • SQLAlchemy</div>
+                                </div>
+
+                                <div className="bg-white border border-gray-300 p-3 rounded-sm shadow-sm">
+                                    <div className="flex justify-between items-center mb-1">
                                         <h4 className="text-sm font-bold text-[#000000]">OUIIMI Marketplace</h4>
                                         <span className="text-[9px] font-mono text-[#4A70A9] uppercase font-bold">ouiimi.com</span>
                                     </div>
@@ -187,15 +233,16 @@ export default function ResumePage() {
                                     <div className="text-[9px] font-mono text-gray-500 font-bold">Next.js 14 • MongoDB • Stripe Connect</div>
                                 </div>
 
+
                                 <div className="bg-white border border-gray-300 p-3 rounded-sm shadow-sm">
                                     <div className="flex justify-between items-center mb-1">
-                                        <h4 className="text-sm font-bold text-[#000000]">GoCreation AI</h4>
-                                        <span className="text-[9px] font-mono text-[#4A70A9] uppercase font-bold">gocreation.ma</span>
+                                        <h4 className="text-sm font-bold text-[#000000]">VisionMind RAG</h4>
+                                        <span className="text-[9px] font-mono text-[#4A70A9] uppercase font-bold text-right leading-none">AI Knowledge Agent</span>
                                     </div>
-                                    <p className="text-[11px] text-gray-700 mb-1.5 font-medium leading-tight">
-                                        Automated legal tech platform for company formation in Morocco. Generates compliant legal PDFs in minutes using an Agentic AI workflow.
+                                    <p className="text-[11px] text-gray-700 mb-1.5 font-medium leading-tight text-justify">
+                                        Autonomous RAG system for corporate intelligence. Crawls company domains, generates high-dimensional vector embeddings, and provides a grounded chat interface for domain-specific knowledge recovery.
                                     </p>
-                                    <div className="text-[9px] font-mono text-gray-500 font-bold">Next.js 15 • LangGraph • FastAPI</div>
+                                    <div className="text-[9px] font-mono text-gray-500 font-bold">Python • FastAPI • OpenAI • Pinecone</div>
                                 </div>
                             </div>
                         </section>
@@ -219,6 +266,6 @@ export default function ResumePage() {
                     }
                 }
             `}</style>
-        </div >
+        </div>
     );
 }

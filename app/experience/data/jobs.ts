@@ -38,14 +38,14 @@ export const jobs: Job[] = [
     },
     {
         id: "ROLE-02",
-        role: "Full Stack AI Developer",
+        role: "Agentic AI Developer (Voice)",
         company: "AUROXA TECH",
         period: "JUL — NOV 2025",
-        description: "Led Full Stack AI development initiatives. Managed agentic AI workflows, deployment pipelines, load balancing, cache systems, and proxy architectures.",
+        description: "Led Agentic AI voice development initiatives. Managed voice agentic workflows, deployment pipelines, load balancing, and high-performance proxy architectures.",
         achievements: [
-            "Led Full Stack AI development initiatives and managed high-throughput REST API pipelines.",
-            "Engineered bulk data synchronization systems for large-scale datasets with 100% accuracy.",
-            "Managed agentic AI workflows, deployment pipelines, load balancing, and proxy architectures."
+            "Architected high-throughput Agentic AI voice pipelines and managed complex REST API infrastructures.",
+            "Engineered bulk data synchronization systems for large-scale datasets with high precision and low latency.",
+            "Orchestrated real-time voice agent workflows, optimizing for sub-500ms response times across distributed systems."
         ],
         skills: ["FastAPI", "VAPI SDK", "OpenAI SDK", "LiveKit", "Dapr", "Docker", "Next.js", "Redis"],
         metrics: [
@@ -54,6 +54,25 @@ export const jobs: Job[] = [
             { label: "Impact", value: "Critical Impact" }
         ],
         classification: "FULL_TIME"
+    },
+    {
+        id: "ROLE-04",
+        role: "Python AI Developer",
+        company: "VISIONAI MIND",
+        period: "JAN — JUN 2025",
+        description: "Developed mission-critical RAG (Retrieval-Augmented Generation) systems and knowledge extraction pipelines for a German AI startup.",
+        achievements: [
+            "Architected autonomous RAG systems that crawl and index corporate domains with high-precision vector embeddings.",
+            "Optimized knowledge recovery workflows using FastAPI and Pinecone, achieving sub-second query latency.",
+            "Integrated large-scale language models (LLMs) into production-ready chat interfaces for domain-specific insights."
+        ],
+        skills: ["Python", "FastAPI", "OpenAI", "Pinecone", "BeautifulSoup", "RAG"],
+        metrics: [
+            { label: "Type", value: "Contract" },
+            { label: "Duration", value: "6 Months" },
+            { label: "Impact", value: "Research Driven" }
+        ],
+        classification: "HYBRID // ENGINEER"
     },
     {
         id: "ROLE-03",
