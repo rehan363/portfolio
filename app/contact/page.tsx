@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
-import { FaGithub, FaPaperPlane, FaCopy } from 'react-icons/fa';
+import { FaGithub, FaPaperPlane, FaCopy, FaLinkedin } from 'react-icons/fa';
 
 const SystemBackground = dynamic(() => import("../components/3d/SystemBackground"), {
     ssr: false,
@@ -31,115 +31,99 @@ export default function ContactPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-center mb-12 max-w-4xl"
+                    className="text-center mb-16 max-w-4xl"
                 >
-                    <div className="flex items-center justify-center gap-3 mb-4">
-                        <div className="w-2 h-2 bg-[#4A70A9] rounded-full animate-pulse" />
-                        <span className="text-xs font-mono text-[#4A70A9] tracking-[0.3em] uppercase">Secure Uplink Established</span>
+                    <div className="flex items-center justify-center gap-3 mb-6">
+                        <div className="relative flex h-2 w-2">
+                            <div className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></div>
+                            <div className="relative inline-flex rounded-full h-2 w-2 bg-green-500 shadow-[0_0_10px_#22c55e]"></div>
+                        </div>
+                        <span className="text-[10px] font-mono text-green-500 tracking-[0.4em] uppercase font-bold">Available for new opportunities</span>
                     </div>
-                    <h1 className="text-6xl md:text-8xl font-bebas text-white leading-[0.8] mb-6">
-                        INITIATE <br /> <span className="opacity-50">TRANSMISSION</span>
+                    <h1 className="text-7xl md:text-9xl font-bebas text-white leading-[0.8] mb-8 tracking-tight">
+                        LET'S BUILD <br /> <span className="text-[#4A70A9]">SOMETHING GREAT</span>
                     </h1>
-                    <p className="text-gray-500 font-mono text-sm max-w-xl mx-auto leading-relaxed">
-                        Secure channel open for collaboration inquiries, architectural consultations, and system access requests.
-                        Response protocols active.
+                    <p className="text-gray-400 font-medium text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                        Whether you have a specific project in mind or just want to discuss the future of Agentic AI, my inbox is always open. Let's connect and turn your vision into reality.
                     </p>
                 </motion.div>
 
-                {/* Transmit Terminal */}
-                <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
+                {/* Main Content */}
+                <div className="w-full max-w-4xl mb-20">
 
-                    {/* Left: Direct Line */}
+                    {/* Centered: Contact Info */}
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="space-y-8"
+                        className="space-y-16 text-center"
                     >
-                        {/* Email Node */}
-                        <div className="group relative">
-                            <div className="absolute -left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-white/10 to-transparent group-hover:via-[#4A70A9]/50 transition-all duration-300" />
-                            <h3 className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-2">Direct Frequency</h3>
-                            <div className="flex items-center gap-4">
-                                <a href="mailto:rehan007313@gmail.com" className="text-2xl md:text-3xl font-bebas text-white hover:text-[#4A70A9] transition-colors tracking-wide">
-                                    REHAN007313@GMAIL.COM
-                                </a>
-                                <button
-                                    onClick={copyEmail}
-                                    className="p-2 border border-white/10 rounded-sm hover:bg-white/5 text-gray-400 hover:text-white transition-all relative"
-                                    title="Copy Frequency"
-                                >
-                                    {copied ? <span className="text-[10px] font-mono text-green-500">COPIED</span> : <FaCopy />}
-                                </button>
+                        <div className="space-y-4 flex flex-col items-center">
+                            <h2 className="text-4xl font-bebas text-white tracking-wider">CONTACT DETAILS</h2>
+                            <div className="h-1 w-20 bg-[#4A70A9]"></div>
+                        </div>
+
+                        <div className="grid grid-cols-1 gap-12">
+                            {/* Email */}
+                            <div className="group relative flex flex-col items-center">
+                                <h3 className="text-[10px] font-mono text-gray-500 uppercase tracking-widest mb-3 font-bold">Email Address</h3>
+                                <div className="flex items-center gap-6">
+                                    <a href="mailto:rehan007313@gmail.com" className="text-3xl md:text-5xl font-bebas text-white hover:text-[#4A70A9] transition-all tracking-wide">
+                                        REHAN007313@GMAIL.COM
+                                    </a>
+                                    <button
+                                        onClick={copyEmail}
+                                        className="p-3 border border-white/10 rounded-sm hover:bg-white/5 text-gray-400 hover:text-white transition-all relative group/copy"
+                                        title="Copy Email"
+                                    >
+                                        {copied ? <span className="text-[10px] font-mono text-green-500 font-bold">COPIED!</span> : <FaCopy className="group-hover/copy:scale-110 transition-transform" />}
+                                    </button>
+                                </div>
+                            </div>
+
+                            {/* Digital Presence */}
+                            <div className="group relative flex flex-col items-center">
+                                <h3 className="text-[10px] font-mono text-gray-500 uppercase tracking-widest mb-3 font-bold">Digital Presence</h3>
+                                <div className="flex flex-col md:flex-row gap-8 md:gap-16">
+                                    <a
+                                        href="https://github.com/rehan363"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-4 text-2xl md:text-4xl font-bebas text-white hover:text-[#4A70A9] transition-all tracking-wide group/link"
+                                    >
+                                        <FaGithub className="text-xl md:text-2xl group-hover/link:rotate-12 transition-transform" />
+                                        <span>GITHUB</span>
+                                    </a>
+                                    <a
+                                        href="https://www.linkedin.com/in/rehan-ahmed313"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-4 text-2xl md:text-4xl font-bebas text-white hover:text-[#4A70A9] transition-all tracking-wide group/link"
+                                    >
+                                        <FaLinkedin className="text-xl md:text-2xl group-hover/link:rotate-12 transition-transform" />
+                                        <span>LINKEDIN</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
-                        {/* GitHub Node */}
-                        <div className="group relative">
-                            <div className="absolute -left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-white/10 to-transparent group-hover:via-[#4A70A9]/50 transition-all duration-300" />
-                            <h3 className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-2">Code Repository</h3>
-                            <a
-                                href="https://github.com/rehan363"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-3 text-2xl md:text-3xl font-bebas text-white hover:text-[#4A70A9] transition-colors tracking-wide"
-                            >
-                                <FaGithub />
-                                <span>GITHUB.COM/REHAN363</span>
-                                <span className="text-xs font-mono text-gray-600 ml-2 border border-white/10 px-2 py-0.5 rounded">PUBLICACCESS</span>
-                            </a>
+                        <div className="pt-12 border-t border-white/5 max-w-xs mx-auto">
+                            <p className="text-xs font-mono text-gray-600 leading-relaxed uppercase tracking-[0.3em]">
+                                Based in Islamabad, Pakistan <br />
+                                Working with clients worldwide
+                            </p>
                         </div>
-                    </motion.div>
-
-                    {/* Right: Message Form (Visual Only in this implementation unless using API) */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                        className="bg-[#0A0A0A] border border-white/10 p-8 relative group"
-                    >
-                        {/* Decorators */}
-                        <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-white/20" />
-                        <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-white/20" />
-
-                        <div className="text-[10px] font-mono text-gray-600 mb-6 uppercase tracking-widest flex justify-between">
-                            <span>ENCRYPTED MESSAGE PROTOCOL</span>
-                            <span>STATUS: READY</span>
-                        </div>
-
-                        <form className="space-y-6" action="mailto:rehan007313@gmail.com" method="post" encType="text/plain">
-                            <div className="space-y-2">
-                                <label className="text-xs font-mono text-gray-500 uppercase">Input // Identity</label>
-                                <input
-                                    type="text"
-                                    name="identity"
-                                    placeholder="DESIGNATION"
-                                    className="w-full bg-[#050505] border border-white/10 text-white p-3 font-mono text-sm focus:border-[#4A70A9] focus:outline-none transition-colors"
-                                />
-                            </div>
-                            <div className="space-y-2">
-                                <label className="text-xs font-mono text-gray-500 uppercase">Input // Purpose</label>
-                                <textarea
-                                    name="payload"
-                                    rows={4}
-                                    placeholder="TRANSMISSION CONTENT..."
-                                    className="w-full bg-[#050505] border border-white/10 text-white p-3 font-mono text-sm focus:border-[#4A70A9] focus:outline-none transition-colors resize-none"
-                                />
-                            </div>
-
-                            <button className="w-full bg-white text-black font-bebas text-xl py-3 tracking-widest hover:bg-[#4A70A9] hover:text-white transition-all duration-300 flex items-center justify-center gap-3">
-                                <FaPaperPlane className="text-sm" />
-                                <span>TRANSMIT PAYLOAD</span>
-                            </button>
-                        </form>
                     </motion.div>
                 </div>
 
-                {/* Footer Metrics */}
-                <div className="mt-20 flex gap-8 text-[10px] font-mono text-gray-700 uppercase tracking-widest opacity-50">
-                    <span>LATENCY: 12ms</span>
-                    <span>ENCRYPTION: AES-256</span>
-                    <span>LOC: ISLAMABAD, PK</span>
+                {/* Footer Status */}
+                <div className="flex gap-12 py-10 border-t border-white/5 w-full max-w-6xl justify-center md:justify-start items-center text-[9px] font-mono text-gray-600 uppercase tracking-[0.3em]">
+                    <div className="flex items-center gap-2">
+                        <div className="w-1 h-1 bg-green-500 rounded-full animate-pulse" />
+                        <span>System Online</span>
+                    </div>
+                    <span>Latency: 12ms</span>
+                    <span className="hidden md:block">Timezone: UTC+5</span>
                 </div>
             </div>
         </main>

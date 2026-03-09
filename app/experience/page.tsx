@@ -78,32 +78,27 @@ export default function ExperiencePage() {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: isLoaded ? 1 : 0, scale: isLoaded ? 1 : 0.95 }}
-                        transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+                        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
                         className="relative inline-block"
                     >
-                        <h1 className="text-[15vw] md:text-[13vw] leading-[0.8] font-playfair font-medium text-[#E0E0E0] mix-blend-difference select-none tracking-tighter relative z-10">
-                            <ScrambleText text="ARCHIVE" trigger="auto" scrambleSpeed={40} />
+                        <h1 className="text-[15vw] md:text-[11vw] leading-[0.8] font-bebas text-white mix-blend-difference select-none tracking-tighter relative z-10">
+                            <ScrambleText text="CHRONICLES" trigger="auto" scrambleSpeed={30} />
                         </h1>
-                        <span className="absolute top-0 left-0 text-[15vw] md:text-[13vw] leading-[0.8] font-playfair font-medium text-white/5 tracking-tighter blur-sm -z-10 translate-y-2 md:translate-y-4">ARCHIVE</span>
+                        <span className="absolute top-0 left-0 text-[15vw] md:text-[11vw] leading-[0.8] font-bebas text-white/5 tracking-tighter blur-sm -z-10 translate-y-2 md:translate-y-4">CHRONICLES</span>
 
-                        <div className="absolute inset-0 flex items-center justify-center z-20 translate-y-12 md:translate-y-24">
-                            <p className="text-[9px] md:text-xs font-light text-white/40 tracking-[0.6em] uppercase font-mono bg-[#050505]/50 px-4 py-1 backdrop-blur-sm">
-                                Selected Works
-                            </p>
+                        <div className="absolute inset-0 flex items-center justify-center z-20 translate-y-16 md:translate-y-24">
+                            <div className="flex flex-col items-center gap-2">
+                                <div className="h-px w-24 bg-gradient-to-r from-transparent via-[#4A70A9] to-transparent" />
+                                <p className="text-[10px] md:text-xs font-mono font-bold text-[#4A70A9] tracking-[0.6em] uppercase">
+                                    Operational History
+                                </p>
+                            </div>
                         </div>
                     </motion.div>
-
-                    <div className="w-px h-12 md:h-16 bg-gradient-to-b from-white/10 to-transparent mx-auto mt-8 md:mt-12 mb-4" />
-                    <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ scale: isLoaded ? 1 : 0, rotate: 360 }}
-                        transition={{ scale: { duration: 1, delay: 1 }, rotate: { duration: 60, repeat: Infinity, ease: "linear" } }}
-                        className="w-2 h-2 bg-white/80 rotate-45 mx-auto"
-                    />
                 </header>
 
                 {/* THE LIVING ARCHIVE GALLERY */}
-                <div className="flex flex-col gap-[10vh] md:gap-[15vh] max-w-[1400px] mx-auto px-6 md:px-12">
+                <div className="flex flex-col gap-[12vh] md:gap-[20vh] max-w-[1400px] mx-auto px-6 md:px-12">
                     {jobs.map((job, i) => (
                         <KineticModule key={job.id} job={job} index={i} isLoaded={isLoaded} />
                     ))}
@@ -179,46 +174,61 @@ function KineticModule({ job, index, isLoaded }: { job: any, index: number, isLo
             >
                 <div className="
                     relative overflow-hidden
-                    p-6 md:p-10
-                    border border-white/10 bg-white/[0.02] backdrop-blur-[4px]
-                    group-hover:border-white/20 group-hover:bg-white/[0.03]
-                    transition-colors duration-500
+                    p-6 md:p-12
+                    border border-white/10 bg-white/[0.02] backdrop-blur-[8px]
+                    group-hover:border-[#4A70A9]/40 group-hover:bg-[#4A70A9]/[0.02]
+                    transition-all duration-700
+                    shadow-2xl
                 ">
-                    {/* Holographic Shine Overlay */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none mix-blend-overlay bg-gradient-to-tr from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] duration-1000 ease-in-out" />
+                    {/* Dossier ID Badge */}
+                    <div className="absolute top-0 right-12 px-3 py-1 bg-[#4A70A9]/20 border-x border-b border-[#4A70A9]/30">
+                        <span className="text-[8px] font-mono text-[#4A70A9] font-bold tracking-[0.2em]">{job.classification}</span>
+                    </div>
 
                     {/* Technical Ornaments */}
-                    <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/40" />
-                    <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-white/40" />
-                    <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/40" />
-                    <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/40" />
-                    <div className="absolute top-1/2 left-0 w-1 h-3 -translate-y-1/2 bg-white/20" />
-                    <div className="absolute top-1/2 right-0 w-1 h-3 -translate-y-1/2 bg-white/20" />
+                    <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-[#4A70A9]/40" />
+                    <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-[#4A70A9]/40" />
 
                     {/* Metadata Header */}
-                    <div className="flex flex-col gap-2 mb-8 relative z-10">
-                        <div className="flex flex-wrap justify-between items-baseline gap-2">
-                            <h2 className="text-2xl md:text-5xl font-playfair font-medium text-white leading-none tracking-tight">
-                                <ChromaticText text={job.role} />
-                            </h2>
-                            <span className="text-[9px] md:text-xs font-mono text-white/50 bg-white/5 px-3 py-1 rounded-full border border-white/5">{job.period}</span>
+                    <div className="flex flex-col gap-4 mb-10 relative z-10">
+                        <div className="flex flex-wrap justify-between items-start gap-4">
+                            <div className="space-y-1">
+                                <h2 className="text-3xl md:text-6xl font-bebas text-white leading-none tracking-[0.02em]">
+                                    <ChromaticText text={job.role} />
+                                </h2>
+                                <h3 className="text-sm md:text-xl font-mono text-[#4A70A9] font-medium tracking-wide">{job.company}</h3>
+                            </div>
+                            <div className="flex flex-col items-end">
+                                <span className="text-[10px] md:text-xs font-mono text-white bg-white/5 px-4 py-1.5 border border-white/10">{job.period}</span>
+                            </div>
                         </div>
-
-                        <h3 className="text-sm md:text-lg font-playfair italic text-white/60 tracking-wide">{job.company}</h3>
                     </div>
 
                     {/* Content */}
-                    <div className="max-w-2xl relative z-10">
-                        <p className="text-sm md:text-base text-[#D4D4D8] font-sans font-light leading-relaxed mb-8 text-justify opacity-90">
-                            {job.description}
-                        </p>
+                    <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10">
+                        <div className="lg:col-span-8 space-y-8">
+                            <p className="text-base md:text-lg text-gray-400 font-light leading-relaxed max-w-3xl">
+                                {job.description}
+                            </p>
 
-                        {/* Metrics */}
-                        <div className="flex flex-wrap gap-4 md:gap-8 border-t border-white/5 pt-6">
-                            {job.metrics.slice(0, 3).map((m: any) => (
-                                <div key={m.label}>
-                                    <div className="text-[9px] uppercase tracking-widest text-[#71717A] mb-1">{m.label}</div>
-                                    <div className="text-xs md:text-sm font-mono text-[#E4E4E7]">
+                            {/* Skills Tag Section */}
+                            <div className="flex flex-wrap gap-2 pt-4">
+                                {job.skills?.map((skill: string) => (
+                                    <span key={skill} className="text-[9px] font-mono text-gray-500 border border-white/5 px-2 py-1 hover:border-[#4A70A9]/30 hover:text-white transition-colors">
+                                        {skill}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Telemetry Metrics */}
+                        <div className="lg:col-span-4 flex flex-col gap-6 lg:border-l lg:border-white/5 lg:pl-10">
+                            {job.metrics.map((m: any) => (
+                                <div key={m.label} className="group/metric">
+                                    <div className="text-[9px] uppercase tracking-[0.3em] text-gray-600 mb-1.5 font-bold group-hover/metric:text-[#4A70A9] transition-colors">
+                                        {m.label}
+                                    </div>
+                                    <div className="text-sm font-mono text-white/90">
                                         <ScrambleText text={m.value} trigger="hover" />
                                     </div>
                                 </div>
@@ -228,37 +238,27 @@ function KineticModule({ job, index, isLoaded }: { job: any, index: number, isLo
                 </div>
             </motion.div>
 
-            {/* MAGNETIC REVEAL - "Outcomes" (Modified for touch/mobile) */}
+            {/* MISSION OBJECTIVES - "Outcomes" */}
             <motion.div
-                className={`w-full md:w-[280px] relative z-10 ${isEven ? 'pl-0 md:pl-6' : 'pr-0 md:pr-6 text-left md:text-right'} group/reveal`}
-                initial="collapsed"
-                whileHover="expanded"
-                whileTap="expanded" // Enable tap interaction on mobile
+                className={`w-full md:w-[320px] relative z-10 ${isEven ? 'pl-0 md:pl-8' : 'pr-0 md:pr-8 text-left md:text-right'} group/reveal`}
             >
-                <div className={`flex items-center gap-4 cursor-pointer py-2 ${!isEven && 'flex-row md:flex-row-reverse'}`}>
-                    <div className="w-1.5 h-1.5 rounded-full border border-white/20 group-hover/reveal:bg-white transition-colors" />
-                    <span className="text-[10px] font-mono text-white/40 tracking-widest uppercase group-hover/reveal:text-white transition-colors">
-                        Outcomes
+                <div className={`flex items-center gap-4 py-4 ${!isEven && 'flex-row md:flex-row-reverse'}`}>
+                    <div className="w-2 h-2 rounded-full border border-[#4A70A9]/40 bg-[#4A70A9]/10" />
+                    <span className="text-[10px] font-mono text-[#4A70A9] tracking-[0.3em] uppercase font-bold">
+                        Mission Outcomes
                     </span>
-                    <div className="h-px flex-1 bg-white/10 group-hover/reveal:bg-white/30 transition-colors" />
+                    <div className="h-px flex-1 bg-white/10" />
                 </div>
 
-                <motion.div
-                    variants={{
-                        collapsed: { height: 0, opacity: 0, marginTop: 0 },
-                        expanded: { height: 'auto', opacity: 1, marginTop: 16 }
-                    }}
-                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                    className="overflow-hidden"
-                >
-                    <ul className={`space-y-3 ${isEven ? 'border-l pl-4' : 'border-l pl-4 md:border-l-0 md:border-r md:pl-0 md:pr-4'} border-white/10 py-2`}>
-                        {job.achievements.map((ach: string, i: number) => (
-                            <li key={i} className="text-[11px] text-[#A1A1AA] font-light leading-relaxed hover:text-white transition-colors">
+                <div className={`space-y-4 ${isEven ? 'border-l pl-6' : 'border-l pl-6 md:border-l-0 md:border-r md:pl-0 md:pr-6'} border-white/10`}>
+                    {job.achievements.map((ach: string, i: number) => (
+                        <div key={i} className="relative group/ach hover:translate-x-1 transition-transform">
+                            <div className="text-[11px] md:text-xs text-gray-400 font-light leading-relaxed group-hover/ach:text-white transition-colors">
                                 {ach}
-                            </li>
-                        ))}
-                    </ul>
-                </motion.div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </motion.div>
 
         </motion.article>

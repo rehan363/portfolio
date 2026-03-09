@@ -19,10 +19,10 @@ export interface Job {
 export const jobs: Job[] = [
     {
         id: "ROLE-01",
-        role: "Full Stack AI Developer",
+        role: "Agentic AI Developer",
         company: "APTIVE MIND",
         period: "NOV 2025 — PRESENT",
-        description: "Building scalable full-stack applications with modern tech stacks. Working on cutting-edge AI Driven software solutions and enterprise-grade systems.",
+        description: "Designing and deploying autonomous agentic workflows and full-stack AI systems. Architecting enterprise-grade solutions that leverage LLMs for complex task automation and data orchestration.",
         achievements: [
             "Building scalable full-stack applications with modern tech stacks.",
             "Architecting enterprise-grade systems for large-scale location data orchestration and AI-powered automation.",

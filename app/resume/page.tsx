@@ -246,6 +246,42 @@ export default function ResumePage() {
                                 </div>
                             </div>
                         </section>
+                        {/* Certifications */}
+                        <section className="mt-4">
+                            <h2 className="text-xl font-bebas text-[#000000] mb-4 flex items-center gap-2">
+                                <span className="w-1.5 h-1.5 bg-[#4A70A9] rounded-full"></span>
+                                CERTIFICATIONS
+                            </h2>
+                            <div className="grid grid-cols-1 gap-3">
+                                <div className="bg-white border border-gray-300 p-3 rounded-sm shadow-sm">
+                                    <div className="flex justify-between items-center mb-1">
+                                        <h4 className="text-sm font-bold text-[#000000]">Agentic AI Professional Level 2 Developer</h4>
+                                        <span className="text-[9px] font-mono text-[#4A70A9] uppercase font-bold text-right leading-none">PIAIC Credential</span>
+                                    </div>
+                                    <p className="text-[11px] text-gray-700 font-medium leading-tight">
+                                        Validation of advanced multi-agent orchestration mastery. Specialized in developing production-grade autonomous agentic systems using LangGraph, OpenAI Agents SDK, and high-fidelity RAG pipelines.
+                                    </p>
+                                </div>
+                                <div className="bg-white border border-gray-300 p-3 rounded-sm shadow-sm">
+                                    <div className="flex justify-between items-center mb-1">
+                                        <h4 className="text-sm font-bold text-[#000000]">Agentic AI Developer (Level 1)</h4>
+                                        <span className="text-[9px] font-mono text-[#4A70A9] uppercase font-bold text-right leading-none">PIAIC Credential</span>
+                                    </div>
+                                    <p className="text-[11px] text-gray-700 font-medium leading-tight">
+                                        Certification in foundational Agentic AI patterns, LLM orchestration, and the construction of autonomous digital employees for business automation.
+                                    </p>
+                                </div>
+                                <div className="bg-white border border-gray-300 p-3 rounded-sm shadow-sm">
+                                    <div className="flex justify-between items-center mb-1">
+                                        <h4 className="text-sm font-bold text-[#000000]">Model Context Protocol: Advanced Topics</h4>
+                                        <span className="text-[9px] font-mono text-[#4A70A9] uppercase font-bold text-right leading-none">Anthropic Credential</span>
+                                    </div>
+                                    <p className="text-[11px] text-gray-700 font-medium leading-tight text-justify">
+                                        Specialized certification in architecting standardized AI context interfaces. Expertise in integrating LLMs with external data sources using MCP for high-fidelity tool-calling and agentic orchestration.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
                     </main>
                 </div>
 

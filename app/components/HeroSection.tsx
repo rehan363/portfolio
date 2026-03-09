@@ -131,16 +131,16 @@ export default function HeroSection() {
 
                                 <div className="space-y-4 md:space-y-6">
                                     <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-bebas text-white leading-[0.95] tracking-tight">
-                                        FULL STACK AI<br />DEVELOPER
+                                        AGENTIC AI<br />SPECIALIST
                                     </h2>
                                     <p className="text-lg sm:text-xl md:text-2xl text-white/50 font-light leading-relaxed max-w-[600px]">
-                                        Building <span className="text-[#4A70A9]">AI-Driven software solutions</span>
+                                        Architecting <span className="text-[#4A70A9]">autonomous systems</span> & intelligent workflows
                                     </p>
                                 </div>
 
                                 <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-[560px]">
-                                    Specialized in developing production-ready applications with modern tech stacks.
-                                    Experienced in full-stack development, agentic AI workflows, and cloud infrastructure.
+                                    Specialized in deploying high-performance agentic architectures and mission-critical AI systems.
+                                    Bridging the gap between complex model orchestration and production-ready applications.
                                 </p>
 
                                 <div className="flex flex-wrap gap-4 pt-4">
@@ -218,17 +218,19 @@ export default function HeroSection() {
                                     />
 
                                     {/* The Image */}
-                                    <div className="absolute inset-0 p-4 bg-black/40 overflow-hidden">
-                                        <div className="relative w-full h-full transition-all duration-700 group-hover:grayscale-0 grayscale opacity-80 group-hover:opacity-100">
+                                    <div className="absolute inset-0 p-1 bg-black/40 overflow-hidden">
+                                        <div className="relative w-full h-full transition-all duration-700 group-hover:grayscale-0 grayscale opacity-90 group-hover:opacity-100">
                                             <img
                                                 src="/portfolio professional image.png"
                                                 alt="Rehan Ahmed"
-                                                className="w-full h-full object-cover scale-[1.15] origin-top translate-y-0"
+                                                className="w-full h-full object-cover scale-[1.08] object-top translate-y-6 transition-transform duration-1000 ease-out group-hover:scale-[1.1]"
                                                 onError={(e) => { e.currentTarget.src = "/hero-tactical.png"; }}
                                             />
-                                            {/* Professional gradient fade to hide hands/watermark */}
-                                            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                                            {/* Tactical Grain Overlay */}
+                                            <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+
+                                            {/* Advanced cinematic gradient masking */}
+                                            <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-black via-[#050505]/95 to-transparent z-10"></div>
                                         </div>
                                     </div>
 

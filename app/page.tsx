@@ -3,6 +3,7 @@ import HeroSection from "./components/HeroSection";
 import ExperienceSection from "./components/ExperienceSection";
 
 const SkillsSection = dynamic(() => import("./components/SkillsSection"), { ssr: false });
+const CertificationsSection = dynamic(() => import("./components/CertificationsSection"), { ssr: false });
 const ProjectsSection = dynamic(() => import("./components/ProjectsSection"), { ssr: false });
 const MethodologySection = dynamic(() => import("./components/MethodologySection"), { ssr: false });
 const Navbar = dynamic(() => import("./components/Navbar"), { ssr: true }); // Keep Navbar critical
@@ -25,6 +26,7 @@ export default function Home() {
       {/* Scrollable Sections - Rendered immediately so they are visible upon reveal */}
       <HeroSection />
       <ExperienceSection />
+      <CertificationsSection />
       <SkillsSection />
       <MethodologySection />
       <ProjectsSection />

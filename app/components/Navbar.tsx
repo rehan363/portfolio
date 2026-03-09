@@ -44,10 +44,11 @@ export default function Navbar() {
 
     const navLinks = [
         { name: "EXPERIENCE", href: "/experience", code: "01" },
-        { name: "TOOLBOX", href: "/skills", code: "02" },
-        { name: "WORK", href: "/projects", code: "03" },
-        { name: "PROCESS", href: "/process", code: "04" },
-        { name: "RESUME", href: "/resume", code: "05" },
+        { name: "CERTIFICATIONS", href: "/#certifications", code: "02" },
+        { name: "TOOLBOX", href: "/skills", code: "03" },
+        { name: "WORK", href: "/projects", code: "04" },
+        { name: "PROCESS", href: "/process", code: "05" },
+        { name: "RESUME", href: "/resume", code: "06" },
     ];
 
     return (
@@ -87,47 +88,35 @@ export default function Navbar() {
                                         </div>
                                     </div>
                                     <div className="hidden sm:block">
-                                        <span className="font-bebas text-xl text-[#E0E0E0] tracking-[0.15em] group-hover:text-[#4A70A9] transition-colors duration-300">
+                                        <span className="font-bebas text-2xl text-[#E0E0E0] tracking-[0.15em] group-hover:text-[#4A70A9] transition-colors duration-300 leading-none">
                                             REHAN
                                         </span>
-                                        <div className="text-[8px] font-mono text-gray-500 tracking-[0.3em] uppercase">
-                                            Full Stack AI Developer
+                                        <div className="text-[7px] font-mono text-[#4A70A9] tracking-[0.35em] uppercase mt-1 font-bold">
+                                            Agentic AI Specialist
                                         </div>
                                     </div>
                                 </Link>
-
-                                {/* Desktop Status */}
-                                <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 bg-white/[0.02] border border-white/5">
-                                    <div className="relative">
-                                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full" />
-                                        <div className="absolute inset-0 w-1.5 h-1.5 bg-green-500 rounded-full animate-ping opacity-75" />
-                                    </div>
-                                    <span className="text-[9px] font-mono text-gray-500 tracking-widest">
-                                        ONLINE
-                                    </span>
-                                </div>
                             </div>
 
                             {/* CENTER: Navigation Links (Desktop) */}
-                            <div className="hidden md:flex items-center">
-                                <div className="flex items-center bg-white/[0.02] border border-white/5 px-1">
+                            <div className="hidden md:flex items-center flex-1 justify-center">
+                                <div className="flex items-center bg-white/[0.03] border border-white/10 rounded-full px-3 py-1.5 backdrop-blur-sm">
                                     {navLinks.map((link) => (
                                         <Link
                                             key={link.name}
                                             href={link.href}
-                                            className="group relative px-5 py-3 transition-colors"
+                                            className="group relative px-6 py-3 transition-all duration-300"
                                         >
-                                            <div className="absolute inset-0 bg-[#4A70A9] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                             <div className="relative flex items-center gap-2">
-                                                <span className="text-[9px] font-mono text-gray-600 group-hover:text-white/50 transition-colors">
+                                                <span className="text-[10px] font-mono text-[#4A70A9] group-hover:text-white transition-colors font-bold">
                                                     {link.code}
                                                 </span>
-                                                <span className="text-[10px] font-mono text-gray-400 group-hover:text-white tracking-[0.2em] transition-colors">
+                                                <span className="text-[11px] font-mono text-gray-300 group-hover:text-white tracking-[0.2em] transition-colors font-medium">
                                                     {link.name}
                                                 </span>
                                             </div>
                                             <motion.div
-                                                className="absolute bottom-0 left-0 right-0 h-px bg-[#4A70A9] origin-left"
+                                                className="absolute -bottom-1 left-6 right-6 h-[2px] bg-[#4A70A9] origin-center shadow-[0_0_10px_#4A70A9]"
                                                 initial={{ scaleX: 0 }}
                                                 whileHover={{ scaleX: 1 }}
                                                 transition={{ duration: 0.3 }}
@@ -138,21 +127,12 @@ export default function Navbar() {
                             </div>
 
                             {/* RIGHT: Actions */}
-                            <div className="flex items-center gap-6">
-                                {/* Clock */}
-                                <div className="hidden lg:flex flex-col items-end">
-                                    <div className="text-[9px] font-mono text-gray-600 tracking-widest">UTC+5</div>
-                                    <div className="text-sm font-mono text-white tabular-nums">{currentTime}</div>
-                                </div>
-
-                                <div className="hidden lg:block w-px h-8 bg-white/10" />
-
+                            <div className="flex items-center">
                                 <Link
                                     href="/contact"
-                                    className="hidden md:flex group relative overflow-hidden px-5 py-2.5 border border-white/20 hover:border-[#4A70A9] transition-colors"
+                                    className="hidden md:flex group relative overflow-hidden px-7 py-3 border border-white/20 hover:border-[#4A70A9] transition-all bg-white text-black hover:bg-[#4A70A9] hover:text-white"
                                 >
-                                    <div className="absolute inset-0 bg-[#4A70A9] translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                                    <span className="relative text-[10px] font-mono text-white tracking-[0.2em]">
+                                    <span className="relative z-10 text-[11px] font-mono font-bold tracking-[0.25em]">
                                         CONNECT
                                     </span>
                                 </Link>
