@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# REHAN AHMED // AGENTIC AI SPECIALIST
 
-## Getting Started
+A high-performance, premium portfolio showcasing specialized expertise in **Agentic AI Workflows**, **Autonomous Systems**, and **Mission-Critical AI Architectures**. 
 
-First, run the development server:
+Built with a "Technical Dossier" aesthetic, this portfolio is designed to project an elite, professional image for an AI engineer specializing in model orchestration and complex system automation.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🛠️ CORE TECHNOLOGY STACK
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+*   **Frontend**: Next.js 14+ (App Router), TypeScript, Framer Motion, Tailwind CSS
+*   **Backend**: Python (FastAPI), OpenAI SDK, LangGraph, Model Context Protocol (MCP)
+*   **Infrastructure**: Docker, Vercel, Redis, PostgreSQL (Supabase/Neon)
+*   **AI Specialization**: RAG Systems, Voice AI (Vapi/LiveKit), Autonomous Multi-Agent Workflows
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 KEY FEATURES
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+*   **Kinetic UI**: Modern, high-framerate animations using Framer Motion (Stairs transitions, Magnetic hover effects).
+*   **Mission Chronicles**: A specialized "Operational History" section styled as technical dossiers.
+*   **Credential Validation**: Dedicated Certifications section for Agentic AI (PIAIC) and Advanced MCP (Anthropic).
+*   **Premium Aesthetic**: Minimalist, high-contrast design with specialized "Scanning" effects and HUD-style ornaments.
+*   **Optimized Performance**: Full SEO optimization and lazy-loading for heavy assets.
 
-## Learn More
+## 🛠️ LOCAL DEVELOPMENT
 
-To learn more about Next.js, take a look at the following resources:
+1.  **Clone the Repository**:
+    ```bash
+    git clone https://github.com/rehan363/portfolio.git
+    cd portfolio
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2.  **Install Dependencies**:
+    ```bash
+    npm install
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3.  **Run Development Server**:
+    ```bash
+    npm run dev
+    ```
 
-## Deploy on Vercel
+4.  **Access Local Environment**:
+    Open [http://localhost:3000](http://localhost:3000)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🌐 DEPLOYMENT
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is optimized for deployment on the **Vercel Platform**. 
+
+- **Automated CI/CD**: Pushing to the `main` branch triggers an automatic build and production release.
+- **Edge Runtime**: Utilizes Next.js Edge for sub-second page loads globally.
+
+---
+
+**© 2026 REHAN AHMED** // *Architecting autonomous systems & intelligent workflows.*
